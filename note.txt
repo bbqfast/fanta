@@ -1,0 +1,23 @@
+
+point to different java version
+===============================================
+/usr/libexec/java_home -V
+Matching Java Virtual Machines (3):
+1.8.0_172, x86_64:	"Java SE 8"	/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+1.8.0_171, x86_64:	"Java SE 8"	/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home
+1.8.0_161, x86_64:	"Java SE 8"	/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home
+
+
+- goto each java home location and do a java -version
+
+/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/bin/java -version
+java version "1.8.0_161"
+Java(TM) SE Runtime Environment (build 1.8.0_161-b12)
+
+#export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_161-b12`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_161`	
+
+
+
+dline
+https://twitter.com/cfn_mindonesia

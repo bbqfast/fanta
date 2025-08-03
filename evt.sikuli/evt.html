@@ -1,0 +1,755 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>evt.sikuli</h2> <a href="evt.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">import</span> lib
+<span class="kw">import</span> org.sikuli.natives.Vision <span class="kw">as</span> Vision;
+
+<span class="kw">import</span> evt_img <span class="kw">as</span> ix
+reload(ix)
+
+gQuestFavOn=False
+game=<span class="dig">5</span>
+state=<span class="str">'no train'</span>
+usePot=False
+potUse=<span class="dig">0</span>
+bossFight=lib.Ref(<span class="str">'bossFight'</span>,<span class="dig">0</span>)
+user=<span class="str">'unknown'</span>
+stopAT71=True
+vartest=True
+
+flower = <span class="dig">5</span>
+
+<span class="kw">def</span> findPanelPage():
+    findPage(imgPanelEventPage, -<span class="dig">1</span>)
+
+<span class="kw">def</span> findColoPage():
+    findPage(imgColoEventPage, -<span class="dig">1</span>)
+
+<span class="kw">def</span> findEventTrainPage():
+    findPage(imgTrainEvenPage, -<span class="dig">1</span>)
+
+
+<span class="kw">def</span> maidenStart():
+    lib.log(<span class="str">'----------------------- Start Training '</span>)
+    <span class="cmt"># lib.log('maidenStart')</span>
+    <span class="cmt"># if lib.logExists(game, imgMaidenBoss):</span>
+    <span class="cmt">#     lib.myClick(game, imgMaidenBoss)</span>
+    <span class="cmt">#     fightMaidenBoss()</span>
+    <span class="kw">if</span> lib.logExists(game, imgMaidenTraining):
+        lib.myClick(game, imgMaidenTraining, <span class="dig">3</span>)
+
+<span class="cmt">#    if lib.logExists(game, imgMaidenTraining):</span>
+ <span class="cmt">#       lib.myClick(game, imgMaidenTraining)</span>
+
+<span class="kw">def</span> Start():
+    <span class="kw">global</span> state, stopAT71
+    <span class="cmt">#if game.exists(imgStartTrain):</span>
+    <span class="kw">if</span> lib.logExists(game, imgStartTrain):
+        lib.log(<span class="str">'----------------------- start training'</span>)
+        <span class="cmt">#if game.exists(imgSevenOne):</span>
+        lib.log(<span class="str">"stopAT71="</span> + str(stopAT71))
+        <span class="kw">if</span> lib.logExists(game, lib.ixact(imgSevenOne)) <span class="kw">and</span> stopAT71:
+            state=<span class="str">'done'</span>
+            lib.log(<span class="str">'------------ at 7-1 training DONE !'</span>)
+        <span class="kw">else</span>:
+            lib.myClickXmg(imgLast(imgStartTrain))
+            <span class="cmt">#lib.myClickXmg(imgByOrder(imgStartTrain, 0))</span>
+        <span class="kw">return</span> True
+    <span class="kw">return</span>
+
+<span class="kw">def</span> maidenBackToEvent():
+    lib.myClick(game, imgMypage)
+    <span class="kw">while</span> lib.logExists(game, imgTrainEventEnter, <span class="dig">2</span>):
+        lib.myClick(game, imgTrainEventEnter)
+
+<span class="kw">def</span> fightMaidenBoss():
+    lib.log(<span class="str">'----------------------- fightMaidenBoss'</span>)
+    <span class="cmt">#clickMaidenMessage()</span>
+    <span class="kw">if</span> log.exists(game, imgFight):
+        fightTrainBoss()
+   <span class="cmt"># while not lib.logExists(game, imgMaidenTraining): </span>
+   <span class="cmt">#     clickMaidenMessage()</span>
+
+<span class="kw">def</span> fightChallenge():
+    lib.myClick(game, imgChallenge)
+    <span class="skw">sleep</span>(<span class="dig">10</span>)
+    fightTrainBoss()
+
+<span class="kw">def</span> fightTrainBoss():
+    allyCnt=<span class="dig">0</span>
+    lib.log(<span class="str">'fight begin !'</span>)
+    <span class="kw">while</span>(game.exists(imgFight)):
+        lib.log(<span class="str">'in fight'</span>)
+        <span class="kw">if</span> (lib.logExists(game, imgSummonAlly) <span class="kw">and</span> allyCnt &lt; <span class="dig">3</span>):
+            lib.log(<span class="str">'call ally'</span>)
+            lib.myClick(game, imgSummonAlly)
+            allyCnt=allyCnt+<span class="dig">1</span>
+        <span class="kw">else</span>:
+            lib.myClick(game, imgFight)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+<span class="kw">def</span> Boss():
+    <span class="cmt">#if game.exists(imgFlee):</span>
+    <span class="kw">if</span> lib.logExists(game, lib.ixact(imgFlee)):
+        lib.screenShot(game, <span class="str">"boss-"</span>)
+        lib.log(<span class="str">'Boss'</span>)
+        lib.myClick(game, imgFlee)
+
+<span class="kw">def</span> Heal():
+    <span class="kw">global</span> state, potUse, usePot
+    <span class="kw">if</span> lib.logExists(game, imgHeal):
+        lib.log(<span class="str">'heal'</span>)
+        <span class="kw">if</span> lib.logExists(game, imgPotLowExact):
+            game.hover(imgPotLow)
+            lib.log(<span class="str">'potion level too low!'</span>)
+            state=<span class="str">'wait'</span>
+            <span class="kw">return</span> False
+        <span class="kw">if</span> potUse &gt; <span class="dig">30</span>:
+            lib.log(<span class="str">'Used too much potion='</span> + str(potUse))
+            state=<span class="str">'done'</span>
+            <span class="kw">return</span> False
+        <span class="kw">if</span> <span class="kw">not</span> usePot:
+            lib.log(<span class="str">'Dont use Pot'</span>)
+            state=<span class="str">'done'</span>
+            <span class="kw">return</span> False
+        lib.myClick(game, imgHeal)
+        lib.myClick(game, imgYes)
+        <span class="cmt"># lib.myClick(imgMyPage)</span>
+        potUse=potUse+<span class="dig">1</span>
+        state==<span class="str">'train'</span>
+        <span class="kw">return</span> True
+        <span class="cmt">#state='no train'</span>
+    <span class="kw">return</span> True
+
+<span class="kw">def</span> challenge():
+    lib.log(<span class="str">'find challenge'</span>)
+    <span class="cmt">#if game.exists(imgChallenge):</span>
+    <span class="kw">if</span> lib.logExists(game, imgChallenge):
+        lib.log(<span class="str">'----------------------- challenge'</span>)
+        fightChallenge()
+        <span class="kw">return</span> True
+    <span class="kw">return</span> False
+
+
+<span class="kw">def</span> setPositionsMaiden():
+    <span class="kw">global</span> center, pos1, pos2, pos3, pos4, pos5, pos6
+    ydelta = <span class="dig">0</span>
+
+    center = Pts(<span class="dig">135</span>, <span class="dig">248</span> + ydelta) <span class="cmt">#278</span>
+    pos3 = Pts(<span class="dig">151</span>, <span class="dig">223</span> + ydelta) <span class="cmt">#278</span>
+    pos2 = Pts(<span class="dig">202</span>, <span class="dig">223</span> + ydelta)
+    pos1 = Pts(<span class="dig">270</span>, <span class="dig">223</span> + ydelta) <span class="cmt">#429</span>
+    pos6 = Pts(<span class="dig">151</span>, <span class="dig">375</span> + ydelta)
+    pos5 = Pts(<span class="dig">227</span>, <span class="dig">375</span> + ydelta)
+    pos4 = Pts(<span class="dig">278</span>, <span class="dig">375</span> + ydelta)
+
+<span class="cmt">#x2</span>
+<span class="kw">def</span> TrainEventBoss(skip=False):
+    lib.log(<span class="str">'TrainEventBoss()'</span>)
+    <span class="kw">global</span> bossFight
+    <span class="cmt">#if game.exists(imgFlee):</span>
+    <span class="kw">if</span> lib.logExists(game, imgFightExact):
+        <span class="kw">if</span> skip:
+            lib.myClick(game, imgFlee, <span class="dig">1</span>)
+            <span class="kw">return</span>
+        lib.screenShot(game, user + <span class="str">"-boss-"</span>)
+        <span class="kw">if</span> lib.logExists(game, imgBossHard):
+            lib.log(<span class="str">'Hard Boss, skipping'</span>)
+            lib.myClick(game, imgFlee, <span class="dig">1</span>)
+            <span class="kw">return</span>
+        <span class="kw">if</span> <span class="kw">not</span> lib.logExists(game, imgBossLevel1):
+            lib.log(<span class="str">'Big Boss, skipping'</span>)
+            lib.myClick(game, imgFlee, <span class="dig">1</span>)
+            <span class="kw">return</span>
+        bossFight.set(bossFight.get()+<span class="dig">1</span>)
+        <span class="cmt">#lib.screenShot(game, "boss-")</span>
+        lib.log(<span class="str">'Easy Boss'</span>)
+        lib.myClick(game, imgFight)
+        pl = initTrainDeployPos()
+        placeUnit(pl)
+        <span class="cmt"># lib.myWait(game ,imgBackToEvent, 60)</span>
+        trainBossHandleResult()
+        <span class="kw">return</span> True
+        <span class="cmt"># lib.myWaitFor2(game, imgBackToEvent, imgEvtTrain, 60)</span>
+        <span class="cmt"># if lib.logExists(game, imgBackToEvent):</span>
+        <span class="cmt">#     lib.myClick(game, imgBackToEvent)</span>
+    <span class="kw">return</span> False
+
+<span class="kw">def</span> TrainEventBossCont():
+    lib.log(<span class="str">'TrainEventBossCont()'</span>)
+    <span class="kw">global</span> bossFight, state
+    fought=False
+    win = False
+    <span class="cmt">#if game.exists(imgFlee):</span>
+    <span class="cmt"># while not win:</span>
+    <span class="kw">if</span> lib.logExists(game, imgFightBossCont):
+        <span class="cmt"># lib.myClick(game, imgFightBossCont)</span>
+        lib.clickTillNext(game, imgFightBossCont, imgTrainSelectBoss)
+        <span class="kw">if</span> lib.logExists(game, imgFightBossCont2):
+            fought=True
+            lib.myClick(game, imgFightBossCont2)
+            <span class="kw">if</span> lib.logExists(game, imgYes, <span class="dig">1</span>):
+                lib.myClick(game, imgYes)
+            <span class="cmt">#bossFight=bossFight+1</span>
+            <span class="cmt">#lib.screenShot(game, "boss-")</span>
+            lib.log(<span class="str">'Boss Cont'</span>)
+            <span class="cmt">#lib.myClick(game, imgFight)</span>
+            pl = initTrainDeployPos()
+            placeUnit(pl)
+            <span class="cmt"># lib.myWait(game, imgBackToEvent, 40)</span>
+            trainBossHandleResult()
+        <span class="kw">else</span>:
+            lib.myClick(game, imgBackToEvent2)
+            bossFight.set(<span class="dig">0</span>)
+            <span class="cmt"># break</span>
+    <span class="kw">return</span> fought
+
+<span class="kw">def</span> trainBossHandleResult():
+    <span class="kw">global</span> state, bossFight
+    lib.myWaitFor3(SCREEN, imgBackToEvent, imgEvtTrain, imgQuestFailed, <span class="dig">40</span>)
+    <span class="kw">if</span> lib.logExists(game, imgFightWon):
+        lib.log(<span class="str">'Boss Won!!!'</span>)
+        win = True
+        state=<span class="str">'done'</span>
+        bossFight.set(<span class="dig">0</span>)
+    <span class="kw">if</span> lib.logExists(game, imgQuestFailed):
+        lib.log(<span class="str">'trainBossHandleResult() - FAILED'</span>)
+        state=<span class="str">'outer'</span>
+        lib.myClick(game, imgQuestFailed)
+    <span class="kw">if</span> lib.logExists(game, imgBackToEvent):
+        lib.myClick(game, imgBackToEvent)
+
+<span class="kw">def</span> checkBossAndStart():
+    TrainEventBossCont()
+    lib.myWait(game, imgMaidenTraining, <span class="dig">5</span>)
+    maidenStart()
+
+<span class="cmt"># state</span>
+<span class="cmt"># training -&gt; boss -&gt; failed -&gt; FailedScreen (quick) -&gt; Train main page</span>
+<span class="cmt"># training -&gt; stage clear -&gt; choose level</span>
+
+<span class="kw">def</span> trainLoop(user=<span class="str">'unknown'</span>):
+    <span class="kw">global</span> loop, delay, state, bossFight, potUse
+    lib.log(<span class="str">'trainLoop='</span> + state)
+    potUse=<span class="dig">0</span>
+    cnt=<span class="dig">0</span>
+    state=<span class="str">'train'</span>
+    <span class="kw">if</span> lib.logExists(game, imgTrainEventEnter):
+        lib.clickTillNext(game, imgTrainEventEnter, imgMaidenTraining)
+    <span class="kw">while</span> (<span class="kw">not</span> state==<span class="str">'done'</span>):
+        lib.log(<span class="str">'outer train loop bossFight='</span> + bossFight.s())
+        <span class="cmt">#IntoTrain()</span>
+        <span class="kw">if</span> TrainEventBossCont():
+            <span class="kw">continue</span>
+        lib.sleeplogx(<span class="dig">5</span>)
+        <span class="cmt"># checkBossAndStart()</span>
+        maidenStart()
+        <span class="cmt">#if bossFight &gt; 0:</span>
+        Start()
+        state=<span class="str">'train'</span>
+        lib.log(<span class="str">'state='</span> + state)
+        <span class="kw">while</span> state==<span class="str">'train'</span>:
+            lib.log(<span class="str">'Loop:'</span> + str(cnt) + <span class="str">' bossFight='</span>+ bossFight.s() + <span class="str">" potUse="</span>+str(potUse) + <span class="str">' state='</span> + state)
+            <span class="kw">if</span> Adv():
+                <span class="kw">continue</span>
+            <span class="kw">if</span> Brave():
+                <span class="kw">continue</span>
+            <span class="kw">if</span> Cont():
+                <span class="kw">continue</span>
+            <span class="kw">if</span> <span class="kw">not</span> Heal(): <span class="cmt">##</span>
+                <span class="kw">break</span>
+            <span class="kw">if</span> lib.logExists(game, imgMaidenYes):
+                lib.myClick(game, imgMaidenYes)
+                <span class="cmt"># doQuest()</span>
+            <span class="cmt"># if bossFight.get() &gt; 0:</span>
+            <span class="cmt">#     lib.log("Boss fought, back to main")</span>
+            <span class="cmt">#     break</span>
+            <span class="cmt">#challenge()</span>
+            <span class="cmt"># maidenStart() # can see start after event boss</span>
+            Start() <span class="cmt"># could pop back to train screen if level done</span>
+            TrainEventBoss()
+            <span class="skw">sleep</span>(<span class="dig">1</span>)
+            cnt+=<span class="dig">1</span>
+        <span class="cmt"># during multi acct mode, we dont wait for regen, we move on to next account</span>
+        <span class="cmt">#saveRanks()</span>
+        lib.sleeplogx(<span class="dig">1</span>)
+        <span class="cmt">#state=='train'</span>
+    lib.log(<span class="str">'maiden loop EXIT'</span>)
+    trainRank()
+    lib.myClickTillGone(game, imgMyPage, waitForImgAppear=<span class="dig">30</span>)
+
+<span class="cmt">#tln1</span>
+<span class="kw">def</span> trainLoopNormal(user=<span class="str">'unknown'</span>, isDaily=False, skip=False):
+    <span class="kw">global</span> loop, delay, state, bossFight, potUse
+    lib.log(<span class="str">'trainLoop normal='</span> + state)
+    potUse=<span class="dig">0</span>
+    cnt=<span class="dig">0</span>
+    state=<span class="str">'train'</span>
+    <span class="kw">if</span> <span class="kw">not</span> isDaily:
+        lib.myClick(game, imgTrainPage, <span class="dig">1</span>)
+    <span class="kw">while</span> (<span class="kw">not</span> state==<span class="str">'done'</span>):
+        lib.log(<span class="str">'outer normal loop bossFight='</span> + bossFight.s())
+        <span class="cmt">#IntoTrain()</span>
+        <span class="cmt"># lib.sleeplogx(5)</span>
+        <span class="cmt"># checkBossAndStart()</span>
+        <span class="cmt"># maidenStart()</span>
+        <span class="cmt">#if bossFight &gt; 0:</span>
+        <span class="kw">if</span> <span class="kw">not</span> isDaily:
+            challenge()
+        Start()
+        state=<span class="str">'train'</span>
+        lib.log(<span class="str">'state='</span> + state)
+        iadv=<span class="dig">0</span>
+        <span class="kw">while</span> state==<span class="str">'train'</span>:
+            lib.log(<span class="str">'Loop:'</span> + str(cnt) + <span class="str">' bossFight='</span>+ bossFight.s() + <span class="str">" potUse="</span>+str(potUse) + <span class="str">' state='</span> + state)
+            <span class="skw">sleep</span>(<span class="dig">1</span>)
+            <span class="kw">if</span> Adv():
+                iadv=iadv+<span class="dig">1</span>
+                <span class="kw">if</span> isDaily:
+                    state=<span class="str">'done'</span>
+                    lib.canSkip(skip, <span class="str">"trainLoopNormal"</span>)
+                    lib.sleeplogx(<span class="dig">6</span>)
+                    Boss()
+                    <span class="kw">break</span>
+                <span class="skw">sleep</span>(<span class="dig">1</span>)
+                <span class="kw">continue</span>
+            <span class="kw">if</span> Brave():
+                <span class="kw">continue</span>
+            <span class="kw">if</span> Cont():
+                <span class="kw">continue</span>
+            <span class="kw">if</span> <span class="kw">not</span> Heal(): <span class="cmt">## </span>
+                <span class="kw">break</span>
+            <span class="cmt"># if lib.logExists(game, imgMaidenYes):</span>
+            <span class="cmt">#     lib.myClick(game, imgMaidenYes)</span>
+                <span class="cmt"># doQuest()</span>
+            <span class="kw">if</span> TrainEventBoss(True):
+                <span class="kw">continue</span>
+            <span class="cmt"># if isDaily or challenge():</span>
+            <span class="kw">if</span> challenge():
+                <span class="kw">continue</span>
+            <span class="cmt"># maidenStart() # can see start after event boss</span>
+            <span class="kw">if</span> Start(): <span class="cmt"># could pop back to train screen if level done</span>
+                cnt=<span class="dig">0</span>
+                <span class="kw">continue</span>
+            cnt+=<span class="dig">1</span>
+            <span class="cmt">#x1</span>
+            <span class="kw">if</span> cnt &gt; <span class="dig">20</span>:
+                lib.log(user + <span class="str">" Infinite trainLoopNormal"</span>)
+                <span class="kw">raise</span> ValueError(user + <span class="str">" Infinite trainLoopNormal"</span>)
+        <span class="cmt"># during multi acct mode, we dont wait for regen, we move on to next account</span>
+        <span class="cmt">#saveRanks()</span>
+        lib.sleeplogx(<span class="dig">1</span>)
+        <span class="cmt">#state=='train'</span>
+    lib.log(<span class="str">'normal loop EXIT'</span>)
+    <span class="kw">if</span> lib.logExists(game, imgBack):
+        lib.myClick(game, imgBack, waitForImgAppear=<span class="dig">1</span>, after=<span class="dig">1</span>)
+    <span class="kw">elif</span> lib.logExists(game, imgMyPage):
+        lib.myClickTillGone(game, imgMyPage)
+    <span class="kw">else</span>:
+        lib.myClick(game, imgBack, waitForImgAppear=<span class="dig">1</span>, after=<span class="dig">1</span>)
+        <span class="kw">if</span> lib.logExists(game, imgMyPage, <span class="dig">2</span>):
+            lib.myClickTillGone(game, imgMyPage)
+
+<span class="kw">def</span> trainRank():
+    <span class="kw">if</span> lib.logExists(game, imgTrainRanking):
+        lib.myClick(game, imgTrainRanking, <span class="dig">1</span>)
+        lib.screenShot(game, <span class="str">"Rank-"</span> + user + <span class="str">"-shot-"</span>)
+        lib.myClick(game, imgBack, <span class="dig">1</span>)
+
+<span class="kw">def</span> fightColo(minBeforeStart = <span class="dig">0</span>):
+    <span class="kw">global</span> multiAcct, usePot
+    <span class="kw">global</span> loop, delay, state
+    sleepMinute(minBeforeStart)
+    <span class="kw">while</span> True:
+        delay = <span class="dig">0</span>
+        multiAcct=True
+        usePot=False
+        mainLoop()
+        findColoPage()
+        lib.myClick(game, imgColoEnter, waitForImgAppear=<span class="dig">10</span>)
+        fightArea()
+        lib.myClick(game, imgBack, waitForImgAppear=<span class="dig">10</span>)
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        lib.myClick(game, imgBack, waitForImgAppear=<span class="dig">10</span>)
+        sleepMinute(<span class="dig">10</span>)
+
+<span class="kw">def</span> fightArea():
+    <span class="cmt">#image = lib.imgByOrder(imgColoFight, 0)</span>
+    image = lib.imgLast(imgColoFight)
+    lib.myClickXmg(image)
+    lib.sleeplogx(<span class="dig">3</span>)
+    <span class="kw">if</span> lib.logExists(game, imgColoBossNear):
+        lib.myClick(game, imgYes)
+    <span class="cmt">#lib.myWait(game, imgSkip,10)</span>
+    lib.myClick(game, imgSkip, waitForImgAppear=<span class="dig">30</span>)
+    lib.myClick(game, imgBack, waitForImgAppear=<span class="dig">30</span>)
+
+<span class="kw">def</span> guildDeployTeam():
+    lib.myClick(game, imgGuildManage)
+    lib.myClick(game, imgGuildDeploy)
+    lib.myClick(game, imgGuildDeploySpot)
+    lib.myClick(game, imgYes)
+
+<span class="kw">def</span> buildCannon():
+    <span class="kw">while</span> True:
+        <span class="kw">if</span> Adv():
+            <span class="kw">continue</span>
+        <span class="kw">if</span> Brave():
+            <span class="kw">continue</span>
+        <span class="kw">if</span> Cont():
+            <span class="kw">continue</span>
+        <span class="kw">if</span> game.exists(imgGuildFire):
+            <span class="kw">break</span>
+    lib.sleeplogx(<span class="dig">3</span>)
+    lib.myClick(game, imgGuildFire)
+    lib.clicklog(imgBsBack)
+    lib.myClick(game, imgGuildToBattle)
+
+<span class="kw">def</span> initTrainDeployPos():
+    pl = []
+    pl.append(lib.Pts(<span class="dig">146</span>, <span class="dig">281</span>))
+    pl.append(lib.Pts(<span class="dig">146</span>, <span class="dig">334</span>))
+    pl.append(lib.Pts(<span class="dig">199</span>, <span class="dig">387</span>))
+    pl.append(lib.Pts(<span class="dig">253</span>, <span class="dig">387</span>))
+    pl.append(lib.Pts(<span class="dig">306</span>, <span class="dig">387</span>))
+    pl.append(lib.Pts(<span class="dig">359</span>, <span class="dig">334</span>))
+    pl.append(lib.Pts(<span class="dig">359</span>, <span class="dig">281</span>))
+    <span class="kw">return</span> pl
+
+<span class="kw">def</span> placeUnit2():
+    lib.log(<span class="str">'placeUnit()'</span>);
+    l = [pos1, pos2, pos3]
+    loopUnits(l)
+
+<span class="kw">def</span> placeUnit(l):
+    lib.log(<span class="str">'placeUnit()'</span>);
+    <span class="cmt">#l = [pos1, pos2, pos3]</span>
+    loopUnits(l)
+
+<span class="kw">def</span> placeAlly():
+    lib.log(<span class="str">'placeAlly()'</span>);
+    l = [pos4, pos5, pos6]
+    loopAlly(l)
+
+<span class="kw">def</span> loopAlly(posList):
+    loopDeploy(imgCallAllyExact, posList)
+
+<span class="kw">def</span> loopUnits(posList):
+    loopDeploy(imgDeployStartExact, posList, True)
+
+<span class="kw">def</span> loopDeploy(imgButton, posList, fav=False):
+    <span class="cmt">#lib.myClick(game, imgButton) #first Ally click can be missed</span>
+    <span class="cmt">## potential infinite loop if there are timing issue where Deploy button just disappear right before doing my click</span>
+    <span class="cmt">## consider using a special version of myClick where we dont wait for the button</span>
+    lib.myClickTillGone(game, imgButton, waitForImgAppear=<span class="dig">20</span>)
+    c=<span class="dig">1</span>
+    <span class="kw">if</span> gQuestFavOn <span class="kw">and</span> game.exists(imgFavOff):
+        lib.myClick(game, imgFavOff)
+    <span class="kw">for</span> x <span class="kw">in</span> posList:
+        <span class="kw">if</span> <span class="kw">not</span> deploy(imgButton, x, c):
+            <span class="kw">return</span>
+        lib.log(<span class="str">'placed '</span> + str(c))
+        c=c+<span class="dig">1</span>
+
+
+<span class="kw">def</span> place(pos):
+    lib.log(<span class="str">'place() x='</span> + str(pos.x) + <span class="str">'y='</span> + str(pos.y))
+    mouseMove(Location(game.getX() + pos.x, game.getY() + pos.y))
+<span class="cmt">#myDrag(Location(game.getX() + pos1.x, game.getY() + pos1.y))            </span>
+    lib.clickHere()
+
+<span class="kw">def</span> deploy(imgButton, pos, idx):
+    <span class="cmt">#imgCallAllyZeroExact</span>
+    <span class="cmt">#comp=Image2(imgDeployStartZeroExact, imgCallAllyZeroExact)</span>
+    <span class="cmt">#if lib.logExists(game, imgDeployStartZeroExact):</span>
+    <span class="cmt">#if comp.existsOr(game):</span>
+        <span class="cmt">#lib.log('No more ally or unit left to deploy')</span>
+        <span class="cmt">#return False</span>
+    <span class="kw">if</span> lib.logExists(game, imgDefenseFailed):
+        lib.log(<span class="str">'DEFENSE FAILED'</span>)
+        <span class="kw">return</span> False
+    <span class="kw">if</span> <span class="kw">not</span> idx==<span class="dig">1</span>:
+        <span class="kw">if</span> <span class="kw">not</span> lib.logExists(game, imgButton):
+            lib.log(<span class="str">'No more deploy for '</span> + lib.strxmg(imgButton))
+            <span class="kw">return</span> False
+        lib.myClick(game, imgButton)
+    <span class="kw">if</span> <span class="kw">not</span> lib.logExists(game, imgDeployExact):
+        lib.log(<span class="str">'No Unit to deploy'</span>)
+        <span class="kw">if</span> lib.logExists(game, imgBack):
+            lib.myClick(game, imgBack)
+        <span class="kw">return</span> False
+    imgFirstDeploy=lib.imgByOrder(imgDeployExact, <span class="dig">0</span>)
+    <span class="cmt">#lib.myWait(game ,imgDeployConfirm, totalWaits=10, takeshot=True)</span>
+    lib.myClickXmg(imgFirstDeploy)
+<span class="cmt">#    if not lib.logExists(game, imgDeployConfirm):</span>
+<span class="cmt">#        lib.myClick(game, imgBack)</span>
+<span class="cmt">#        return False</span>
+    <span class="cmt">#place(pos)</span>
+    <span class="cmt">#lib.myClick(game, imgDeployConfirm)</span>
+    <span class="cmt">#while not lib.myWait(SCREEN ,imgMyProfileFrom, 6):</span>
+    <span class="cmt">#while lib.logExists(game, imgDeployConfirm):</span>
+    lib.log(<span class="str">'Confirm place'</span>)
+    place(pos)
+    lib.myClick(game, imgDeployConfirm)
+    lib.sleeplogx(<span class="dig">1</span>)
+    <span class="kw">return</span> True
+
+
+<span class="kw">def</span> Brave():
+    <span class="kw">if</span> lib.logExists(game, imgBrave):
+        lib.log(<span class="str">'brave'</span>)
+        lib.myClick(game, imgBrave)
+        <span class="kw">return</span> True
+    <span class="kw">else</span>:
+        <span class="kw">return</span> False
+<span class="kw">def</span> Adv():
+    <span class="kw">global</span> bossFight
+    <span class="kw">if</span> lib.logExists(game, imgAdv):
+        lib.log(<span class="str">'advance bossFight='</span> + bossFight.s() + <span class="str">' potUse='</span> + str(potUse))
+        lib.myClick(game, imgAdv)
+        lib.sleeplogx(<span class="dig">.7</span>)
+        <span class="kw">return</span> True
+    <span class="kw">else</span>:
+        <span class="kw">return</span> False
+
+<span class="kw">def</span> imgLast(image):
+    lib.log(<span class="str">'imgLast'</span>)
+    tt = findAll(image)
+    tts  = sorted(tt, key=lib.by_y)
+    <span class="cmt">#lib.log(str(len(tts)))</span>
+    button=tts[len(tts)-<span class="dig">1</span>]
+    hover(button)
+    <span class="kw">return</span> button
+
+<span class="kw">def</span> Cont():
+    <span class="kw">if</span> lib.logExists(game, imgCont):
+        lib.log(<span class="str">'continue'</span>)
+        lib.myClick(game, imgCont)
+        lib.sleeplogx(<span class="dig">.7</span>)
+        <span class="kw">return</span> True
+    <span class="kw">else</span>:
+        <span class="kw">return</span> False
+
+<span class="kw">def</span> rookBox(image, hover=True): <span class="cmt"># unused</span>
+    ub=<span class="skw">find</span>(image)
+    ub.setX(ub.x - <span class="dig">5</span>)
+    ub.setY(ub.y - <span class="dig">50</span>)
+    ub.setW(<span class="dig">450</span>)
+    ub.setH(<span class="dig">90</span>)
+    <span class="kw">if</span> hover:
+        lib.hoverBox(ub)
+    <span class="kw">return</span> ub
+
+
+<span class="kw">def</span> clashJoinOnly():
+    lib.myClick(game, imgClashMain)
+    <span class="kw">if</span> lib.logExists(game, imgNo, <span class="dig">2</span>):
+        lib.myClick(game, imgNo)
+    lib.myClick(game, imgMyPage)
+
+<span class="kw">def</span> clash():
+    lib.log(<span class="str">'Clash()'</span>)
+    lib.myClick(game, imgClashMain)
+    <span class="kw">if</span> lib.logExists(game, imgNo, <span class="dig">2</span>):
+        lib.myClick(game, imgNo)
+    lib.myClick(game, imgClashBattleLg, <span class="dig">1</span>)
+    <span class="cmt">#lib.myClick(game, imgClashFight)</span>
+    box=rookBox(imgClashRook)
+    lib.myClick(box, imgClashFight, <span class="dig">1</span>)
+    win=False
+    clashpot=<span class="dig">0</span>
+    lib.myClick(game, imgClashBattleStart, <span class="dig">1</span>)
+    lib.myClick(game, imgYes)
+    <span class="kw">while</span> <span class="kw">not</span> win:
+        lib.myClick(game, imgClashSkip)
+        lib.myWaitFor2(game, imgClashBattle, imgYes, <span class="dig">20</span>)
+        <span class="kw">if</span> lib.logExists(game, imgYes):
+            lib.myClick(game, imgYes)
+            lib.myClick(game, imgYes, <span class="dig">1</span>) <span class="cmt"># for potion</span>
+            clashpot+=<span class="dig">1</span>
+        <span class="kw">else</span>:
+            win=True
+            <span class="kw">break</span>
+    <span class="cmt">#  finish battle</span>
+    lib.myClick(game, imgClashBattle,<span class="dig">1</span>)
+    <span class="cmt"># lib.myClick(game, imgClashBack)</span>
+    lib.clickTillGone(game, imgClashBack)
+    lib.log(<span class="str">'Clash() pot='</span> + str(clashpot))
+    <span class="kw">if</span> lib.logExists(game, imgMyPage, <span class="dig">2</span>):
+        lib.myClick(game, imgMyPage)
+
+<span class="kw">def</span> joinTacticsOnly():
+    lib.myClick(game, imgTacticsMain)
+    lib.sleeplogx(<span class="dig">2</span>)
+    <span class="kw">if</span> lib.logExists(game, imgYes):
+       lib.myClick(game, imgYes)
+    <span class="cmt"># lib.sleeplogx(1)</span>
+    lib.myClick(game, imgTacticsMain2, <span class="dig">1</span>)
+
+<span class="cmt">#pt1</span>
+<span class="kw">def</span> playTactics():
+    lib.myClick(game, imgTacticsMain)
+    lib.sleeplogx(<span class="dig">3</span>)
+    <span class="kw">if</span> lib.logExists(game, imgYes):
+        lib.myClick(game, imgYes)
+        lib.sleeplogx(<span class="dig">3</span>)
+    <span class="kw">if</span> lib.logExists(game, imgTacticsFormTeam):
+        lib.myClick(game, imgTacticsFormTeam)
+    cnt=<span class="dig">3</span>
+    <span class="kw">while</span> cnt &gt; <span class="dig">0</span>:
+        lib.myWaitFor2(game ,imgTacticsBattle, imgTacticsBoss, <span class="dig">63</span>)
+        <span class="kw">if</span> lib.logExists(game, imgTacticsBoss):
+            lib.myClick(game, imgTacticsBoss)
+        <span class="kw">else</span>:
+            lib.myClick(game, imgTacticsBattle)
+            lib.myClick(game, imgTacticsCP6)
+        <span class="cmt">#lib.myClickTillGone(game, ixact(imgTacticsBattle), waitForImgAppear=63)</span>
+        lib.sleeplogx(<span class="dig">7</span>)
+        <span class="cmt">#lib.myClick(game, imgTacticsAutoOff)</span>
+        lib.myClickTillGone(game, ixact(imgTacticsAutoOff), waitForImgAppear=<span class="dig">1</span>)
+        lib.myClick(game, imgTacticsFF)
+    <span class="cmt">#lib.myClick(game, imgTacticsNext)</span>
+        lib.myWaitFor2(game ,imgTacticsNext, imgTacticsGiveup, <span class="dig">30</span>)
+        <span class="kw">if</span> lib.logExists(game, imgTacticsNext):
+            lib.log(<span class="str">'playTactics() - Win'</span>)
+            <span class="kw">break</span>
+        <span class="kw">else</span>:
+            lib.log(<span class="str">'playTactics() - Give up'</span>)
+            lib.myClick(game, imgTacticsGiveup)
+            lib.myClick(game, imgYes)
+        cnt=cnt-<span class="dig">1</span>
+    lib.myClick(game, imgTacticsNext, waitForImgAppear=<span class="dig">30</span>)
+    lib.myClick(game, imgTacticsTop)
+    lib.sleeplogx(<span class="dig">3</span>)
+    lib.myClick(game, imgTacticsMenu)
+    lib.myClick(game, imgTacticsRankings)
+    <span class="cmt"># lib.screenShot(game, user + "-tactics-ranking-")    </span>
+    lib.myClick(game, imgBack)
+    lib.myClick(game, imgTacticsMain2)
+
+<span class="kw">def</span> diceEvent():
+    diceEnter()
+    diceRoll()
+
+<span class="kw">def</span> diceEnter():
+    lib.myClick(game, imgDiceMain, after=<span class="dig">1.5</span>)
+    lib.myClick(game, imgDiceEventPage, after=<span class="dig">1.5</span>)
+    <span class="kw">if</span> lib.logExists(game, imgNo, <span class="dig">2</span>):
+        lib.myClick(game, imgNo, waitForImgAppear=<span class="dig">1</span>, after=<span class="dig">2</span>)
+    <span class="cmt">#lib.myClick(game, imgBack, waitForImgAppear=1, after=1)</span>
+    <span class="cmt"># lib.myClick(game, imgBack, waitForImgAppear=1, after=1)</span>
+    lib.myClickTillGone(game, imgBack, waitForImgAppear=<span class="dig">2</span>)
+
+
+<span class="kw">def</span> diceRoll():
+    c=<span class="dig">4</span>
+    lib.sleeplogx(<span class="dig">1</span>)
+    <span class="kw">while</span> c&gt;<span class="dig">0</span> <span class="kw">and</span> lib.logExists(game, ixact(imgDiceBTzero, <span class="dig">0.95</span>)):
+        <span class="cmt">#lib.myClick(game, imgDiceRoll)</span>
+        <span class="kw">if</span> lib.logExists(game, ixact(imgDiceRoll, <span class="dig">.95</span>)):
+            lib.myClickTillGone(game, ixact(imgDiceRoll, <span class="dig">.95</span>), waitForImgAppear=<span class="dig">0</span>, retryIfNotGone=<span class="dig">30</span>, waitAfterClick=<span class="dig">1</span>)
+            <span class="cmt">#lib.clickTillNext(game, ixact(imgDiceRoll, .95), imgDiceStop)</span>
+            lib.myClick(game, imgDiceStop)
+            lib.sleeplogx(<span class="dig">5</span>)
+        <span class="kw">if</span> lib.logExists(game, imgDiceFight):
+            lib.log(<span class="str">'diceRoll() - fight'</span>)
+            lib.myClick(game, imgDiceFight)
+            diceFightBoss()
+            <span class="kw">break</span>;
+        <span class="kw">if</span> lib.logExists(game, imgDiceOpenChest):
+            lib.log(<span class="str">'diceRoll() - chest'</span>)
+            lib.myClick(game, imgDiceRetreat)
+            lib.myClick(game, imgYes)
+            <span class="cmt">#break;</span>
+        c=c-<span class="dig">1</span>
+
+<span class="kw">def</span> diceFightBoss():
+    lib.log(<span class="str">'diceFightBoss()'</span>)
+    lib.clickTillNext(game, imgDiceRoll, imgDiceStop)
+    lib.myClick(game, imgDiceStop)
+    lib.sleeplogx(<span class="dig">7</span>)
+    <span class="cmt">#lib.myWaitFor2(game ,imgDiceToBoard, imgTrainPage, 5)    </span>
+    <span class="kw">if</span> <span class="kw">not</span> lib.logExists(game, imgDiceToBoard):
+        lib.log(<span class="str">'diceFightBoss() - not winning'</span>)
+        lib.clickTillNext(game, imgDiceRetreat, imgYes)
+        lib.myClick(game, imgYes)
+        lib.sleeplogx(<span class="dig">5</span>)
+    lib.myClick(game, imgDiceToBoard)
+    <span class="kw">if</span> lib.logExists(game, imgYes):
+        lib.myClick(game, imgYes)
+    lib.myClick(game, imgBack)
+    lib.sleeplogx(<span class="dig">1</span>)
+    lib.myClick(game, imgBack)
+</pre>
+</body>
+</html>

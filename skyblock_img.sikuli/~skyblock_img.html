@@ -1,0 +1,219 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>skyblock_img.sikuli</h2> <a href="skyblock_img.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> lib
+reload(lib)
+
+<span class="kw">import</span> org.sikuli.natives.Vision <span class="kw">as</span> Vision;
+<span class="cmt"># import datetime</span>
+<span class="cmt"># import shutil</span>
+Vision.setParameter(<span class="str">"MinTargetSize"</span>, <span class="dig">10</span>) <span class="cmt"># A small value such as 6 makes the matching </span>
+
+<span class="cmt">#1763 ,1026</span>
+
+testimg=(<img src="1593649758152.png" />)
+
+testimg=(<img src="1593650107198.png" />)
+
+
+imgGameIcon=lib.X(<img src="1593649701227.png" />).fx(<span class="str">"imgGameIcon"</span>)
+
+imgFurnace=lib.X(<img src="1593904615359.png" />).fx(<span class="str">"imgFurnace"</span>)
+
+
+
+<span class="cmt">#,,image,,im</span>
+
+
+
+
+
+
+imgTree1=lib.XP(<img src="1596314811951.png" />).fx(<span class="str">"imgTree1"</span>)
+
+
+imgTree2=lib.XP(<img src="1596314875112.png" />).fx(<span class="str">"imgTree2"</span>)
+
+
+imgTree3=lib.XP(<img src="1596312495555.png" />).fx(<span class="str">"imgTree3"</span>)
+
+
+imgTree4=lib.XP(<img src="1596314984944.png" />).fx(<span class="str">"imgTree4"</span>)
+
+
+imgTree5=lib.XP(<img src="1596315043112.png" />).fx(<span class="str">"imgTree5"</span>)
+
+
+
+imgTree6=lib.XP(<img src="1596315150768.png" />).fx(<span class="str">"imgTree6"</span>)
+
+
+
+imgTree7=lib.XP(<img src="1596315826437.png" />).fx(<span class="str">"imgTree7"</span>)
+
+
+imgTree8=lib.XP(<img src="1593655666558.png" />).fx(<span class="str">"imgTree8"</span>)
+
+imgTree9=lib.XP(<img src="1593656506060.png" />).fx(<span class="str">"imgTree9"</span>)
+
+
+<span class="cmt"># birch</span>
+
+
+
+imgBirchTree1=lib.XP(<img src="1596317402228.png" />).fx(<span class="str">"imgBirchTree1"</span>)
+
+
+
+imgBirchTree2=lib.XP(<img src="1596317435044.png" />).fx(<span class="str">"imgBirchTree2"</span>)
+
+
+imgBirchTree3=lib.XP(<img src="1596317462244.png" />).fx(<span class="str">"imgBirchTree3"</span>)
+
+
+imgBirchTree4=lib.XP(<img src="1596317685228.png" />).fx(<span class="str">"imgBirchTree4"</span>)
+
+
+
+imgBirchTree5=lib.XP(<img src="1596317735344.png" />).fx(<span class="str">"imgBirchTree5"</span>)
+
+
+imgBirchTree6=lib.XP(<img src="1596317804789.png" />).fx(<span class="str">"imgBirchTree6"</span>)
+
+
+imgBirchTree7=lib.XP(<img src="1596317811523.png" />).fx(<span class="str">"imgBirchTree7"</span>)
+
+
+imgBirchTree8=lib.XP(<img src="1593655666558.png" />).fx(<span class="str">"imgBirchTree8"</span>)
+
+imgBirchTree9=lib.XP(<img src="1593656506060.png" />).fx(<span class="str">"imgBirchTree9"</span>)
+
+
+
+
+treeSimilar=<span class="dig">0.78</span>
+
+
+imgIron=lib.X(<img src="1593143381900.png" />).fx(<span class="str">"imgIron"</span>)
+<span class="cmt">#imgIron=lib.X("1593145021675.png").fx("")</span>
+imgBread=lib.XP(<img src="1593903930352.png" />).fx(<span class="str">"imgBread"</span>).similar(<span class="dig">0.80</span>)
+
+
+
+<span class="cmt">#=lib.X("1593143381900.png").fx("")</span>
+imgIronRock1=lib.XP(<img src="1593145021675.png" />).fx(<span class="str">"imgIronRock1"</span>)
+imgIronRock2=lib.XP(<img src="1593368846783.png" />).fx(<span class="str">"imgIronRock2"</span>)
+imgIronRock3=lib.XP(<img src="1593373584318.png" />).fx(<span class="str">"imgIronRock3"</span>)
+imgIronRock4=lib.XP(<img src="1593373588493.png" />).fx(<span class="str">"imgIronRock4"</span>)
+
+
+imgIronRock5=lib.XP(<img src="1593379210444.png" />).fx(<span class="str">"imgIronRock5"</span>)
+
+
+imgIronRock6=lib.XP(<img src="1593379233298.png" />).fx(<span class="str">"imgIronRock6"</span>)
+
+
+imgIronRock7=lib.XP(<img src="1593379242658.png" />).fx(<span class="str">"imgIronRock6"</span>)
+
+
+imgIronRock8=lib.XP(<img src="1593379251877.png" />).fx(<span class="str">"imgIronRock8"</span>)
+
+
+imgIronRock9=lib.XP(<img src="1593379270922.png" />).fx(<span class="str">"imgIronRock9"</span>)
+
+imgCoal=lib.X(<img src="1593138903821.png" />).fx(<span class="str">"imgCoal"</span>)
+
+imgCoal=lib.X(<img src="1593904151439.png" />).fx(<span class="str">"imgCoal"</span>)
+
+
+
+
+imgIronOre=lib.X(<img src="1593143858268.png" />).fx(<span class="str">"imgIronOre"</span>)
+
+imgIronOre=lib.X(<img src="1593903172729.png" />).fx(<span class="str">"imgIronOre"</span>)
+
+imgDough=lib.X(<img src="1593903685352.png" />).fx(<span class="str">"imgDough"</span>)
+
+imgFantaClose=lib.X(<img src="1593139466699.png" />)
+
+
+
+imgPlank=lib.X(<img src="1593493441466.png" />).fx(<span class="str">"imgPlank"</span>)
+<span class="cmt">#imgPlank=lib.X("1593493721699.png").fx("imgPlank")</span>
+
+
+<span class="cmt">#imgPlank=lib.X("1593494165391.png").fx("imgPlank")</span>
+
+imgWood=lib.X(<img src="1593493323985.png" />).fx(<span class="str">"imgWood"</span>)
+</pre>
+</body>
+</html>

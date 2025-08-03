@@ -1,0 +1,4 @@
+
+
+echo "" >  SikuliX.app/Contents/Java/TrainLog.txt
+tail -f SikuliX.app/Contents/Java/TrainLog.txt

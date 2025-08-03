@@ -1,0 +1,201 @@
+babooxa	dice	GP
+babooxb	dice	GP
+babooxc	dice	GP
+babooxd	dice	GP
+babooxe	dice	GP
+babooxf	dice	GP
+biggergrace	dice	GP
+doorxd	dice	GP
+doorxf	dice	GP
+doorxg	dice	GP
+doorxj	dice	GP
+doorxu	dice	GP
+doorxw	dice	GP
+dukkxa	dice	GP
+dukkxb	dice	GP
+dukkxc	dice	GP
+dukkxd	dice	GP
+dukkxe	dice	GP
+dukkxf	dice	GP
+dukkxg	dice	GP
+dukkxh	dice	GP
+dukkxi	dice	GP
+dukkxj	dice	GP
+dukkxk	dice	GP
+dukkxl	dice	GP
+dukkxm	dice	GP
+faffza		
+faffzb		
+faffzc	dice	GP
+faffzd		
+faffze		
+faffzf		
+faffzg		
+faffzh		
+faffzi		
+faffzj		
+faffzk		
+faffzm		
+faffzn		
+faffzo		
+faffzp		
+faffzq		
+faffzr		
+faffzs		
+faffzu		
+faffzv		
+faffzx		
+faffzy		
+faffzz		
+fb330	dice	GP
+fio507	dice	GP
+fuffzl	dice	GP
+fuffzt	dice	GP
+gulfza		
+gulfza	dice	GP
+gulfzb		
+gulfzc		
+gulfzd		
+gulfze		
+gulfzf		
+gulfzg		
+gulfzh	dice	GP
+gulfzi		
+gulfzj		
+gulfzk		
+gulfzl		
+gulfzm	dice	GP
+gulfzn		
+gulfzo		
+gulfzp		
+gulfzq		
+gulfzr		
+gulfzs		
+gulfzt		
+gulfzu		
+gulfzv		
+gulfzw		
+gulfzx		
+gulfzy		
+gulfzz		
+haffza		
+haffzb		
+haffzc	dice	GP
+haffzd		
+haffze	dice	GP
+haffzf		
+haffzg		
+haffzh		
+haffzi		
+haffzj		
+haffzk		
+haffzl		
+haffzm		
+haffzn		
+haffzo		
+haffzp		
+haffzq		
+haffzr	dice	GP
+haffzs		
+haffzt		
+haffzu	dice	GP
+haffzv		
+haffzw	dice	GP
+haffzx	dice	GP
+haffzy	dice	GP
+haffzz		
+instxa	dice	GP
+instxad	dice	GP
+instxaj	dice	GP
+instxan	dice	GP
+instxas	dice	GP
+instxav	dice	GP
+instxb	dice	GP
+instxbd	dice	GP
+instxbi	dice	GP
+instxbj	dice	GP
+instxbk	dice	GP
+instxc	dice	GP
+instxcc	dice	GP
+instxce	dice	GP
+instxd	dice	GP
+instxe	dice	GP
+instxei	dice	GP
+instxeo	dice	GP
+instxet	dice	GP
+instxew	dice	GP
+instxf	dice	GP
+instxm	dice	GP
+instxn	dice	GP
+instxq	dice	GP
+instxw	dice	GP
+instxx	dice	GP
+jomooxa	dice	GP
+jomooxb	dice	GP
+jomooxc	dice	GP
+jomooxd	dice	GP
+kissmygrace	dice	GP
+kitt100a		
+kitt100a	dice	GP
+kitt100b		
+kitt100b	dice	GP
+kitt100ba		
+kitt100bb		
+kitt100bc		
+kitt100bd		
+kitt100be		
+kitt100bi		
+kitt100bj		
+kitt100bk		
+kitt100bl		
+kitt100bm		
+kitt100c		
+kitt100d		
+kpp102		
+kpp104		
+kpp106		
+kpp107		
+kpp108		
+kpp110		
+kpp111		
+kpp112		
+kpp115		
+kpp119		
+loveugrace	dice	GP
+maszv	dice	GP
+monnxa	dice	GP
+monnxb	dice	GP
+monnxc	dice	GP
+monnxd	dice	GP
+monnxe	dice	GP
+monnxe	dice	GP
+saltyzb	dice	GP
+saltyzd	dice	GP
+saltyzg	dice	GP
+saltyzp	dice	GP
+saltyzs	dice	GP
+skinxab	dice	GP
+skinxaf	dice	GP
+skinxj	dice	GP
+skinxl	dice	GP
+skinxx	dice	GP
+skinxy	dice	GP
+skinxz	dice	GP
+xcb100	GP	
+xcb101	GP	
+xcb120	GP	
+xcb120	GP	
+xcb121	GP	
+xcb123	GP	
+xcb124	GP	
+xcb125	GP	
+xcb126	GP	
+xcb127	GP	
+xcb128	GP	
+xcb129	GP	
+xcb130	GP	
+xcb131	GP	
+xcb140	GP	
+xcb150	GP	
+xcb160	GP	
+xcb170	GP	

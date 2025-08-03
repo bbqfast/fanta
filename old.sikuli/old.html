@@ -1,0 +1,330 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>old.sikuli</h2> <a href="old.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+imgMenu=lib.X(<img src="1384927648657.png" />).fx(<span class="str">"imgMenu"</span>)
+imgLaunchFanta=lib.X(<img src="1384962722131.png" />).fx(<span class="str">"imgLaunchFanta"</span>)
+imgBsSetting=lib.X(<img src="1384962796125.png" />).fx(<span class="str">"imgBsSetting"</span>)
+imgBsBack=lib.X(<img src="1384962825250.png" />).fx(<span class="str">"imgBsBack"</span>)
+
+<span class="cmt">#------------------Moba coins</span>
+
+imgMobaOffer=lib.X(<img src="1385239767014.png" />).fx(<span class="str">"imgMobaOffer"</span>)
+imgMobaCancel=lib.X(<img src="1385239779197.png" />).fx(<span class="str">"imgMobaCancel"</span>)
+imgMobaLater=lib.X(<img src="1386043000480.png" />).fx(<span class="str">"imgMobaLater"</span>)
+
+
+imgSetting=lib.X(<img src="1384961374436.png" />).fx(<span class="str">"imgSetting"</span>)
+imgSettingFrom=lib.X(<img src="1384961474242.png" />).fx(<span class="str">"imgSettingFrom"</span>)
+imgSettingTo=lib.X(<img src="1384961485466.png" />).fx(<span class="str">"imgSettingTo"</span>)
+imgLogout=lib.X(<img src="1384961535394.png" />).fx(<span class="str">"imgLogout"</span>)
+
+<span class="cmt">#-------------- daily img</span>
+<span class="cmt">#imgMyPage=lib.X("1380266124485.png").fx("imgMyPage")</span>
+imgDailyStart=lib.X(<img src="1382186126149.png" />).fx(<span class="str">"imgDailyStart"</span>)
+imgDailyStop=lib.X(<img src="1382268772148.png" />).fx(<span class="str">"imgDailyStop"</span>)
+imgDailyAds=lib.X(<img src="1382616189506.png" />).fx(<span class="str">"imgDailyAds"</span>)
+imgSkip=lib.X(<img src="1386080679425.png" />).fx(<span class="str">"imgSkip"</span>)
+
+
+imgMyProfileTo=lib.X(<img src="1384966556211.png" />).fx(<span class="str">"imgMyProfileTo"</span>)
+
+imgMyApps=lib.X(<img src="1384969512104.png" />).fx(<span class="str">"imgMyApps"</span>)
+
+imgLoginBonusStart=lib.X(<img src="1384970164355.png" />).fx(<span class="str">"imgLoginBonusStart"</span>)
+imgWelcomeBack=lib.X(<img src="1402197661205.png" />).fx(<span class="str">"imgWelcomeBack"</span>)
+
+imgFree6=lib.X(<img src="1402200366320.png" />).fx(<span class="str">"imgFree6"</span>)
+imgDailyRoulette=lib.X(<img src="1398307771076.png" />).fx(<span class="str">"imgDailyRoulette"</span>)
+
+
+<span class="kw">def</span> logOut():
+    <span class="skw">click</span>(imgMenu)
+    <span class="cmt">#lib.myClickExact(SCREEN, imgMenu) </span>
+    lib.myClickExact(SCREEN, imgSetting)
+    lib.myWait(SCREEN ,imgSettingFrom, <span class="dig">30</span>)   <span class="cmt"># save guard drag drop </span>
+    <span class="skw">dragDrop</span>(imgSettingFrom, imgSettingTo)
+    lib.myClick(SCREEN, imgLogout)
+    lib.myClickExact(SCREEN, imgLogoutYes)
+
+<span class="kw">def</span> logOut2(stopbs=False):
+    lib.myClick(SCREEN, imgMobaIcon)
+    lib.sleeplogx(<span class="dig">1</span>)
+    lib.myClick(SCREEN, imgMobaIconGreyExact, waitForImgAppear=<span class="dig">30</span>)
+    lib.sleeplogx(<span class="dig">5</span>)
+    <span class="cmt"># save guard drag drop </span>
+    <span class="kw">while</span> <span class="kw">not</span> lib.myWait(SCREEN ,imgMyProfileFrom, <span class="dig">6</span>):
+        lib.log(<span class="str">'grey moba icon might still here, reclicking'</span>)
+        lib.myClick(SCREEN, imgMobaIconGreyExact, waitForImgAppear=<span class="dig">30</span>)
+        lib.sleeplogx(<span class="dig">5</span>)
+    oldDelay=Settings.MoveMouseDelay
+    Settings.MoveMouseDelay = <span class="dig">2</span>
+    hover(imgMyProfileFrom)
+    <span class="skw">dragDrop</span>(imgMyProfileFrom, imgMyProfileTo)
+    <span class="skw">dragDrop</span>(imgMyProfileFrom2, imgMyProfileTo)
+    <span class="cmt">#dragDrop(imgMyProfileFrom, imgMyProfileTo) # seem not needed</span>
+    Settings.MoveMouseDelay=oldDelay
+    lib.myClick(SCREEN, imgLogout)
+    lib.myClick(SCREEN, imgLogoutYes, True)
+    <span class="kw">if</span> stopbs:
+        quitBS()
+
+<span class="kw">def</span> runFanta():
+    lib.log(<span class="str">'runFanta'</span>)
+    lib.myWait(SCREEN ,imgMyApps, <span class="dig">30</span>)
+    <span class="kw">while</span> exists(imgMyApps):
+        lib.clicklog(imgMyApps)
+        lib.clicklog(imgLaunchFanta)
+        lib.sleeplogx(<span class="dig">4</span>)
+    <span class="cmt">#sleep(2)</span>
+    <span class="cmt">#log('App Icon gone, now adjest Fanta dimension')</span>
+    <span class="cmt">#lib.clicklog(imgBsSetting)</span>
+    <span class="cmt">#lib.clicklog(imgBsBack)  </span>
+
+<span class="kw">def</span> cancelMoba():
+    <span class="kw">if</span>(game.exists(imgMobaCancel)):
+        lib.log(<span class="str">'cancelMoba'</span>)
+        lib.myClick(game, imgMobaCancel)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="kw">if</span>(game.exists(imgMobaLater)):
+        lib.log(<span class="str">'laterMoba'</span>)
+        lib.myClick(game, imgMobaLater)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+<span class="cmt">## new daily</span>
+<span class="kw">def</span> daily():
+    lib.log(<span class="str">'daily()'</span>)
+    <span class="cmt">#lib.myClick(game, imgDailyStart)</span>
+    lib.myClickTillGone(game, imgDailyStart, waitForImgAppear=<span class="dig">60</span>)
+    <span class="skw">sleep</span>(<span class="dig">3</span>) <span class="cmt">## hope fix the bug stuck at ads screen</span>
+    lib.myClick(game, imgDailyStop, waitForImgAppear=<span class="dig">30</span>)
+    <span class="cmt">#lib.myClickTillGone(game, imgDailyAds, True, 60)</span>
+    <span class="kw">if</span> hasDailyAds:
+        lib.myClick(game, imgDailyAds, waitForImgAppear=<span class="dig">60</span>)
+    <span class="cmt">#comp=Image2(imgSend, imgAllyWaiting)</span>
+    comp=Image3(imgSend, imgAllyWaiting, imgAnnounceClose)
+    <span class="cmt">#while game.exists(imgBack):</span>
+    <span class="kw">while</span> <span class="kw">not</span> comp.existsOr(game):
+        lib.log(<span class="str">'comp.existsOr cond'</span>)
+        lib.myClick(game, imgBack, waitForImgAppear=<span class="dig">30</span>)
+        lib.sleeplogx(<span class="dig">5</span>) <span class="cmt"># fix bug a delay of main screen loading</span>
+
+<span class="kw">def</span> chkDaily():
+    lib.log(<span class="str">'chkDaily()'</span>)
+    <span class="kw">if</span> game.exists(imgMyPage):
+        lib.myClick(game, imgMyPage)
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="kw">if</span> game.exists(imgDailyStart):
+        daily()
+
+<span class="kw">def</span> dailyAfterStart():
+    lib.log(<span class="str">'dailyAfterStart'</span>)
+    <span class="cmt"># imgDailyStart</span>
+    <span class="cmt">#lib.myWaitFor2(SCREEN ,imgLoginBonusStart, imgDailyStart, 5)</span>
+    <span class="cmt">#lib.myWaitFor3(game, imgAllyWaiting, imgDailyStart, imgLoginBonusStart, 5)</span>
+    <span class="cmt">#lib.myWaitFor4(game, imgWelcomeBack, imgAllyWaiting, imgDailyStart, imgLoginBonusStart, 5)</span>
+    lib.myWaitFor3(game, imgAllyWaiting, imgDailyStart, imgBingo, <span class="dig">5</span>)
+    <span class="cmt">#if lib.myWait(game, imgLoginBonusStart, 5):</span>
+    <span class="kw">if</span> lib.logExists(game, imgWelcomeBack):
+        lib.myClick(game, imgMyPage)
+    <span class="kw">if</span> lib.logExists(game, imgLoginBonusStart):
+        lib.myClick(game, imgMyPage)
+        lib.sleeplogx(<span class="dig">5</span>)
+    lib.sleeplogx(<span class="dig">2</span>)
+    <span class="kw">if</span> lib.logExists(game, imgFree6):
+        lib.sleeplogx(<span class="dig">2</span>)
+        lib.myClick(game, imgBack)
+        lib.sleeplogx(<span class="dig">5</span>)
+    <span class="kw">if</span> lib.logExists(game, imgBingoIntro):
+        lib.myClick(game, imgNextPage)
+        lib.sleeplogx(<span class="dig">3</span>)
+    bingo()
+    lib.log(<span class="str">'dailyAfterStart EXIT'</span>)
+
+<span class="kw">def</span> logOutAndIn1(user, passw):
+    lib.log(<span class="str">'logOutAndIn('</span> + user + <span class="str">', '</span> + passw + <span class="str">')'</span>)
+    logOut2()
+    logIn(user, passw)
+
+<span class="kw">def</span> logOutAndIn(user, passw, stopbs=False):
+    lib.log(<span class="str">'logOutAndIn('</span> + user + <span class="str">', '</span> + passw + <span class="str">')'</span>)
+    logOut2(stopbs)
+    logIn(user, passw, stopbs)  <span class="cmt"># if we stop we start also!</span>
+
+<span class="kw">def</span> logIn(user, passw, runbs=False):
+    lib.log(<span class="str">'logIn('</span> + user + <span class="str">', '</span> + passw + <span class="str">')'</span>)
+    <span class="kw">if</span> runbs:
+        runBS()
+    runFanta()
+    loginFanta(user, passw)
+    lib.sleeplogx(<span class="dig">6</span>)
+    lib.log(<span class="str">'logged in('</span> + user + <span class="str">', '</span> + passw + <span class="str">'), game starting'</span>)
+    <span class="cmt">#if not (game.exists(imgSend)):</span>
+    <span class="kw">if</span> <span class="kw">not</span> lib.logExists(game, imgSend):
+        dailyAfterStart()
+        <span class="cmt">#deferAlly()</span>
+        clearAlly()
+        cancelAnnounce()
+        <span class="skw">sleep</span>(<span class="dig">3</span>)
+    saveStatsShot(user)
+
+<span class="kw">def</span> cancelMoba():
+    <span class="kw">if</span>(game.exists(imgMobaCancel)):
+        lib.log(<span class="str">'cancelMoba'</span>)
+        lib.myClick(game, imgMobaCancel)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="kw">if</span>(game.exists(imgMobaLater)):
+        lib.log(<span class="str">'laterMoba'</span>)
+        lib.myClick(game, imgMobaLater)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+<span class="kw">def</span> cancelSound():
+    <span class="kw">if</span>(game.exists(imgSound)):
+        lib.log(<span class="str">'cancelSound'</span>)
+        lib.myClick(game, imgNo)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+
+<span class="kw">def</span> runBS():
+    cmd = <span class="str">'C:\Program Files (x86)\BlueStacks\HD-StartLauncher.exe'</span>
+    lib.log(<span class="str">'Start BlueStacks'</span>)
+    <span class="cmt">#os.popen(cmd); wait(3)   </span>
+    openApp(cmd)
+    <span class="skw">wait</span>(<span class="dig">5</span>)
+
+<span class="kw">def</span> quitBS():
+    cmd = <span class="str">'C:\Program Files (x86)\BlueStacks\HD-Quit.exe'</span>
+    lib.log(<span class="str">'Quit BlueStacks'</span>)
+    openApp(cmd)
+    <span class="skw">wait</span>(<span class="dig">3</span>)
+
+<span class="kw">def</span> isRotaryHour():
+    curTime = datetime.datetime.now().time()
+    hh = curTime.hour
+    mm = curTime.minute
+    <span class="kw">if</span> (hh == <span class="dig">4</span>):
+        <span class="kw">return</span> True
+    <span class="kw">else</span>:
+        <span class="kw">return</span> False
+
+<span class="kw">def</span> runDaily():
+    <span class="kw">if</span> (isRotaryHour()):
+        chkDaily()
+
+<span class="kw">def</span> chkDaily():
+    roulette()
+    <span class="kw">if</span> game.exists(imgMyPage):
+        lib.myClickTillGone(game, imgMyPage, waitForImgAppear=<span class="dig">60</span>)
+    lib.sleeplogx(<span class="dig">5</span>)
+    <span class="kw">if</span> game.exists(imgDailyStart):
+        daily()
+
+<span class="kw">def</span> runFanta():
+    lib.log(<span class="str">'runFanta'</span>)
+    lib.myWait(SCREEN ,imgMyApps, <span class="dig">30</span>)
+    <span class="kw">while</span> exists(imgMyApps):
+        lib.clicklog(imgMyApps)
+        lib.clicklog(imgLaunchFanta)
+        lib.sleeplogx(<span class="dig">4</span>)
+    <span class="cmt">#sleep(2)</span>
+    <span class="cmt">#log('App Icon gone, now adjest Fanta dimension')</span>
+    <span class="cmt">#lib.clicklog(imgBsSetting)</span>
+    <span class="cmt">#lib.clicklog(imgBsBack)    </span>
+
+
+<span class="kw">def</span> roulette():
+    <span class="kw">if</span> game.exists(imgDailyRoulette=X):
+        lib.myClickTillGone(game, imgNextPage=X, waitForImgAppear=<span class="dig">3</span>)
+
+<span class="kw">def</span> smartStart(user, passw):
+    <span class="kw">if</span> lib.logExists(SCREEN, imgMyApps):
+        runFanta()
+    <span class="kw">if</span> lib.logExists(SCREEN, imgLogin):
+        loginFanta(user, passw)
+
+
+<span class="kw">def</span> old():
+    <span class="kw">try</span>:
+        lib.log(<span class="str">'try ... catch Begins'</span>)
+        <span class="cmt">#lib.sleeplogx(delayStart)</span>
+        logOutAndIn(<span class="str">'kpp111'</span>, <span class="str">'pppppppp'</span>, True) <span class="cmt">#21000 LP#!</span>
+        <span class="cmt">#fightColo(minBeforeStart = 0) #m2</span>
+        <span class="cmt">#hover(imgMyPageExact)</span>
+        <span class="cmt">#loginLoop(list)</span>
+        <span class="cmt">#hover(imgBingoRemainingExact)</span>
+        <span class="cmt">#singleTrain()</span>
+        <span class="cmt">#saveRanks()</span>
+        <span class="cmt">#maidenLoop()</span>
+    <span class="kw">except</span>:
+        <span class="cmt">#screenShot(game, "Exception")    </span>
+        <span class="kw">raise</span>
+</pre>
+</body>
+</html>

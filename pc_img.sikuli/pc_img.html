@@ -1,0 +1,753 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>pc_img.sikuli</h2> <a href="pc_img.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt"># BS resolution</span>
+<span class="cmt"># 1280 x 720</span>
+<span class="kw">import</span> lib
+reload(lib)
+
+<span class="kw">import</span> org.sikuli.natives.Vision <span class="kw">as</span> Vision;
+<span class="cmt"># import datetime</span>
+<span class="cmt"># import shutil</span>
+Vision.setParameter(<span class="str">"MinTargetSize"</span>, <span class="dig">10</span>) <span class="cmt"># A small value such as 6 makes the matching </span>
+
+imgFantaClose=lib.X(<img src="1527961831469.png" />).fx(<span class="str">"imgFantaClose"</span>)
+imgFantaCloseX=lib.X(<img src="1527965419404.png" />).fx(<span class="str">"imgFantaCloseX"</span>)
+imgPlayStoreClose=lib.X(<img src="1529643223256.png" />).fx(<span class="str">"imgPlayStoreClose"</span>)
+imgPlayStoreCloseX=lib.X(<img src="1529632687627.png" />).fx(<span class="str">"imgPlayStoreCloseX"</span>)
+
+imgCardEpic=lib.X(<img src="1532627751544.png" />).fx(<span class="str">"imgCardEpic"</span>)
+imgCardUseTicet=lib.X(<img src="1532628612856.png" />).fx(<span class="str">"imgCardUseTicet"</span>)
+
+imgDrawAgain=lib.X(<img src="1532635543462.png" />).fx(<span class="str">"imgDrawAgain"</span>)
+
+
+imgNetworkErrorTxt=lib.X(<img src="1529609884381.png" />).fx(<span class="str">"imgNetworkErrorTxt"</span>)
+imgNetworkErrorExit=lib.X(<img src="1529609916118.png" />).fx(<span class="str">"imgNetworkErrorExit"</span>)
+
+imgFolderEdited=lib.X(<img src="1527220657705.png" />).fx(<span class="str">"imgFolderEdited"</span>)
+imgFolderEdited=lib.X(<img src="1527274182991.png" />).fx(<span class="str">"imgFolderEdited"</span>)
+imgFolderEdited=lib.X(<img src="1543381051439.png" />).fx(<span class="str">"imgFolderEdited"</span>)
+
+<span class="cmt">##imgFolderEdited=lib.X("1543380063672.png").fx("imgFolderEdited")</span>
+<span class="cmt">#imgFolderNotEdited=lib.X("1543380142385.png").fx("imgFolderNotEdited")</span>
+imgFolderEdited=lib.X(<img src="1543388617102.png" />).fx(<span class="str">"imgFolderEdited"</span>)
+
+imgFolderNotEdited=lib.X(<img src="1543381137160.png" />).fx(<span class="str">"imgFolderNotEdited"</span>)
+imgFolderNotEdited=lib.X(<img src="1543388243497.png" />).fx(<span class="str">"imgFolderNotEdited"</span>)
+
+
+
+imgFolderRenameTitle=lib.X(<img src="1527220808200.png" />).fx(<span class="str">"imgFolderRenameTitle"</span>)
+
+
+imgTermsYes=lib.X(<img src="1527137768039.png" />).fx(<span class="str">"imgTermsYes"</span>)
+
+imgPlayOpenVertical=lib.X(<img src="1527126628414.png" />).fx(<span class="str">"imgPlayOpenVertical"</span>)
+
+imgRecruit=lib.X(<img src="1523594257104.png" />).fx(<span class="str">"imgRecruit"</span>)
+
+imgProfileMain=lib.X(<img src="1522098404764.png" />).fx(<span class="str">"imgProfileMain"</span>)
+imgProfileInventory=lib.X(<img src="1522098734886.png" />).fx(<span class="str">"imgProfileInventory"</span>)
+imgUnitStar_9=lib.X(<img src="1521855853658.png" />).fx(<span class="str">"imgUnitStar 9"</span>)
+<span class="cmt">#imgUnitStar_9=lib.X("1521858451951.png").fx("imgUnitStar 9")</span>
+imgMonStar_9=lib.X(<img src="1521914295157.png" />).fx(<span class="str">"imgMonStar_9"</span>)
+
+imgUnitStar_8=lib.X(<img src="1522187181056.png" />).fx(<span class="str">"imgUnitStar_8"</span>)
+imgMonStar_8=lib.X(<img src="1522187248145.png" />).fx(<span class="str">"imgMonStar_8"</span>)
+
+imgTradeMain=lib.X(<img src="1521852049078.png" />).fx(<span class="str">"imgTrade"</span>)
+imgTradeTitle=lib.X(<img src="1542771738138.png" />).fx(<span class="str">"imgTradeTitle"</span>)
+
+
+imgTradeID=lib.X(<img src="1521852091044.png" />).fx(<span class="str">"imgTradeID"</span>)
+imgTradeSearchID=lib.X(<img src="1521852131822.png" />).fx(<span class="str">"imgTradeSearchID"</span>)
+
+imgTradeProfile=lib.X(<img src="1521852156436.png" />).fx(<span class="str">"imgTradeProfile"</span>)
+imgTradeProfile=lib.X(<img src="1542829287215.png" />).fx(<span class="str">"imgTradeProfile"</span>)
+imgTradeViewItem=lib.X(<img src="1521852176541.png" />).fx(<span class="str">"imgTradeViewItem"</span>)
+imgTradeViewUnits=lib.X(<img src="1521856767792.png" />).fx(<span class="str">"imgTradeViewUnits"</span>)
+
+imgTradePlusOne=lib.X(<img src="1521852201502.png" />).fx(<span class="str">"imgTradePlusOne"</span>)
+imgTradePlusOne2=lib.X(<img src="1521852231693.png" />).fx(<span class="str">"imgTradePlusOne"</span>)
+imgTradePlusOne=lib.X(<img src="1524938189065.png" />).fx(<span class="str">"imgTradePlusOne"</span>)
+imgTradePlusOne=lib.X(<img src="1542048875762.png" />).fx(<span class="str">"imgTradePlusOne"</span>)
+imgTradePlusOne=lib.X(<img src="1542049506705.png" />).fx(<span class="str">"imgTradePlusOne"</span>)
+
+
+imgTradeConfirm=lib.X(<img src="1521852377250.png" />).fx(<span class="str">"imgTradeConfirm"</span>)
+imgTradeCont=lib.X(<img src="1521854966915.png" />).fx(<span class="str">"imgTradeCont"</span>)
+
+imgTradeDetails=lib.X(<img src="1521855022668.png" />).fx(<span class="str">"imgTradeDetails"</span>)
+
+imgTradePending=lib.X(<img src="1521854995020.png" />).fx(<span class="str">"imgTradePending"</span>)
+imgTradePending=lib.X(<img src="1542049939296.png" />).fx(<span class="str">"imgTradePending"</span>)
+
+
+
+
+
+<span class="cmt">#fo1</span>
+imgPathRoot=lib.X(<img src="1521525479149.png" />).fx(<span class="str">"imgPathRoot"</span>)
+imgPathRoot=lib.X(<img src="1527273839317.png" />).fx(<span class="str">"imgPathRoot"</span>)
+imgPathSD=lib.X(<img src="1521525333421.png" />).fx(<span class="str">"imgPathSD"</span>)
+
+imgPathAndroid=lib.X(<img src="1521522898892.png" />).fx(<span class="str">"imgPathAndroid"</span>)
+imgPathAndroid=lib.X(<img src="1527233157410.png" />).fx(<span class="str">"imgPathAndroid"</span>)
+imgPathAndroid=lib.X(<img src="1527273926011.png" />).fx(<span class="str">"imgPathAndroid"</span>)
+
+
+imgPathData=lib.X(<img src="1521522920768.png" />).fx(<span class="str">"imgPathData"</span>)
+imgPathData=lib.X(<img src="1527233226461.png" />).fx(<span class="str">"imgPathData"</span>)
+imgPathData=lib.X(<img src="1527273898675.png" />).fx(<span class="str">"imgPathData"</span>)
+
+
+imgLoginBoxBlank=lib.X(<img src="1520653367864.png" />).fx(<span class="str">"imgLoginBoxBlank"</span>)
+imgLoginBoxBlank=lib.X(<img src="1520716237118.png" />).fx(<span class="str">"imgLoginBoxBlank"</span>)
+imgLoginBoxBlank=lib.X(<img src="1527274586086.png" />).fx(<span class="str">"imgLoginBoxBlank"</span>)
+
+
+imgLoginOpps=lib.X(<img src="1520653043761.png" />).fx(<span class="str">"imgLoginOpps"</span>)
+imgLoginBadPw=lib.X(<img src="1520668898121.png" />).fx(<span class="str">"imgLoginBadPw"</span>)
+
+
+
+imgInboxItemsTab=lib.X(<img src="1520352591485.png" />).fx(<span class="str">"imgInboxItemsTab"</span>)
+imgInboxItemsTab=lib.X(<img src="1528611124015.png" />).fx(<span class="str">"imgInboxItemsTab"</span>)
+
+imgInboxUnitsTab=lib.X(<img src="1520383760907.png" />).fx(<span class="str">"imgInboxUnitsTab"</span>)
+imgInboxUnitsTab=lib.X(<img src="1528611152760.png" />).fx(<span class="str">"imgInboxUnitsTab"</span>)
+
+
+imgInboxUnitsTabHighLight=lib.X(<img src="1528611097615.png" />).fx(<span class="str">"imgInboxUnitsTabHighLight"</span>)
+
+imgInboxItemsTabHighLight=lib.X(<img src="1528611068894.png" />).fx(<span class="str">"imgInboxItemsTabHighLight"</span>)
+
+imgInboxFilter=lib.X(<img src="1520384408755.png" />).fx(<span class="str">"imgInboxFilter"</span>)
+imgInboxFilterUnits=lib.X(<img src="1520384445575.png" />).fx(<span class="str">"imgInboxFilterUnits"</span>)
+imgInboxFilterMonsters=lib.X(<img src="1521914013308.png" />).fx(<span class="str">"imgInboxFilterMonsters"</span>)
+
+imgInboxSelectAll=lib.X(<img src="1520352670206.png" />).fx(<span class="str">"imgInboxSelectAll"</span>)
+imgInboxSelectAll=lib.X(<img src="1528611258070.png" />).fx(<span class="str">"imgInboxSelectAll"</span>)
+imgInboxSelectAll=lib.X(<img src="1528611370300.png" />).fx(<span class="str">"imgInboxSelectAll"</span>)
+
+
+imgInboxConfirm=lib.X(<img src="1520352885407.png" />).fx(<span class="str">"imgInboxConfirm"</span>)
+imgInboxReceive=lib.X(<img src="1520353066414.png" />).fx(<span class="str">"imgInboxReceive"</span>)
+imgInboxFilterStar_9=lib.X(<img src="1520385170219.png" />).fx(<span class="str">"imgInboxFilterStar_9"</span>)
+imgInboxFilterStar_8=lib.X(<img src="1521087431781.png" />).fx(<span class="str">"imgInboxFilterStar_8"</span>)
+imgInboxFilterStar_7=lib.X(<img src="1521087502831.png" />).fx(<span class="str">"imgInboxFilterStar_7"</span>)
+imgInboxFilterStar_11=lib.X(<img src="1521087477803.png" />).fx(<span class="str">"imgInboxFilterStar_11"</span>)
+
+
+imgDetail=lib.X(<img src="1518550925205.png" />).fx(<span class="str">"imgDetail"</span>)
+
+imgAllNotice=lib.X(<img src="1518550257667.png" />).fx(<span class="str">"imgAllNotice"</span>)
+imgAllNotice=lib.X(<img src="1527273593061.png" />).fx(<span class="str">"imgAllNotice"</span>)
+
+imgNoticeTitle=lib.X(<img src="1529802244789.png" />).fx(<span class="str">"imgNoticeTitle"</span>)
+
+
+imgAllyMain=lib.X(<img src="1518549969600.png" />).fx(<span class="str">"imgAllyMain"</span>)
+imgAllyTitle=lib.X(<img src="1529218220045.png" />).fx(<span class="str">"imgAllyTitle"</span>)
+
+imgAllyProfile=lib.X(<img src="1518581519420.png" />).fx(<span class="str">"imgAllyProfile"</span>)
+imgAllyMsg=lib.X(<img src="1518581558533.png" />).fx(<span class="str">"imgAllyMsg"</span>)
+imgProfileMsgBox=lib.X(<img src="1518716911969.png" />).fx(<span class="str">"imgProfileMsgBox"</span>)
+imgProfileMsgBox=lib.X(<img src="1527505955021.png" />).fx(<span class="str">"imgProfileMsgBox"</span>)
+imgProfileEditTitle=lib.X(<img src="1543641788652.png" />).fx(<span class="str">"imgProfileEditTitle"</span>)
+
+imgMissionLeana=lib.X(<img src="1518551176050.png" />).fx(<span class="str">"imgMissionLeana"</span>)
+imgMissionMsgToAll=lib.X(<img src="1518551102499.png" />).fx(<span class="str">"imgMissionMsgToAll"</span>)
+
+imgMissionDrawCardPack=lib.X(<img src="1525797413995.png" />).fx(<span class="str">"imgMissionDrawCardPack"</span>)
+imgMissionDrawCardPack=lib.X(<img src="1527273701235.png" />).fx(<span class="str">"imgMissionDrawCardPack"</span>)
+imgMissionAscend=lib.X(<img src="1525630091367.png" />).fx(<span class="str">"imgMissionAscend"</span>)
+
+
+<span class="cmt">#imgMissionMsgToAlly=lib.X("1525802555655.png").fx("imgMissionMsgToAlly")</span>
+
+imgMissionMsgToAlly=lib.X(<img src="1527338708467.png" />).fx(<span class="str">"imgMissionMsgToAlly"</span>)
+
+imgMissionSellUnit=lib.X(<img src="1525879230979.png" />).fx(<span class="str">"imgMissionSellUnit"</span>)
+imgMissionSellUnit=lib.X(<img src="1527505407724.png" />).fx(<span class="str">"imgMissionSellUnit"</span>)
+imgMissionSellUnit=lib.X(<img src="1544121108932.png" />).fx(<span class="str">"imgMissionSellUnit"</span>)
+
+imgMissionInnIn=lib.X(<img src="1525879288581.png" />).fx(<span class="str">"imgMissionInnIn"</span>)
+
+imgMissionInnIn=lib.X(<img src="1527419748094.png" />).fx(<span class="str">"imgMissionInnIn"</span>)
+
+
+imgMissionProfile=lib.X(<img src="1518716359108.png" />).fx(<span class="str">"imgMissionProfile"</span>)
+imgMissionProfile=lib.X(<img src="1527505498911.png" />).fx(<span class="str">"imgMissionProfile"</span>)
+
+imgMissionBrave=lib.X(<img src="1525573638604.png" />).fx(<span class="str">"imgMission"</span>)
+imgMissionBrave=lib.X(<img src="1527592267463.png" />).fx(<span class="str">"imgMission"</span>)
+
+imgMissionInnOut=lib.X(<img src="1525577587566.png" />).fx(<span class="str">"imgMissionInnOut"</span>)
+
+imgMissionInnOut=lib.X(<img src="1527592145483.png" />).fx(<span class="str">"imgMissionInnOut"</span>)
+
+imgMissionBattle=lib.X(<img src="1525630056522.png" />).fx(<span class="str">"imgMissionBattle"</span>)
+
+imgMissionBattle=lib.X(<img src="1527678486244.png" />).fx(<span class="str">"imgMissionBattle"</span>)
+
+<span class="cmt">#imgMissionProfileTitle=lib.X("1525707767510.png").fx("imgMissionProfileTitle")</span>
+
+imgMissionProfileTitle=lib.X(<img src="1527338557265.png" />).fx(<span class="str">"imgMissionProfileTitle"</span>)
+
+imgMissionTraining=lib.X(<img src="1527248966688.png" />).fx(<span class="str">"imgMissionTraining"</span>)
+imgMissionTraining=lib.X(<img src="1527273634254.png" />).fx(<span class="str">"imgMissionTraining"</span>)
+
+imgMissionQuest=lib.X(<img src="1525966155277.png" />).fx(<span class="str">"imgMissionQuest"</span>)
+
+imgMissionQuest=lib.X(<img src="1527419897567.png" />).fx(<span class="str">"imgMissionQuest"</span>)
+
+imgQuestSelect=lib.X(<img src="1525966206043.png" />).fx(<span class="str">"imgQuestSelect"</span>)
+imgQuest1=lib.X(<img src="1525966241206.png" />).fx(<span class="str">"imgQuest1"</span>)
+imgQuestStart=lib.X(<img src="1525966278710.png" />).fx(<span class="str">"imgQuestStart"</span>)
+imgQuestMonsterLeft=lib.X(<img src="1525968665452.png" />).fx(<span class="str">"imgQuestMonsterLeft"</span>)
+
+<span class="cmt">#ib1</span>
+imgProfileEditTitle=lib.X(<img src="1525707527792.png" />).fx(<span class="str">"imgProfileEditTitle"</span>)
+imgProfileEditTitle=lib.X(<img src="1527662108244.png" />).fx(<span class="str">"imgProfileEditTitle"</span>)
+
+
+imgProfileSetTitle=lib.X(<img src="1525707556169.png" />).fx(<span class="str">"imgProfileSetTitle"</span>)
+
+
+
+imgInnMain=lib.X(<img src="1525568899799.png" />).fx(<span class="str">"imgInnMain"</span>)
+imgInnCheckIn=lib.X(<img src="1525569356748.png" />).fx(<span class="str">"imgInnCheckIn"</span>)
+imgInnCheckOut=lib.X(<img src="1525569378533.png" />).fx(<span class="str">"imgInnCheckOut"</span>)
+imgSortByNew=lib.X(<img src="1527321042583.png" />).fx(<span class="str">"imgSortByNew"</span>)
+imgSortByNew=lib.X(<img src="1527536276575.png" />).fx(<span class="str">"imgSortByNew"</span>)
+
+imgSortByLevelLow=lib.X(<img src="1527321068220.png" />).fx(<span class="str">"imgSortByLevelLow"</span>)
+imgSortByLevelLow=lib.X(<img src="1527536314614.png" />).fx(<span class="str">"imgSortByLevelLow"</span>)
+imgSortRarityLow=lib.X(<img src="1527321099303.png" />).fx(<span class="str">"imgSortRarityLow"</span>)
+imgSortRarityLow=lib.X(<img src="1527536338482.png" />).fx(<span class="str">"imgSortRarityLow"</span>)
+
+
+imgInnCheckIn2=lib.X(<img src="1525569736432.png" />).fx(<span class="str">"imgInnCheckIn"</span>)
+imgInnReceive=lib.X(<img src="1525572708266.png" />).fx(<span class="str">"imgInnReceive"</span>)
+imgBrave=lib.X(<img src="1525574897108.png" />).fx(<span class="str">"imgBrave"</span>)
+imgBattleSelect=lib.X(<img src="1527480445125.png" />).fx(<span class="str">"imgBattleSelect"</span>)
+imgBattleSelectTitle=lib.X(<img src="1543703359905.png" />).fx(<span class="str">"imgBattleSelectTitle"</span>)
+
+imgBattleBattle=lib.X(<img src="1527480475599.png" />).fx(<span class="str">"imgBattleBattle"</span>)
+
+imgBattleDeployUnit=lib.X(<img src="1525630491935.png" />).fx(<span class="str">"imgBattleDeployUnit"</span>)
+
+imgBattleSkip=lib.X(<img src="1525641508576.png" />).fx(<span class="str">"imgBattleSkip"</span>)
+<span class="cmt">#imgBattleSkip=lib.X</span>
+
+
+imgMissionSelect=lib.X(<img src="1518553395428.png" />).fx(<span class="str">"imgMissionSelect"</span>)
+imgMissionExchange=imgGiftGift2=lib.X(<img src="1519506554404.png" />).fx(<span class="str">""</span>)
+imgMissionPotion=lib.X(<img src="1519506581399.png" />).fx(<span class="str">"imgMissionPotion"</span>)
+<span class="cmt">#imgMissionPotion=lib.X("1521269358870.png").fx("imgMissionTE")</span>
+
+imgMissionExchange2=lib.X(<img src="1519506628786.png" />).fx(<span class="str">"imgMissionExchange2"</span>)
+imgMissionExchange2=lib.X(<img src="1528611943498.png" />).fx(<span class="str">"imgMissionExchange2"</span>)
+imgMissionExchangeTitle=lib.X(<img src="1544161842927.png" />).fx(<span class="str">"imgMissionExchangeTitle"</span>)
+
+
+<span class="cmt">#imgMissionExchange2=lib.X</span>
+imgCardBravePts=lib.X(<img src="1518551607813.png" />).fx(<span class="str">"imgCardBravePts"</span>)
+imgCardBravePts=lib.X(<img src="1525801414600.png" />).fx(<span class="str">"imgCardBravePts"</span>)
+imgCardBravePts=lib.X(<img src="1531074043020.png" />).fx(<span class="str">"imgCardBravePts"</span>)
+
+imgAllyMina=lib.X(<img src="1526053449024.png" />).fx(<span class="str">"imgAllyMina"</span>)
+
+imgMina=lib.X(<img src="1520816299997.png" />).fx(<span class="str">"imgMina"</span>)
+imgMinaQuest=lib.X(<img src="1525969171707.png" />).fx(<span class="str">"imgMinaQuest"</span>)
+imgMinaAlly=lib.X(<img src="1527320991664.png" />).fx(<span class="str">"imgMinaAlly"</span>)
+
+
+imgAllyStar1=lib.X(<img src="1518560706927.png" />).fx(<span class="str">"imgAllyStar1"</span>)
+
+
+imgAllyStar2=lib.X(<img src="1518544382979.png" />).fx(<span class="str">"imgAllyStar2"</span>)
+<span class="cmt">#imgAllyStar4=lib.X("1518548048853.png").fx("imgAllyStar4")</span>
+<span class="cmt">#imgAllyStar3=lib.X("1518589055863.png").fx("imgAllyStar3")</span>
+imgAllyStar3=lib.X(<img src="1518719687644.png" />).fx(<span class="str">"imgAllyStar3"</span>)
+
+<span class="cmt">#imgAllyStar4=lib.X("1518589007285.png").fx("imgAllyStar4")</span>
+imgAllyStar4=lib.X(<img src="1518719284260.png" />).fx(<span class="str">"imgAllyStar4"</span>)
+
+imgAllyStar5=lib.X(<img src="1518548780820.png" />).fx(<span class="str">"imgAllyStar5"</span>)
+
+imgAllyDecline=lib.X(<img src="1518544425988.png" />).fx(<span class="str">"imgAllyDecline"</span>)
+imgAllyApprove=lib.X(<img src="1518544478325.png" />).fx(<span class="str">"imgAllyApprove"</span>)
+
+imgBSFantaApp=lib.X(<img src="1517706353347.png" />).fx(<span class="str">"imgBSFantaApp"</span>)
+
+imgBSSystemApp=lib.X(<img src="1517705278418.png" />).fx(<span class="str">"imgBSSystemApp"</span>)
+
+imgBSPlayStore=lib.X(<img src="1517705323305.png" />).fx(<span class="str">"imgBSPlayStore"</span>)
+imgBSFileManager=lib.X(<img src="1517707071096.png" />).fx(<span class="str">"imgBSFileManager"</span>)
+
+imgBSPlayTextBox=lib.X(<img src="1517705245617.png" />).fx(<span class="str">"imgBSPlayTextBox"</span>)
+imgBSPlayHighlighted=lib.X(<img src="1521913023577.png" />).fx(<span class="str">"imgBSPlayHighlighted"</span>)
+
+
+<span class="cmt">#imgDrawAgain=lib.X("1517632760404.png").fx("imgDrawAgain")</span>
+imgDrawAgainExact=lib.XP(imgDrawAgain).fx(<span class="str">"imgDrawAgainExact"</span>).similar(<span class="dig">0.90</span>)
+
+imgCardPackTitle=lib.X(<img src="1544508596857.png" />).fx(<span class="str">"imgCardPackTitle"</span>)
+
+
+imgCardPack6to8=lib.X(<img src="1517631510100.png" />).fx(<span class="str">"imgCardPack6to8"</span>)
+
+
+imgUnitsMain=lib.X(<img src="1517474623746.png" />).fx(<span class="str">"imgUnitsMain"</span>)
+
+imgCardPackMain=lib.X(<img src="1517371996244.png" />).fx(<span class="str">"imgCardPackMain"</span>)
+imgCardPackMain=lib.X(<img src="1525879422495.png" />).fx(<span class="str">"imgCardPackMain"</span>)
+
+imgCardPackStandard=lib.X(<img src="1525800809304.png" />).fx(<span class="str">"imgCardPackStandard"</span>)
+imgCardPackTicket=lib.X(<img src="1535867786419.png" />).fx(<span class="str">"imgCardPackTicket"</span>)
+imgCardPackUseTicket=lib.X(<img src="1535867952758.png" />).fx(<span class="str">"imgCardPackUseTicket"</span>)
+imgCardPackUseTicket2=lib.X(<img src="1535868637166.png" />).fx(<span class="str">"imgCardPackUseTicket"</span>)
+
+
+imgCardUseTicket=lib.X(<img src="1517372176675.png" />).fx(<span class="str">"imgCardUseTicket"</span>)
+imgCardUseTicketExact=lib.XP(imgCardUseTicket).fx(<span class="str">"imgCardUseTicketExact"</span>).similar(<span class="dig">0.90</span>)
+
+<span class="cmt">#,x1</span>
+
+imgQCMain=lib.X(<img src="1517111251295.png" />).fx(<span class="str">"imgQCMain"</span>)
+imgQCUnit=lib.X(<img src="1517111298466.png" />).fx(<span class="str">"imgQCUnit"</span>)
+umgUnitsMain=lib.X(<img src="1517093258631.png" />).fx(<span class="str">"umgUnitsMain"</span>)
+
+<span class="cmt">#imgR9=find("1517346868820.png")</span>
+<span class="cmt">#imgR8=find("1517346881740.png")</span>
+<span class="cmt">#imgR9=find("1517346894327.png")</span>
+
+
+imgUnitsLeader=lib.X(<img src="1517093542710.png" />).fx(<span class="str">"imgUnitsLeader"</span>)
+imgSortByRarityHigh=lib.X(<img src="1517093882472.png" />).fx(<span class="str">"imgSortByRarityHigh"</span>)
+imgSortByDefault=lib.X(<img src="1517807929530.png" />).fx(<span class="str">"imgSortByDefault"</span>)
+imgSortByLevelHigh=lib.X(<img src="1517808536437.png" />).fx(<span class="str">"imgSortByLevelHigh"</span>)
+
+
+imgInbox1to4=lib.X(<img src="1517091554115.png" />).fx(<span class="str">"imgInbox1to4"</span>)
+imgInbox5to6=lib.X(<img src="1517111517797.png" />).fx(<span class="str">"imgInbox5to6"</span>)
+
+imgInbox7to8=lib.X(<img src="1517091584776.png" />).fx(<span class="str">"imgInbox7to8"</span>)
+imgInbox9to10=lib.X(<img src="1517356678639.png" />).fx(<span class="str">"imgInbox9to10"</span>)
+imgInbox11=lib.X(<img src="1518804637288.png" />).fx(<span class="str">"imgInbox11"</span>)
+
+imgInboxItems=lib.X(<img src="1517096974541.png" />).fx(<span class="str">"imgInboxItems"</span>)
+
+imgInboxAll=lib.X(<img src="1517091347871.png" />).fx(<span class="str">"imgInboxAll"</span>)
+imgInboxUnits=lib.X(<img src="1517091379478.png" />).fx(<span class="str">"imgInboxUnits"</span>)
+
+imgSellMain=lib.X(<img src="1517042975930.png" />).fx(<span class="str">"imgSellMain"</span>)
+imgSell=lib.X(<img src="1517043005962.png" />).fx(<span class="str">"imgSell"</span>)
+imgSell2=lib.X(<img src="1517043057772.png" />).fx(<span class="str">"imgSell2"</span>)
+
+imgUnselected=lib.X(<img src="1517021915604.png" />).fx(<span class="str">"imgUnselected"</span>)
+imgUnselected=lib.X(<img src="1527422502181.png" />).fx(<span class="str">"imgUnselected"</span>)
+
+
+imgUnits=lib.X(<img src="1517020672181.png" />).fx(<span class="str">"imgUnits"</span>)
+
+imgNextPage=lib.X(<img src="1517020733112.png" />).fx(<span class="str">"imgNextPage"</span>)
+
+imgOneStar=lib.X(<img src="1517020802851.png" />).fx(<span class="str">"imgOneStar"</span>)
+imgOneStar=lib.X(<img src="1517040645246.png" />).fx(<span class="str">"imgOneStar"</span>)
+
+<span class="cmt">#imgOneStar=lib.X("1517089853905.png").fx("imgOneStar")</span>
+<span class="cmt">#imgOneStar=lib.X("1517090303769.png").fx("imgOneStar")</span>
+imgOneStar=lib.X(<img src="1517090544010.png" />).fx(<span class="str">"imgOneStar"</span>)
+imgOneStarMon=lib.X(<img src="1517198861268.png" />).fx(<span class="str">"imgOneStarMon"</span>)
+imgSellStar2=lib.X(<img src="1518630024157.png" />).fx(<span class="str">""</span>)
+imgSellStar2mon=lib.X(<img src="1518630068695.png" />).fx(<span class="str">""</span>)
+
+imgEightStar=lib.X(<img src="1517094184845.png" />).fx(<span class="str">"imgEightStar"</span>)
+
+img7StarInbox=lib.X(<img src="1517095340650.png" />).fx(<span class="str">"img7StarInbox"</span>)
+img9StarInbox=lib.X(<img src="1517356590100.png" />).fx(<span class="str">"img9StarInbox"</span>)
+img8StarInbox=lib.X(<img src="1517356612030.png" />).fx(<span class="str">"img8StarInbox"</span>)
+img11StarInbox=lib.X(<img src="1518804141065.png" />).fx(<span class="str">"img11StarInbox"</span>)
+
+imgOneStarExact=lib.XP(imgOneStar).fx(<span class="str">"imgOneStarExact"</span>).similar(<span class="dig">0.85</span>)
+
+
+imgNine=lib.X(<img src="1517092785995.png" />).fx(<span class="str">"imgNine"</span>)
+imgNine=lib.X(<img src="1517043484800.png" />).fx(<span class="str">"imgNine"</span>)
+imgNineExact=lib.XP(imgNine).fx(<span class="str">"imgNineExact"</span>).similar(<span class="dig">0.9</span>)
+
+<span class="cmt">#------------- training img</span>
+<span class="cmt">#imgSkip=("1386080679425.png")</span>
+<span class="cmt">#.iname(imgMobaIcon)</span>
+imgMobaIcon=lib.X(<img src="1516565829830.png" />).fx(<span class="str">"imgMobaIcon"</span>)
+
+imgBsIconMain=lib.X(<img src="1516516573806.png" />).fx(<span class="str">"imgBsIcon"</span>)
+
+imgBsIcon=lib.X(<img src="1516515544113.png" />).fx(<span class="str">"imgBsIcon"</span>)
+
+
+<span class="cmt"># ---------- e1</span>
+imgLegion=lib.X(<img src="1516571290724.png" />).fx(<span class="str">"imgLegion"</span>)
+
+<span class="cmt">#,rg1,pe1,fr1</span>
+imgPastEvent=lib.X(<img src="1546664141582.png" />).fx(<span class="str">"imgPastEvent"</span>)
+imgPastEvent=lib.X(<img src="1547529686088.png" />).fx(<span class="str">"imgPastEvent"</span>)
+imgPastEvent=lib.X(<img src="1548614515215.png" />).fx(<span class="str">"imgPastEvent"</span>)
+
+
+imgFinalRanking=lib.X(<img src="1546664063294.png" />).fx(<span class="str">"imgFinalRanking"</span>)
+imgFinalRanking=lib.X(<img src="1548614338407.png" />).fx(<span class="str">"imgFinalRanking"</span>)
+
+
+<span class="cmt">#imgReceive=lib.X("1516574022849.png").fx("imgReceive")</span>
+
+imgReceive=lib.X(<img src="1527680927025.png" />).fx(<span class="str">"imgReceive"</span>)
+imgClash=lib.X(<img src="1516574946652.png" />).fx(<span class="str">"imgClash"</span>)
+imgClash=lib.X(<img src="1523508044603.png" />).fx(<span class="str">"imgClash"</span>)
+
+imgTrainEvent=lib.X(<img src="1516697891505.png" />).fx(<span class="str">"imgTrainEvent"</span>)
+imgTrainEvent=lib.X(<img src="1541298386357.png" />).fx(<span class="str">"imgTrainEvent"</span>)
+
+imgTrainEvent2=lib.X(<img src="1516697933157.png" />).fx(<span class="str">"imgTrainEvent2"</span>)
+imgTrainEvent2=lib.X(<img src="1541298411933.png" />).fx(<span class="str">"imgTrainEvent2"</span>)
+
+
+imgCloseAnnounce=lib.X(<img src="1516697718870.png" />).fx(<span class="str">"imgCloseAnnounce"</span>)
+
+
+imgClashSearch=lib.X(<img src="1516580876702.png" />).fx(<span class="str">"imgClashSearch"</span>)
+imgClahsRandom=lib.X(<img src="1516580968294.png" />).fx(<span class="str">""</span>)
+imgYes=lib.X(<img src="1516580977038.png" />).fx(<span class="str">"imgYes"</span>)
+imgNo=lib.X(<img src="1516581032982.png" />).fx(<span class="str">"imgNo"</span>)
+
+imgNoFull=lib.X(<img src="1527737767062.png" />).fx(<span class="str">"imgNoFull"</span>)
+
+
+imgClashMina=lib.X(<img src="1516582052390.png" />).fx(<span class="str">"imgClashMina"</span>)
+
+imgPanelEventButton=lib.X(<img src="1398269118035.png" />).fx(<span class="str">"imgPanelEventButton"</span>)
+
+imgMyPage=lib.X(<img src="1516566326176.png" />).fx(<span class="str">"imgMyPage"</span>)
+imgMyPage=lib.X(<img src="1530502168658.png" />).fx(<span class="str">"imgMyPage"</span>)
+imgMyPage=lib.X(<img src="1531711489257.png" />).fx(<span class="str">"imgMyPage"</span>)
+
+imgMainPage=lib.X(<img src="1527681260787.png" />).fx(<span class="str">'imgMainPage'</span>)
+
+
+imgInbox=lib.X(<img src="1516566368621.png" />).fx(<span class="str">"imgInbox"</span>)
+imgDetails=lib.X(<img src="1516566403956.png" />).fx(<span class="str">"imgDetails"</span>)
+
+imgMyPageExact=lib.XP(imgMyPage).fx(<span class="str">"imgMyPageExact"</span>).similar(<span class="dig">0.95</span>)
+
+imgStartTrain=lib.X(<img src="1378588144144.png" />).fx(<span class="str">"imgStartTrain"</span>)
+imgTrainPage=lib.X(<img src="1382108647222.png" />).fx(<span class="str">"imgTrainPage"</span>)
+
+imgBingoFlip=lib.X(<img src="1516567958961.png" />).fx(<span class="str">"imgBingoFlip"</span>)
+imgBingoReceive=lib.X(<img src="1516568213435.png" />).fx(<span class="str">"imgBingoReceive"</span>)
+
+imgBingoRemain=lib.X(<img src="1516568793597.png" />).fx(<span class="str">"imgBingoRemain"</span>)
+imgBingoRemain=lib.X(<img src="1519098458708.png" />).fx(<span class="str">"imgBingoRemain"</span>)
+
+imgBingoRemainExact=lib.XP(imgBingoRemain).fx(<span class="str">"imgBingoRemainExact"</span>).similar(<span class="dig">0.99</span>)
+
+imgSkip=lib.X(<img src="1386080679425.png" />).fx(<span class="str">"imgSkip"</span>)
+imgAnnounceClose=lib.X(<img src="1386080764027.png" />).fx(<span class="str">"imgAnnounceClose"</span>)
+
+imgBack=lib.X(<img src="1516658968124.png" />).fx(<span class="str">"imgBack"</span>)
+
+<span class="cmt">#imgBack=lib.X("1527292550662.png").fx("imgBack")</span>
+<span class="cmt">#imgBack=lib.X("1527292670693.png").fx("imgBack")</span>
+<span class="cmt">#imgBack=lib.X("1527292692797.png").fx("imgBack")</span>
+imgBack=lib.X(<img src="1527294266559.png" />).fx(<span class="str">"imgBack"</span>)
+
+
+imgBackMain=lib.X(<img src="1521080738983.png" />).fx(<span class="str">"imgBackMain"</span>)
+
+imgBackToMyPage=lib.X(<img src="1519891152418.png" />).fx(<span class="str">"imgBackToMyPage"</span>)
+
+
+imgDailyAdsGet=lib.X(<img src="1382616204068.png" />).fx(<span class="str">"imgDailyAdsGet"</span>)
+
+imgMenu=lib.X(<img src="1516571218514.png" />).fx(<span class="str">"imgMenu"</span>)
+imgMenuPressed=lib.X(<img src="1516574259894.png" />).fx(<span class="str">"imgMenuPressed"</span>)
+
+imgInboxMain=lib.X(<img src="1517017808688.png" />).fx(<span class="str">"imgInboxMain"</span>)
+imgRegister=lib.X(<img src="1528610601840.png" />).fx(<span class="str">"imgRegister"</span>)
+imgRegister=lib.X(<img src="1531710897617.png" />).fx(<span class="str">"imgRegister"</span>)
+
+
+imgRegisterMore=lib.X(<img src="1517017874728.png" />).fx(<span class="str">"imgRegisterMore"</span>)
+imgRegisterDevice=lib.X(<img src="1517017906392.png" />).fx(<span class="str">"imgRegisterDevice"</span>)
+
+
+imgFileManager=lib.X(<img src="1516515676506.png" />).fx(<span class="str">"imgFileManager"</span>)
+imgFileManager2=lib.X(<img src="1516723313876.png" />).fx(<span class="str">"imgFileManager2"</span>)
+imgFileManager2=lib.X(<img src="1529893633999.png" />).fx(<span class="str">"imgFileManager2"</span>)
+
+
+imgFolderAndroid=lib.X(<img src="1516583096677.png" />).fx(<span class="str">"imgFolderAndroid"</span>)
+
+
+imgFolderData=lib.X(<img src="1516583111381.png" />).fx(<span class="str">"imgFolderData"</span>)
+
+<span class="cmt">#imgFolderFanta=lib.X("1516515783306.png").fx("imgFolderFanta")</span>
+imgFolderFanta=lib.X(<img src="1542848980617.png" />).fx(<span class="str">"imgFolderFanta"</span>)
+
+imgFolderRename=lib.X(<img src="1516515851000.png" />).fx(<span class="str">"imgFolderRename"</span>)
+
+imgFolderRenameOK=lib.X(<img src="1516515874801.png" />).fx(<span class="str">"imgFolderRenameOK"</span>)
+imgFolderRenameCancel=lib.X(<img src="1542846582599.png" />).fx(<span class="str">"imgFolderRenameCancel"</span>)
+<span class="cmt">#fo2</span>
+imgFolderStorage=lib.X(<img src="1516515903795.png" />).fx(<span class="str">"imgFolderStorage"</span>)
+
+imgFolderSdcard=lib.X(<img src="1516515933201.png" />).fx(<span class="str">"imgFolderSdcard"</span>)
+
+
+imgPlayStore=lib.X(<img src="1516251886885.png" />).fx(<span class="str">"imgPlayStore"</span>)
+
+imgPlayUninstall=lib.X(<img src="1516564300167.png" />).fx(<span class="str">"imgPlayUninstall"</span>)
+
+imgPlayOpen=lib.X(<img src="1516564310051.png" />).fx(<span class="str">"imgPlayOpen"</span>)
+
+imgPlayOk=lib.X(<img src="1516564365670.png" />).fx(<span class="str">"imgPlayOk"</span>)
+
+imgPlayInstall=lib.X(<img src="1516564417906.png" />).fx(<span class="str">"imgPlayInstall"</span>)
+
+imgPlayAccept=lib.X(<img src="1516564383603.png" />).fx(<span class="str">"imgPlayAccept"</span>)
+imgFantaIconTop=lib.X(<img src="1543384214170.png" />).fx(<span class="str">"imgFantaIconTop"</span>)
+imgPythonIconTop=lib.X(<img src="1546205386563.png" />).fx(<span class="str">"imgPythonIconTop"</span>)
+
+
+imgLogoutYes=lib.X(<img src="1384961812253.png" />).fx(<span class="str">"imgLogoutYes"</span>)
+imgLaunchFanta=lib.X(<img src="1384962722131.png" />).fx(<span class="str">"imgLaunchFanta"</span>)
+imgBsSetting=lib.X(<img src="1384962796125.png" />).fx(<span class="str">"imgBsSetting"</span>)
+imgBsBack=lib.X(<img src="1384962825250.png" />).fx(<span class="str">"imgBsBack"</span>)
+
+imgLogin=lib.X(<img src="1516565536997.png" />).fx(<span class="str">"imgLogin"</span>)
+imgLogin=lib.X(<img src="1527274537966.png" />).fx(<span class="str">"imgLogin"</span>)
+
+imgLoginErrorOk=lib.X(<img src="1518469322798.png" />).fx(<span class="str">"imgLoginErrorOk"</span>)
+
+imgLoginErrorOk=lib.X(<img src="1529807282596.png" />).fx(<span class="str">"imgLoginErrorOk"</span>)
+
+
+
+imgSignup=lib.X(<img src="1516573699655.png" />).fx(<span class="str">"imgSignup"</span>)
+
+imgLoginBox=lib.X(<img src="1516565569638.png" />).fx(<span class="str">"imgLoginBox"</span>)
+<span class="cmt">#imgLoginBox=lib.X("1520994649455.png").fx("imgLoginBox")</span>
+imgLoginBox=lib.X(<img src="1527274496518.png" />).fx(<span class="str">"imgLoginBox"</span>)
+
+
+imgPassBox=lib.X(<img src="1516565585110.png" />).fx(<span class="str">"imgPassBox"</span>)
+<span class="cmt">#imgPassBox=lib.X("1520994721247.png").fx("imgPassBox")</span>
+imgPassBox=lib.X(<img src="1527274517863.png" />).fx(<span class="str">"imgPassBox"</span>)
+
+
+imgStartGame=lib.X(<img src="1516510949721.png" />).fx(<span class="str">"imgStartGame"</span>)
+
+imgSound=lib.X(<img src="1385751363408.png" />).fx(<span class="str">"imgSound"</span>)
+
+imgAllyWaiting=lib.X(<img src="1385243282491.png" />).fx(<span class="str">"imgAllyWaiting"</span>)
+imgAllyWaiting=lib.X(<img src="1543209060102.png" />).fx(<span class="str">"imgAllyWaiting"</span>)
+
+imgAllyWaitApproval=lib.X(<img src="1527747771111.png" />).fx(<span class="str">"imgAllyWaitApproval"</span>)
+
+
+<span class="cmt"># Use send button as indicator for main screen</span>
+
+imgSend=lib.X(<img src="1518581877345.png" />).fx(<span class="str">"imgSend"</span>)
+
+imgSend=lib.X(<img src="1527506091255.png" />).fx(<span class="str">"imgSend"</span>)
+
+<span class="cmt">#------------------Train Assists</span>
+imgAssists=lib.X(<img src="1396769101678.png" />).fx(<span class="str">"imgAssists"</span>)
+
+imgAssistAlly=lib.X(<img src="1396769415356.png" />).fx(<span class="str">"imgAssistAlly"</span>)
+imgEvent=lib.X(<img src="1396769474430.png" />).fx(<span class="str">"imgEvent"</span>)
+
+imgInventory=lib.X(<img src="1386342379025.png" />).fx(<span class="str">"imgInventory"</span>)
+imgProfilePage=lib.X(<img src="1386342396871.png" />).fx(<span class="str">"imgProfilePage"</span>)
+imgInventoryView=lib.X(<img src="1386342781478.png" />).fx(<span class="str">"imgInventoryView"</span>)
+
+imgNextPage=lib.X(<img src="1516655525799.png" />).fx(<span class="str">"imgNextPage"</span>)
+
+imgMsgBox=lib.X(<img src="1398313035521.png" />).fx(<span class="str">"imgMsgBox"</span>)
+
+imgPaste=lib.X(<img src="1398313230272.png" />).fx(<span class="str">"imgPaste"</span>)
+
+imgProfile=lib.X(<img src="1398313936320.png" />).fx(<span class="str">"imgProfile"</span>)
+imgRemoveAlly=lib.X(<img src="1523596833175.png" />).fx(<span class="str">"imgRemoveAlly"</span>)
+
+imgProfileExact=lib.XP(imgProfile).fx(<span class="str">"imgProfileExact"</span>).similar(<span class="dig">0.99999</span>)
+
+imgMyname=lib.X(<img src="1398317150216.png" />).fx(<span class="str">"imgMyname"</span>)
+
+imgDeclineAlly=lib.X(<img src="1527748686277.png" />).fx(<span class="str">"imgDeclineAlly"</span>)
+imgApproveAlly=lib.X(<img src="1527748663159.png" />).fx(<span class="str">"imgApproveAlly"</span>)
+
+<span class="cmt">#imgMaiden</span>
+imgDeployStart=lib.X(<img src="1399092807425.png" />).fx(<span class="str">"imgDeployStart"</span>)
+imgDeployStartExact=lib.XP(imgDeployStart).fx(<span class="str">"imgDeployStartExact"</span>).similar(<span class="dig">0.99999</span>)
+
+imgCallAlly=lib.X(<img src="1399092922610.png" />).fx(<span class="str">"imgCallAlly"</span>)
+<span class="cmt">#imgCallAlly=lib.X("1399225689396.png").fx("imgCallAlly")</span>
+imgCallAllyExact=lib.XP(imgCallAlly).fx(<span class="str">"imgCallAllyExact"</span>).similar(<span class="dig">0.99999</span>)
+
+<span class="cmt">#imgDeploy=lib.X("1399095886444.png").fx("imgDeploy")</span>
+imgDeploy=lib.X(<img src="1399265357272.png" />).fx(<span class="str">"imgDeploy"</span>)
+
+imgDeployExact=lib.XP(imgDeploy).fx(<span class="str">"imgDeployExact"</span>).similar(<span class="dig">0.99999</span>)
+
+imgDeployExact=lib.XP(imgDeploy).fx(<span class="str">"imgDeployExact"</span>).exact()
+imgDeployStartZero=lib.X(<img src="1399183448913.png" />).fx(<span class="str">"imgDeployStartZero"</span>)
+imgDeployStartZeroExact=lib.XP(imgDeployStartZero).fx(<span class="str">"imgDeployStartZeroExact"</span>).exact()
+
+imgCallAllyZero=lib.X(<img src="1399186125358.png" />).fx(<span class="str">"imgCallAllyZero"</span>)
+imgCallAllyZeroExact=lib.XP(imgCallAllyZero).fx(<span class="str">"imgCallAllyZeroExact"</span>).exact()
+
+imgDeployConfirm=lib.X(<img src="1399094433605.png" />).fx(<span class="str">"imgDeployConfirm"</span>)
+imgDeployConfirmExact=lib.XP(imgDeployConfirm).fx(<span class="str">"imgDeployConfirmExact"</span>).similar(<span class="dig">0.99999</span>)
+
+imgDeployConfirmDisabled=lib.X(<img src="1399292223963.png" />).fx(<span class="str">"imgDeployConfirmDisabled"</span>)
+imgDeployConfirmDisabledExact=lib.XP(imgDeployConfirmDisabled).fx(<span class="str">"imgDeployConfirmDisabledExact"</span>).similar(<span class="dig">0.99999</span>)
+
+
+imgFavOff=lib.X(<img src="1399095448220.png" />).fx(<span class="str">"imgFavOff"</span>)
+
+imgLocate=lib.X(<img src="1399093185485.png" />).fx(<span class="str">"imgLocate"</span>)
+
+
+imgLocate=lib.X(<img src="1516518855051.png" />).fx(<span class="str">"imgLocate"</span>) <span class="cmt"># x= 566 y= 699</span>
+imgLocate=lib.X(<img src="1516519020094.png" />).fx(<span class="str">"imgLocate"</span>) <span class="cmt">#  x= 572 y= 346</span>
+imgLocate=lib.X(<img src="1517038582679.png" />).fx(<span class="str">"imgLocate"</span>)
+imgLocate=lib.X(<img src="1517039194971.png" />).fx(<span class="str">"imgLocate"</span>)
+imgLocate=lib.X(<img src="1517114317058.png" />).fx(<span class="str">""</span>)
+imgLocate=lib.X(<img src="1517118530663.png" />).fx(<span class="str">""</span>)
+imgLocate=lib.X(<img src="1520384878311.png" />).fx(<span class="str">""</span>)
+
+
+imgEventPageSmall=lib.X(<img src="1399162503580.png" />).fx(<span class="str">"imgEventPageSmall"</span>)
+
+imgRankings=lib.X(<img src="1399351593503.png" />).fx(<span class="str">"imgRankings"</span>)
+
+imgDefenseFailed=lib.X(<img src="1399390816843.png" />).fx(<span class="str">"imgDefenseFailed"</span>)
+
+imgQuestFailed=lib.X(<img src="1517110662856.png" />).fx(<span class="str">"imgQuestFailed"</span>)
+
+imgKpp=lib.X(<img src="1405912460750.png" />).fx(<span class="str">"imgKpp"</span>)
+imgKppExact=lib.XP(imgKpp).fx(<span class="str">"imgKppExact"</span>).similar(<span class="dig">0.90</span>)
+
+
+<span class="cmt"># -- new login screen</span>
+imgBingo=lib.X(<img src="1410497031604.png" />).fx(<span class="str">"imgBingo"</span>)
+imgSquare=lib.X(<img src="1410497059882.png" />).fx(<span class="str">"imgSquare"</span>)
+<span class="cmt">#imgReceive=lib.X("1410497993819.png").fx("imgReceive")</span>
+
+
+imgBingoRemaining=lib.X(<img src="1410578214674.png" />).fx(<span class="str">"imgBingoRemaining"</span>)
+<span class="cmt">#imgBingoRemainingExact=lib.XP(imgBingoRemaining).fx("imgBingoRemainingExact").similar(0.999)</span>
+imgBingoRemainingExact=lib.XP(imgBingoRemaining).fx(<span class="str">"imgBingoRemainingExact"</span>).similar(<span class="dig">0.995</span>)
+
+
+imgPyIcon=lib.X(<img src="1544939629037.png" />).fx(<span class="str">"imgPyIcon"</span>)
+
+imgPyRunScript=lib.X(<img src="1544939760036.png" />).fx(<span class="str">"imgPyRunScript"</span>)
+
+imgPyRename=lib.X(<img src="1544939783144.png" />).fx(<span class="str">"imgPyRename"</span>)
+imgPyRenameBack=lib.X(<img src="1544942866168.png" />).fx(<span class="str">"imgPyRenameBack"</span>)
+imgPyRefresh=lib.X(<img src="1544991362472.png" />).fx(<span class="str">"imgPyRefresh"</span>)
+
+imgPyTop=lib.X(<img src="1544942174034.png" />).fx(<span class="str">"imgPyTop"</span>)
+
+imgFileManagerApk=lib.X(<img src="1544944108659.png" />).fx(<span class="str">"imgFileManagerApk"</span>)
+
+imgQuickNext=lib.X(<img src="1544946731281.png" />).fx(<span class="str">"imgQuickNext"</span>)
+imgQuickInstall=lib.X(<img src="1544944360596.png" />).fx(<span class="str">"imgQuickInstall"</span>)
+imgQuickInstallDone=lib.X(<img src="1544944394265.png" />).fx(<span class="str">"imgQuickInstallDone"</span>)
+imgQuickInstallOpen=lib.X(<img src="1544944496298.png" />).fx(<span class="str">"imgQuickInstallOpen"</span>)
+imgSystemApp=lib.X(<img src="1544945630554.png" />).fx(<span class="str">""</span>)
+imgSystemSettings=lib.X(<img src="1544945653241.png" />).fx(<span class="str">"imgSystemSettings"</span>)
+imgSystemAppsMgr=lib.X(<img src="1544945686227.png" />).fx(<span class="str">"imgSystemAppsMgr"</span>)
+imgFantasica=lib.X(<img src="1544945710607.png" />).fx(<span class="str">"imgFantasica"</span>)
+imgSystemUninstall=lib.X(<img src="1544945739578.png" />).fx(<span class="str">"imgSystemUninstall"</span>)
+imgSystemUninstallOk=lib.X(<img src="1544946193076.png" />).fx(<span class="str">"imgSystemUninstallOk"</span>)
+
+imgHomeFanta=lib.X(<img src="1544992290730.png" />).fx(<span class="str">"imgHomeFanta"</span>)
+imgHomePython=lib.X(<img src="1546205300886.png" />).fx(<span class="str">"imgHomePython"</span>)
+</pre>
+</body>
+</html>

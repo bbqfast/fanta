@@ -1,0 +1,353 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>evt_img.sikuli</h2> <a href="evt_img.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">import</span> lib
+<span class="kw">import</span> org.sikuli.natives.Vision <span class="kw">as</span> Vision;
+
+imgNetworkFailure=lib.X(<img src="1528252956973.png" />).fx(<span class="str">"imgNetworkFailure"</span>)
+imgNetworkFailure=lib.X(<img src="1528252983157.png" />).fx(<span class="str">"imgNetworkFailure"</span>)
+
+imgTrainHeading=lib.X(<img src="1527769518757.png" />).fx(<span class="str">'imgTrainHeading'</span>)
+
+imgTrainBossFailed=lib.X(<img src="1521780249281.png" />).fx(<span class="str">"imgTrainBossFailed"</span>)
+imgTrainRanking=lib.X(<img src="1521782472063.png" />).fx(<span class="str">"imgTrainRanking"</span>)
+
+
+imgTacticsMain=lib.X(<img src="1520399389810.png" />).fx(<span class="str">"imgTacticsMain"</span>)
+imgTacticsMain=lib.X(<img src="1527042508752.png" />).fx(<span class="str">"imgTacticsMain"</span>)
+imgTacticsMain=lib.X(<img src="1535248062541.png" />).fx(<span class="str">"imgTacticsMain"</span>)
+imgTacticsMain=lib.X(<img src="1544500505824.png" />).fx(<span class="str">"imgTacticsMain"</span>)
+
+
+imgTacticsFormTeam=lib.X(<img src="1520402581650.png" />).fx(<span class="str">"imgTacticsFormTeam"</span>)
+
+imgTacticsBoss=lib.X(<img src="1520807801574.png" />).fx(<span class="str">"imgTacticsBoss"</span>)
+
+imgTacticsBattle=lib.X(<img src="1520399502946.png" />).fx(<span class="str">"imgTacticsBattle"</span>)
+imgTacticsCP6=lib.X(<img src="1520399531189.png" />).fx(<span class="str">"imgTacticsCP6"</span>)
+imgTacticsAutoOff=lib.X(<img src="1520399738284.png" />).fx(<span class="str">"imgTacticsAutoOff"</span>)
+imgTacticsFF=lib.X(<img src="1520399746377.png" />).fx(<span class="str">"imgTacticsFF"</span>)
+
+imgTacticsNext=lib.X(<img src="1520399802461.png" />).fx(<span class="str">"imgTactics"</span>)
+imgTacticsTop=lib.X(<img src="1520399814300.png" />).fx(<span class="str">"imgTacticsTop"</span>)
+imgTacticsMenu=lib.X(<img src="1520399832816.png" />).fx(<span class="str">"imgTacticsMenu"</span>)
+imgTacticsRankings=lib.X(<img src="1520399839138.png" />).fx(<span class="str">"imgTacticsRankings"</span>)
+imgTacticsMain2=lib.X(<img src="1520400111073.png" />).fx(<span class="str">"imgTacticsMain"</span>)
+imgTacticsGiveup=lib.X(<img src="1520493580686.png" />).fx(<span class="str">"imgTacticsGiveup"</span>)
+
+imgDiceMain=lib.X(<img src="1530502731424.png" />).fx(<span class="str">"imgDiceMain"</span>)
+imgDiceMain=lib.X(<img src="1536443908471.png" />).fx(<span class="str">"imgDiceMain"</span>)
+imgDiceMain=lib.X(<img src="1540705181817.png" />).fx(<span class="str">"imgDiceMain"</span>)
+imgDiceMain=lib.X(<img src="1543086554537.png" />).fx(<span class="str">"imgDiceMain"</span>)
+imgDiceMain=lib.X(<img src="1545196965660.png" />).fx(<span class="str">"imgDiceMain"</span>)
+imgDiceMain=lib.X(<img src="1548090194851.png" />).fx(<span class="str">"imgDiceMain"</span>)
+
+
+imgDiceEventPage=lib.X(<img src="1519961740755.png" />).fx(<span class="str">""</span>)
+<span class="cmt">#imgDiceRoll=lib.X("1519961781013.png").fx("imgDiceRoll")</span>
+imgDiceRoll=lib.X(<img src="1520057923482.png" />).fx(<span class="str">"imgDiceRoll"</span>)
+
+imgDiceStop=lib.X(<img src="1519961837147.png" />).fx(<span class="str">"imgDiceStop"</span>)
+imgDiceOpenChest=lib.X(<img src="1519966359156.png" />).fx(<span class="str">"imgDiceOpenChest"</span>)
+imgDiceClose=lib.X(<img src="1520056821007.png" />).fx(<span class="str">"imgDiceClose"</span>)
+
+
+imgDiceFight=lib.X(<img src="1519961947795.png" />).fx(<span class="str">"imgDiceFight"</span>)
+imgDiceRetreat=lib.X(<img src="1519963403277.png" />).fx(<span class="str">"imgDiceRetreat"</span>)
+imgDiceNext=lib.X(<img src="1519963441778.png" />).fx(<span class="str">"imgDiceNext"</span>)
+imgDiceToBoard=lib.X(<img src="1519963458452.png" />).fx(<span class="str">"imgDiceToBoard"</span>)
+imgDiceBTzero=lib.X(<img src="1520142597784.png" />).fx(<span class="str">"imgDiceBTzero"</span>)
+
+<span class="cmt">#imgClashMain=lib.X("1517346374213.png").fx("imgClashMain")</span>
+<span class="cmt">#imgClashMain=lib.X("1523507969428.png").fx("imgClashMain")</span>
+imgClashMain=lib.X(<img src="1532581798562.png" />).fx(<span class="str">"imgClashMain"</span>)
+imgClashMain=lib.X(<img src="1540013218801.png" />).fx(<span class="str">"imgClashMain"</span>)
+
+imgClashRook=lib.X(<img src="1517373242651.png" />).fx(<span class="str">"imgClashRook"</span>)
+imgGiftMain=lib.X(<img src="1519373449542.png" />).fx(<span class="str">"imgGiftMain"</span>)
+imgGiftMain=lib.X(<img src="1538876701153.png" />).fx(<span class="str">"imgGiftMain"</span>)
+
+imgGiftBack=lib.X(<img src="1519373615130.png" />).fx(<span class="str">"imgGiftBack"</span>)
+imgGiftBack=lib.X(<img src="1533698728361.png" />).fx(<span class="str">"imgGiftBack"</span>)
+
+
+imgGiftGift=lib.X(<img src="1519439548028.png" />).fx(<span class="str">"imgGiftGift"</span>)
+imgGiftRandom=lib.X(<img src="1519439679750.png" />).fx(<span class="str">"imgGiftRandom"</span>)
+imgGiftPlusOne=lib.X(<img src="1519439725077.png" />).fx(<span class="str">"imgGiftPlusOne"</span>)
+
+imgGiftGift2=lib.X(<img src="1519439777185.png" />).fx(<span class="str">"imgGiftGift2"</span>)
+imgGiftGift2=lib.X(<img src="1519440971228.png" />).fx(<span class="str">"imgGiftGift2"</span>)
+
+imgNo=lib.X(<img src="1517346422718.png" />).fx(<span class="str">"imgNo"</span>)
+
+imgClashBattleLg=lib.X(<img src="1517346458437.png" />).fx(<span class="str">"imgClashBattleLg"</span>)
+<span class="cmt">#imgClashBattleLg=lib.X("1517354194743.png").fx("imgBattle")</span>
+
+imgClashFight=lib.X(<img src="1517346504514.png" />).fx(<span class="str">"imgClashFight"</span>)
+
+imgClashBattleStart=lib.X(<img src="1517354492120.png" />).fx(<span class="str">"imgClashBattleStart"</span>)
+
+imgClashEditTeam=lib.X(<img src="1517346567605.png" />).fx(<span class="str">"imgClashEditTeam"</span>)
+imgClashSupport=lib.X(<img src="1517346598656.png" />).fx(<span class="str">"imgClashSupport"</span>)
+imgClashIntro=lib.X(<img src="1517346649812.png" />).fx(<span class="str">"imgClashIntro"</span>)
+imgClashSkip=lib.X(<img src="1517347037327.png" />).fx(<span class="str">"imgClashSkip"</span>)
+imgClashVictory=lib.X(<img src="1517347094273.png" />).fx(<span class="str">"imgClashVictory"</span>)
+imgClashNext=lib.X(<img src="1517347151409.png" />).fx(<span class="str">"imgClashNext"</span>)
+imgClashBattle=lib.X(<img src="1517347264298.png" />).fx(<span class="str">"imgClashBattle"</span>)
+imgClashBack=lib.X(<img src="1517356063055.png" />).fx(<span class="str">"imgClashBack"</span>)
+imgFrontlinesIntro=lib.X(<img src="1522218177004.png" />).fx(<span class="str">"imgFrontlinesIntro"</span>)
+imgFrontlinesIntro=lib.X(<img src="1529874516319.png" />).fx(<span class="str">"imgFrontlinesIntro"</span>)
+
+imgFrontlinesMain=lib.X(<img src="1522218221130.png" />).fx(<span class="str">"imgFrontlinesMain"</span>)
+imgFrontlinesMain=lib.X(<img src="1529874347181.png" />).fx(<span class="str">"imgFrontlinesMain"</span>)
+
+imgBossLevel1=lib.X(<img src="1517186336208.png" />).fx(<span class="str">"imgBossLevel1"</span>)
+
+imgBossLevel1=lib.X(<img src="1517269005499.png" />).fx(<span class="str">"imgBossLevel1"</span>)
+imgBossHard=lib.X(<img src="1517279751000.png" />).fx(<span class="str">"imgBossHard"</span>)
+imgBossHard=lib.X(<img src="1522091610110.png" />).fx(<span class="str">"imgBossHard"</span>)
+
+imgBossList=lib.X(<img src="1517185749825.png" />).fx(<span class="str">"imgBossList"</span>)
+
+imgQCRook=lib.X(<img src="1517111987238.png" />).fx(<span class="str">"imgQCRook"</span>)
+imgQuestFailed=lib.X(<img src="1517110662856.png" />).fx(<span class="str">"imgQuestFailed"</span>)
+imgQCMain=lib.X(<img src="1517111251295.png" />).fx(<span class="str">"imgQCMain"</span>)
+
+imgStartQuest=lib.X(<img src="1517112121414.png" />).fx(<span class="str">"imgStartQuest"</span>)
+imgStartQuestTE=lib.X(<img src="1517122904402.png" />).fx(<span class="str">"imgStartQuestTE"</span>)
+
+imgChooseQuest=lib.X(<img src="1517117595201.png" />).fx(<span class="str">"imgChooseQuest"</span>)
+
+imgTrainSelectBoss=lib.X(<img src="1516999726505.png" />).fx(<span class="str">"imgTrainSelectBoss"</span>)
+
+imgFightWon=lib.X(<img src="1517009409819.png" />).fx(<span class="str">"imgFightWon"</span>)
+
+<span class="cmt">#imgFightBossCont=lib.X("1516998826934.png").fx("imgFightBossCont")</span>
+
+imgFightBossCont=lib.X(<img src="1517282848825.png" />).fx(<span class="str">"imgFightBossCont"</span>)
+imgFightBossCont=lib.X(<img src="1521600851683.png" />).fx(<span class="str">"imgFightBossCont"</span>)
+
+
+imgFlee=lib.X(<img src="1517208858323.png" />).fx(<span class="str">"imgFlee"</span>)
+
+<span class="cmt">#imgFightBossCont2=lib.X("1516998895216.png").fx("imgFightBossCont2")</span>
+
+imgFightBossCont2=lib.X(<img src="1517282893882.png" />).fx(<span class="str">"imgFightBossCont2"</span>)
+
+imgBackToEvent=lib.X(<img src="1517000493544.png" />).fx(<span class="str">"imgBackToEvent"</span>)
+imgBackToEvent2=lib.X(<img src="1517011215955.png" />).fx(<span class="str">"imgBackToEvent2"</span>)
+
+
+imgMyPage=lib.X(<img src="1516927751991.png" />).fx(<span class="str">"imgMyPage"</span>)
+imgMyPage=lib.X(<img src="1529876160705.png" />).fx(<span class="str">"imgMyPage"</span>)
+
+
+imgHeal=lib.X(<img src="1516863560993.png" />).fx(<span class="str">"imgHeal"</span>)
+imgYes=lib.X(<img src="1516930827035.png" />).fx(<span class="str">"imgYes"</span>)
+
+
+imgTrainEventEnter=lib.X(<img src="1516930681298.png" />).fx(<span class="str">"imgTrainEventEnter"</span>)
+imgTrainEvent=lib.X(<img src="1521600139801.png" />).fx(<span class="str">"imgTrainEventEnter"</span>)
+imgTrainEvent=lib.X(<img src="1525457967346.png" />).fx(<span class="str">"imgTrainEvent"</span>)
+imgTrainEvent=lib.X(<img src="1530681662901.png" />).fx(<span class="str">"imgTrainEvent"</span>)
+imgTrainEvent=lib.X(<img src="1535690577862.png" />).fx(<span class="str">"imgTrainEvent"</span>)
+imgTrainEvent=lib.X(<img src="1546205793015.png" />).fx(<span class="str">"imgTrainEvent"</span>)
+
+
+imgTrainEvent2=lib.X(<img src="1546205816520.png" />).fx(<span class="str">"imgTrainEvent2"</span>)
+
+imgEvtTrain=lib.X(<img src="1516767621935.png" />).fx(<span class="str">"imgEvtTrain"</span>)
+
+imgTrainSelectEpisode=lib.X(<img src="1543199379133.png" />).fx(<span class="str">"imgTrainSelectEpisode"</span>)
+imgTrainSelect=lib.X(<img src="1543199932425.png" />).fx(<span class="str">"imgTrainSelect"</span>)
+
+imgStartTrain=lib.X(<img src="1516779411253.png" />).fx(<span class="str">"imgStartTrain"</span>)
+
+imgAdv=lib.X(<img src="1516767707531.png" />).fx(<span class="str">"imgAdv"</span>)
+
+imgBrave=lib.X(<img src="1378596711898.png" />).fx(<span class="str">"imgBrave"</span>)
+imgBrave=lib.X(<img src="1527291976211.png" />).fx(<span class="str">"imgBrave"</span>)
+
+imgCont=lib.X(<img src="1516855523387.png" />).fx(<span class="str">"imgCont"</span>)
+
+<span class="cmt">#imgFight=lib.X("1516767754145.png").fx("imgFight")</span>
+imgFight=lib.X(<img src="1517282688519.png" />).fx(<span class="str">"imgFight"</span>)
+imgFightExact=lib.XP(imgFight).fx(<span class="str">"imgFightExact"</span>).similar(<span class="dig">0.95</span>)
+
+
+imgFlee=lib.X(<img src="1516767765269.png" />).fx(<span class="str">"imgFlee"</span>)
+imgDeployStart=lib.X(<img src="1516767790010.png" />).fx(<span class="str">"imgDeployStart"</span>)
+imgDeployStart=lib.X(<img src="1516772574085.png" />).fx(<span class="str">"imgDeployStart"</span>)
+imgDeployStart=lib.X(<img src="1525641075395.png" />).fx(<span class="str">"imgDeployStart"</span>)
+imgDeployStart=lib.X(<img src="1527316969999.png" />).fx(<span class="str">"imgDeployStart"</span>)
+
+imgDeploySkip=lib.X(<img src="1525641508576.png" />).fx(<span class="str">"imgDeploySkip"</span>)
+
+imgDeployStartExact=lib.XP(imgDeployStart).fx(<span class="str">"imgDeployStartExact"</span>).similar(<span class="dig">0.9</span>)
+
+imgDeploy=lib.X(<img src="1516767798824.png" />).fx(<span class="str">"imgDeploy"</span>)
+imgDeploy=lib.X(<img src="1527317043590.png" />).fx(<span class="str">"imgDeploy"</span>)
+
+imgDeployConfirm=lib.X(<img src="1516771734325.png" />).fx(<span class="str">"imgDeployConfirm"</span>)
+
+imgDeployExact=lib.XP(imgDeploy).fx(<span class="str">"imgDeployExact"</span>).similar(<span class="dig">0.95</span>)
+
+imgDefenseFailed=lib.X(<img src="1399390816843.png" />).fx(<span class="str">"imgDefenseFailed"</span>)
+
+imgLoc=lib.X(<img src="1516769739959.png" />).fx(<span class="str">"imgLoc"</span>)
+
+imgBack=lib.X(<img src="1516658968124.png" />).fx(<span class="str">"imgBack"</span>)
+imgBack=lib.X(<img src="1527292692797.png" />).fx(<span class="str">"imgBack"</span>)
+imgBack=lib.X(<img src="1531637505670.png" />).fx(<span class="str">"imgBack"</span>)
+
+imgPanelEventPage=lib.X(<img src="1528612316502.png" />).fx(<span class="str">"imgPanelEventPage"</span>)
+imgPanelEventPage=lib.X(<img src="1538344945310.png" />).fx(<span class="str">"imgPanelEventPage"</span>)
+imgPanelEventPage=lib.X(<img src="1544300358888.png" />).fx(<span class="str">"imgPanelEventPage"</span>)
+imgPanelEventPage=lib.X(<img src="1548614265282.png" />).fx(<span class="str">"imgPanelEventPage"</span>)
+
+
+imgPanelEventPage2=lib.X(<img src="1538344915144.png" />).fx(<span class="str">"imgPanelEventPage2"</span>)
+
+
+imgTrainEvenPage=lib.X(<img src="1396768885441.png" />).fx(<span class="str">"imgTrainEvenPage"</span>)
+imgTrainEvenPage=lib.X(<img src="1401682939572.png" />).fx(<span class="str">"imgTrainEvenPage"</span>)
+imgTrainEvenPage=lib.X(<img src="1404231050034.png" />).fx(<span class="str">"imgTrainEvenPage"</span>)
+imgMaidenBoss=lib.X(<img src="1399176188937.png" />).fx(<span class="str">"imgMaidenBoss"</span>)
+imgMaidenMsgArea=lib.X(<img src="1399176752602.png" />).fx(<span class="str">"imgMaidenMsgArea"</span>)
+imgMaidenMsgArea=lib.X(<img src="1399176899809.png" />).fx(<span class="str">"imgMaidenMsgArea"</span>)
+
+<span class="cmt">#imgMaidenTraining=lib.X("1399092410639.png").fx("imgMaidenTraining")</span>
+
+imgMaidenTraining=lib.X(<img src="1516778533595.png" />).fx(<span class="str">"imgMaidenTraining"</span>)
+
+imgMaidenYes=lib.X(<img src="1399092656552.png" />).fx(<span class="str">"imgMaidenYes"</span>)
+imgMaidenNo=lib.X(<img src="1399160165791.png" />).fx(<span class="str">"imgMaidenNo"</span>)
+
+imgRecoverTP=lib.X(<img src="1399178965644.png" />).fx(<span class="str">"imgRecoverTP"</span>)
+
+imgChallenge=lib.X(<img src="1516931893632.png" />).fx(<span class="str">"imgChallenge"</span>)
+
+imgSummonAlly=lib.X(<img src="1516931915518.png" />).fx(<span class="str">"imgSummonAlly"</span>)
+
+imgSevenOne=lib.X(<img src="1384837860483.png" />).fx(<span class="str">"imgSevenOne"</span>)
+imgSevenOne=lib.X(<img src="1521178279879.png" />).fx(<span class="str">"imgSevenOne"</span>)
+
+imgPotLow=lib.X(<img src="1384922830105.png" />).fx(<span class="str">"imgPotLow"</span>)
+
+imgPotLow=lib.X(<img src="1384925487567.png" />).fx(<span class="str">"imgPotLow"</span>)
+
+imgPotLow=lib.X(<img src="1384925542882.png" />).fx(<span class="str">"imgPotLow"</span>)
+
+imgPotLowExact=lib.XP(imgPotLow).fx(<span class="str">"imgPotLowExact"</span>).similar(<span class="dig">0.99999</span>)
+
+imgTrainPage=lib.X(<img src="1384926806435.png" />).fx(<span class="str">"imgTrainPage"</span>)
+imgTrainPage=lib.X(<img src="1527291664963.png" />).fx(<span class="str">"imgTrainPage"</span>)
+imgTrainPage=lib.X(<img src="1527291798885.png" />).fx(<span class="str">"imgTrainPage"</span>)
+
+<span class="cmt">#------------------GB stuff</span>
+<span class="cmt">#gb1</span>
+imgGuildPage=lib.X(<img src="1518751131850.png" />).fx(<span class="str">"imgGuildPage"</span>)
+imgGuildJoin=lib.X(<img src="1518751528864.png" />).fx(<span class="str">"imgGuildJoin"</span>)
+
+imgGuildCreate=lib.X(<img src="1518752110927.png" />).fx(<span class="str">"imgGuildCreate"</span>)
+
+imgGuildCreate2=lib.X(<img src="1518752233340.png" />).fx(<span class="str">"imgGuildCreate2"</span>)
+
+
+imgGuildManage=lib.X(<img src="1385052200989.png" />).fx(<span class="str">"imgGuildManage"</span>)
+imgGuildDeploy=lib.X(<img src="1385052238118.png" />).fx(<span class="str">"imgGuildDeploy"</span>)
+imgGuildDeploySpot=lib.X(<img src="1385052264868.png" />).fx(<span class="str">"imgGuildDeploySpot"</span>)
+
+<span class="cmt">#imgGuildToBattle=lib.X("1385053337583.png").fx("imgGuildToBattle")</span>
+imgGuildToBattle=lib.X(<img src="1518764688792.png" />).fx(<span class="str">"imgGuildToBattle"</span>)
+imgGuildAttack=lib.X(<img src="1518764740607.png" />).fx(<span class="str">"imgGuildAttack"</span>)
+imgGuildSkip=lib.X(<img src="1518764960063.png" />).fx(<span class="str">"imgGuildSkip"</span>)
+
+imgGuildCannon=lib.X(<img src="1385053463402.png" />).fx(<span class="str">"imgGuildCannon"</span>)
+
+imgGuildFire=lib.X(<img src="1385053889740.png" />).fx(<span class="str">"imgGuildFire"</span>)
+
+imgColoEnter=lib.X(<img src="1406039001271.png" />).fx(<span class="str">"imgColoEnter"</span>)
+imgColoFight=lib.X(<img src="1406039040673.png" />).fx(<span class="str">"imgColoFight"</span>)
+imgColoFight=lib.X(<img src="1406039701081.png" />).fx(<span class="str">"imgColoFight"</span>)
+imgColoBossNear=lib.X(<img src="1406039925653.png" />).fx(<span class="str">"imgColoBossNear"</span>)
+imgColoUseTE=lib.X(<img src="1406040141958.png" />).fx(<span class="str">"imgColoUseTE"</span>)
+imgColoEventPage=lib.X(<img src="1406047569423.png" />).fx(<span class="str">"imgColoEventPage"</span>)
+
+imgEvoMain=lib.X(<img src="1531634677032.png" />).fx(<span class="str">"imgEvoMain"</span>)
+imgEvoEventPage=lib.X(<img src="1531634717787.png" />).fx(<span class="str">"imgEvoEventPage"</span>)
+imgEvoMina=lib.X(<img src="1531634772312.png" />).fx(<span class="str">"imgEvoMina"</span>)
+imgMenu=lib.X(<img src="1516571218514.png" />).fx(<span class="str">"imgMenu"</span>)
+</pre>
+</body>
+</html>

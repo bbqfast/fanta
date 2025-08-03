@@ -1,0 +1,673 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>accts.sikuli</h2> <a href="accts.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">import</span> datetime
+
+<span class="kw">def</span> gbAccount1():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'bluu129ed'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'bluu128h'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'xcb126'</span>, <span class="str">'passw'</span>:<span class="str">'oooooooo'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'xcb129'</span>, <span class="str">'passw'</span>:<span class="str">'oooooooo'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'kissmygrace'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}]
+    <span class="kw">return</span> acctList
+
+<span class="kw">def</span> gbAccount2():
+        acctList=[{<span class="str">'user'</span>:<span class="str">'gaau1'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'almondlegend'</span>, <span class="str">'passw'</span>:<span class="str">'moonfalling'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'triangel2'</span>, <span class="str">'passw'</span>:<span class="str">'moonfalling'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau2'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau3'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau4'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau5'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau6'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau7'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau8'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau9'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau10'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau11'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau12'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau13'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau14'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau15'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau16'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau17'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau18'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau19'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau20'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau21'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau22'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau23'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau24'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                <span class="cmt">#, {'user':'gaau26', 'passw':'pppppppp', 'login':''}</span>
+                , {<span class="str">'user'</span>:<span class="str">'gaau27'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau28'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau29'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau30'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau32'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau33'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau34'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau35'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau36'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau37'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau38'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau39'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau40'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau42'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau43'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau44'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau45'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau46'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau47'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau48'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau49'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+                , {<span class="str">'user'</span>:<span class="str">'gaau50'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}]
+        <span class="kw">return</span> acctList
+
+<span class="cmt">#alist</span>
+
+<span class="kw">def</span> gbAccount3(): <span class="cmt"># get panel free stuff</span>
+    acctList=[{<span class="str">'user'</span>:<span class="str">'gaau370'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau331'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau333'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau334'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau335'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau336'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau337'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau338'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau339'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau340'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau362'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau363'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau365'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau366'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau367'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau368'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau369'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau370'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau391'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau392'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau393'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau394'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau395'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau396'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau397'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau421'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau424'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau425'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau426'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau427'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau428'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau429'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau430'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau431'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau432'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau433'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau434'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau435'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau436'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau437'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau438'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau561'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau562'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau563'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'gaau393'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}]
+    <span class="kw">return</span> acctList
+
+<span class="cmt">#al</span>
+<span class="kw">def</span> gbAccountAlly():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'haau169'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau170'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau171'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau172'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau173'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau174'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau184'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau185'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau186'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}]
+    <span class="kw">return</span> acctList
+
+<span class="kw">def</span> gbAccount5():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'haau169'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau170'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau171'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau172'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}]
+    <span class="kw">return</span> acctList
+
+<span class="kw">def</span> gbAccount6():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'kpp119'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau51'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}
+            <span class="cmt">#, {'user':'haau118', 'passw':'pppppppp'}</span>
+            <span class="cmt">#, {'user':'haau119', 'passw':'pppppppp'}</span>
+            <span class="cmt">#, {'user':'haau120', 'passw':'pppppppp'}</span>
+            <span class="cmt">#, {'user':'bbqnow', 'passw':'yyyyyyyy'}</span>
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>}
+            , {<span class="str">'user'</span>:<span class="str">'kpp111'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>}]
+    <span class="kw">return</span> acctList
+
+<span class="cmt"># desktop train</span>
+<span class="kw">def</span> gbAccount7():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'haau76'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau77'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            <span class="cmt">#, {'user':'haau78', 'passw':'pppppppp', 'login':''}</span>
+            , {<span class="str">'user'</span>:<span class="str">'haau79'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau80'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau81'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau82'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau83'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau84'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau85'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau86'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau87'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau88'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau89'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau90'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau91'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau92'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau93'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau94'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau95'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau96'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau97'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau98'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            <span class="cmt"># , {'user':'haau99', 'passw':'pppppppp', 'login':''} # wrong PW</span>
+            , {<span class="str">'user'</span>:<span class="str">'haau100'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau101'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau102'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau103'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau104'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau105'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau106'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau107'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau108'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau109'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau110'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau111'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau112'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau113'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau114'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau115'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau116'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}]
+    <span class="kw">return</span> acctList
+
+<span class="kw">def</span> gbAccountAlt():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'kpp117'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'bbqnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'kpp111'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'kpp119'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            <span class="cmt">#, {'user':'bbqnow', 'passw':'yyyyyyyy', 'login':''}</span>
+            , {<span class="str">'user'</span>:<span class="str">'haau155'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau154'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau153'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau152'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}]
+    <span class="kw">return</span> acctList
+
+
+<span class="kw">def</span> gbAccount8():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau51'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau52'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau53'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau54'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau55'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau56'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau57'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau58'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau59'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau60'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau61'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau62'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau63'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'busnow'</span>, <span class="str">'passw'</span>:<span class="str">'yyyyyyyy'</span>, <span class="str">'login'</span>:<span class="str">''</span>, <span class="str">'assist'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau64'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau65'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau66'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau67'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau68'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+            , {<span class="str">'user'</span>:<span class="str">'haau69'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}]
+    <span class="kw">return</span> acctList
+
+
+<span class="kw">def</span> Bluu():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'dummy'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    <span class="cmt"># , {'user':'bluu114', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'bluu115', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'bluu116', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'bluu117', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'bluu118', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'bluu119', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'bluu120', 'passw':'pppppppp', 'login':''}</span>
+    , {<span class="str">'user'</span>:<span class="str">'bluu121'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'bluu122'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'bluu123'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'bluu124'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'bluu125'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'bluu126'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'bluu127'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'bluu128'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    ]
+    <span class="kw">return</span> acctList
+
+<span class="kw">def</span> Haau():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'dummy'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'kpp119'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'skyfall55'</span>, <span class="str">'passw'</span>:<span class="str">'moonfalling'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau1'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau2'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau3'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau4'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau5'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau6'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau7'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau8'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau9'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau10'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau12'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau13'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau14'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau15'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau16'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau17'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau18'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau19'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau21'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau22'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau23'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau24'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau25'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau26'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau27'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau28'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau29'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    ]
+    <span class="kw">return</span> acctList
+
+<span class="kw">def</span> Haau2():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'dummy'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau30'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau31'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau32'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau33'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau34'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau36'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau37'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau38'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau39'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau40'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau41'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau42'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau43'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau44'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau45'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau46'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau47'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau48'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau49'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau50'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau51'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau52'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau53'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau54'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau55'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau56'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau57'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau58'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau59'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau60'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau61'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau62'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau63'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau64'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau65'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau66'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    ]
+    <span class="kw">return</span> acctList
+
+<span class="kw">def</span> Haau3():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'dummy'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    <span class="cmt"># , {'user':'haau67', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau68', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau69', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau70', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau71', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau72', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau73', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau74', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau75', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau76', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau77', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau78', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau79', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau80', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau81', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau82', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau83', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau84', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau85', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau86', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau87', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau88', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau89', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau90', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau91', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau92', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau93', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau94', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau95', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau96', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau97', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau98', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau100', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau101', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau102', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau103', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau104', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau105', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau106', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau107', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau108', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau109', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau110', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau111', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau112', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau113', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau114', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau115', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau116', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau117', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau118', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau119', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau120', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau121', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau122', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau123', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau124', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau125', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau126', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau127', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau128', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau129', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau130', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau131', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau132', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau133', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau134', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau135', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau136', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau137', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau138', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau139', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau140', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau141', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau142', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau143', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau144', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau145', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau146', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau147', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau148', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau149', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau150', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau151', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau152', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau153', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau154', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau155', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau156', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau157', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau158', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau159', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau160', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau161', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau162', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau163', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau164', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau165', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau166', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau167', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau168', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau169', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau170', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau171', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau172', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau173', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau174', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau175', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau176', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau177', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau178', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau179', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau180', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau181', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau182', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau183', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau184', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau185', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau186', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau187', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau188', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau189', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau190', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau191', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau192', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau193', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau194', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau195', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau196', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau197', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau198', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau199', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau200', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau201', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau202', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau203', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau204', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau205', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau206', 'passw':'pppppppp', 'login':''}</span>
+    <span class="cmt"># , {'user':'haau207', 'passw':'pppppppp', 'login':''}</span>
+    , {<span class="str">'user'</span>:<span class="str">'haau208'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+   , {<span class="str">'user'</span>:<span class="str">'haau209'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+   , {<span class="str">'user'</span>:<span class="str">'haau210'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau211'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+
+    , {<span class="str">'user'</span>:<span class="str">'haau212'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau213'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau214'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau215'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau216'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau217'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau218'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau219'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau220'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau221'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau222'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau223'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau224'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau225'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau226'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau227'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau228'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+
+    , {<span class="str">'user'</span>:<span class="str">'haau229'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau230'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau231'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau232'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau233'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+   , {<span class="str">'user'</span>:<span class="str">'haau234'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau235'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+   , {<span class="str">'user'</span>:<span class="str">'kpp119'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau236'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+   , {<span class="str">'user'</span>:<span class="str">'haau237'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau238'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau239'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau240'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau241'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau242'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau243'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau244'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau245'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau246'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau247'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau248'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau249'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau250'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau251'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau252'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau253'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau254'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau255'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau256'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau257'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau258'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau259'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau260'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau261'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau262'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau263'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau264'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau265'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau266'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau267'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau268'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau269'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau270'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau271'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau272'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau273'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'haau274'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+   <span class="cmt">#  #a2</span>
+   <span class="cmt">#  , {'user':'haau275', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau276', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau277', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau278', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau279', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau280', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau281', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau282', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau283', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau284', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau285', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau286', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau287', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau288', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau289', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau290', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau291', 'passw':'pppppppp', 'login':''}</span>
+   <span class="cmt">#  , {'user':'haau292', 'passw':'pppppppp', 'login':''}</span>
+    ]
+    <span class="kw">return</span> acctList
+
+<span class="kw">def</span> Gaau():
+    acctList=[{<span class="str">'user'</span>:<span class="str">'dummy'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    <span class="cmt"># , {'user':'gaau394', 'passw':'pppppppp', 'login':''}</span>
+    , {<span class="str">'user'</span>:<span class="str">'kpp119'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'akekee'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'skyfall55'</span>, <span class="str">'passw'</span>:<span class="str">'moonfalling'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau395'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau396'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau397'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau421'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau424'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau425'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau426'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau427'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau428'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau429'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau430'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau431'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau432'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau433'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau434'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau435'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau436'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau437'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau438'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau561'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau562'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    , {<span class="str">'user'</span>:<span class="str">'gaau563'</span>, <span class="str">'passw'</span>:<span class="str">'pppppppp'</span>, <span class="str">'login'</span>:<span class="str">''</span>}
+    ]
+    <span class="kw">return</span> acctList
+</pre>
+</body>
+</html>

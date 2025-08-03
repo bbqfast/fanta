@@ -1,0 +1,351 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>mac.sikuli</h2> <a href="mac.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt"># ~/Skull/SikuliX.app/Contents/Java/TrainLog.tx</span>
+
+<span class="kw">import</span> lib
+<span class="kw">import</span> evt
+<span class="kw">import</span> accts
+<span class="kw">import</span> traceback
+<span class="kw">import</span> datetime
+<span class="kw">import</span> mac_img <span class="kw">as</span> mimg1
+
+
+reload(mimg1)
+reload(lib)
+reload(evt)
+reload(accts)
+<span class="kw">import</span> org.sikuli.natives.Vision <span class="kw">as</span> Vision;
+<span class="kw">import</span> datetime
+<span class="kw">import</span> shutil
+Vision.setParameter(<span class="str">"MinTargetSize"</span>, <span class="dig">10</span>) <span class="cmt"># A small value such as 6 makes the matching </span>
+
+
+<span class="kw">def</span> waitHour(hr, min):
+    lib.log(<span class="str">'waitHour()'</span>);
+    <span class="kw">while</span> True:
+        now = datetime.datetime.now()
+        <span class="kw">if</span> (now.hour == hr <span class="kw">and</span> now.minute &gt; min):
+            <span class="kw">break</span>
+        lib.sleeplogx(<span class="dig">60</span>)
+    <span class="cmt">#print now.year, now.month, now.day, now.hour, now.minute, now.second</span>
+
+
+<span class="kw">def</span> ixact(img, sim=<span class="dig">0.9</span>):
+    <span class="kw">return</span> lib.XP(img).fx(img.f+<span class="str">"Exact"</span>).similar(sim)
+
+<span class="cmt">#mc3</span>
+<span class="kw">def</span> myClick3(area, img, waitForImgAppear=<span class="dig">0</span>):
+    lib.myClick(area, img, waitForImgAppear=waitForImgAppear, holdDur=<span class="dig">0.5</span>, after=<span class="dig">0.5</span>)
+
+<span class="kw">def</span> initGame():
+    lib.log(<span class="str">'initGame'</span>)
+    <span class="kw">global</span> bsicon, game, bottomBarDrag, bottomBarDrop, heroBarDrag, heroBarDrop
+    <span class="cmt">#bsicon=initBsIcon()</span>
+    game = <span class="skw">find</span>(mimg1.imgMobaIcon)
+    game.setX(game.x - <span class="dig">20</span>)
+    game.setW(<span class="dig">500</span>)
+    game.setH(<span class="dig">900</span>)
+    evt.game=game
+    lib.game=game
+
+
+<span class="kw">def</span> setup(first=True):
+    lib.log(<span class="str">"setup"</span>)
+    <span class="kw">if</span> lib.logExists(SCREEN, mimg1.imgMobaIcon):
+        initGame()
+        <span class="kw">if</span> first:
+            myClick3(game, mimg1.imgMobaIcon)
+        game.highlight(<span class="dig">1</span>)
+
+<span class="kw">def</span> sendLuna():
+    lib.log(<span class="str">"sendLuna"</span>)
+    <span class="kw">if</span> lib.logExists(game, mimg1.imgSelect):
+        myClick3(game, mimg1.imgSelect)
+        myClick3(game, mimg1.imgViewItems)
+        <span class="kw">while</span> lib.logExists(game, ixact(mimg1.imgLunaTotal, <span class="dig">.95</span>)):
+            myClick3(game, mimg1.imgLuna, holdDur=<span class="dig">.4</span>)
+        myClick3(game, mimg1.imgTrade)
+        myClick3(game, mimg1.imgConfirm)
+        myClick3(game, mimg1.imgContinue)
+        myClick3(game, mimg1.imgBack)
+
+<span class="kw">def</span> goBack():
+    <span class="kw">if</span> lib.logExists(game, mimg1.imgBack):
+        myClick3(game, mimg1.imgBack)
+        myClick3(game, mimg1.imgBack)
+
+<span class="cmt">#tl</span>
+<span class="kw">def</span> tradeLoop():
+    lib.log(<span class="str">"tradeLoop"</span>)
+    <span class="kw">while</span> True:
+        myClick3(game,  mimg1.imgMenu)
+        myClick3(game, mimg1.mimg1.imgTradeMain)
+        lib.sleeplogx(<span class="dig">3</span>)
+        <span class="kw">if</span> lib.logExists(game, mimg1.imgDetails):
+            myClick3(game, mimg1.imgDetails)
+            lib.sleeplogx(<span class="dig">3</span>)
+            sendLuna()
+            goBack()
+        <span class="kw">else</span>:
+            myClick3(game, mimg1.imgBack)
+        lib.sleeplogx(<span class="dig">2</span>)
+        myClick3(game,  mimg1.imgMenuPressed)
+
+
+<span class="kw">def</span> allyAccept():
+    myClick3(game, mimg1.imgAllyMain)
+    clearApprove()
+    myClick3(game, mimg1.imgBack)
+    lib.sleeplogx(<span class="dig">3</span>)
+
+<span class="kw">def</span> clearApprove():
+    lib.log(<span class="str">"clearApprove"</span>)
+    <span class="kw">while</span> lib.logExists(game, mimg1.imgAllyApprove):
+        myClick3(gambge, mimg1.imgAllyApprove)
+        lib.sleeplogx(<span class="dig">2</span>)
+        myClick3(game, mimg1.imgBack)
+
+<span class="kw">def</span> allyApprove():
+    lib.log(<span class="str">"allyApprove"</span>)
+    <span class="cmt">#if lib.logExists(game, mimg1.imgAllyWaiting):</span>
+    myClick3(game, mimg1.imgAllyWaiting)
+    lib.sleeplogx(<span class="dig">2</span>)
+    myClick3(game, mimg1.imgWaitApproval)
+    <span class="kw">while</span> lib.logExists(game, mimg1.imgAllyApprove):
+        myClick3(game, mimg1.imgAllyApprove)
+        lib.sleeplogx(<span class="dig">2</span>)
+    <span class="cmt">#if lib.logExists(game, mimg1.imgBack):</span>
+    myClick3(game, mimg1.imgBack)
+
+<span class="kw">def</span> allyLoop():
+    <span class="kw">while</span> True:
+        <span class="cmt">#allyAccept()</span>
+        allyApprove()
+        lib.sleeplogx(<span class="dig">14</span>)
+
+<span class="kw">def</span> setBox(ub, dx, dy, w, h):
+    ub.setX(ub.x + dx)
+    ub.setY(ub.y + dy)
+    ub.setW(w)
+    ub.setH(h)
+    <span class="cmt">#lib.hoverBox(ub)</span>
+    ub.highlight(<span class="dig">1</span>)
+
+<span class="kw">def</span> closeFanta():
+    lib.log(<span class="str">"closeFanta"</span>)
+    ex=<span class="dig">0</span>
+    <span class="kw">while</span> ex &lt; <span class="dig">3</span>:
+        <span class="kw">try</span>:
+            ub=<span class="skw">find</span>(mimg1.imgFantaTab)
+            setBox(ub, -<span class="dig">5</span>, -<span class="dig">5</span>, w=<span class="dig">120</span>, h=<span class="dig">30</span>)
+            myClick3(ub, mimg1.imgTabClose)
+            <span class="kw">break</span>
+        <span class="kw">except</span>:
+            lib.screenShot(game, <span class="str">"closeFanta-"</span>)
+            lib.log(<span class="str">"CloseFanta failed: ex="</span> + str(ex))
+            lib.log(traceback.format_exc())
+            ex=ex+<span class="dig">1</span>
+
+<span class="kw">def</span> launch():
+    lib.log(<span class="str">"launch()"</span>)
+    <span class="cmt">#while lib.logExists(SCREEN,  mimg1.imgFantaIcon):</span>
+    myClick3(SCREEN, ixact(mimg1.imgFantaIcon))
+    <span class="cmt">#lib.clicklog(mimg1.imgFantaIcon)</span>
+    <span class="cmt">#lib.locateg(SCREEN, ixact(mimg1.imgFantaIcon))`</span>
+    mouseDown(Button.LEFT)
+    mouseUp(Button.LEFT)
+    lib.sleeplogx(<span class="dig">1</span>)
+
+<span class="kw">def</span> relaunch():
+    lib.log(<span class="str">"relaunch()"</span>)
+    closeFanta()
+    lib.sleeplogx(<span class="dig">1</span>)
+    <span class="kw">try</span>:
+        launch()
+        lib.myClickTillGone(SCREEN, mimg1.imgStartGame, waitForImgAppear=<span class="dig">240</span>)
+        setup(False)
+    <span class="kw">except</span>:
+        lib.screenShot(game, <span class="str">"relaunch()-except"</span>)
+        lib.log(traceback.format_exc())
+        <span class="kw">return</span> False
+    <span class="kw">return</span> True
+
+<span class="kw">def</span> afterLaunch():
+    lib.log(<span class="str">"afterLaunch()"</span>)
+    lib.sleeplogx(<span class="dig">2</span>)
+    <span class="kw">if</span> lib.logExists(game, mimg1.imgClose):
+        myClick3(game,  mimg1.imgClose)
+    myClick3(game,  mimg1.imgMenu)
+    myClick3(game, mimg1.imgAllyMain)
+    clearApprove()
+
+<span class="kw">def</span> allyLoopCatch():
+    lib.log(<span class="str">"allyLoopCatch"</span>)
+    re=False
+    <span class="kw">while</span> True:
+        <span class="kw">try</span>:
+            <span class="kw">if</span> re:
+                afterLaunch()
+            allyLoop()
+        <span class="kw">except</span>:
+            lib.screenShot(game, <span class="str">"allyLoopCatch-"</span>)
+            lib.log(traceback.format_exc())
+            <span class="kw">if</span> <span class="kw">not</span> relaunch():
+                conitinue
+            re=True
+
+<span class="kw">def</span> tradeLoopCatch():
+    <span class="kw">while</span> True:
+        <span class="kw">try</span>:
+            tradeLoop()
+        <span class="kw">except</span>:
+            lib.screenShot(game, <span class="str">"tradeLoopCatch-"</span>)
+            lib.log(traceback.format_exc())
+            relaunch()
+            re=True
+
+<span class="kw">def</span> leana():
+    <span class="kw">while</span> True:
+        myClick3(game, mimg1.imgGetLp)
+        myClick3(game, mimg1.imgYes)
+        lib.sleeplogx(<span class="dig">1</span>)
+
+<span class="cmt">#waitHour(2, 30)           </span>
+<span class="kw">def</span> mysleep(sec):
+    start_t=time.time()
+    <span class="kw">while</span> True:
+        dur=time.time() - start_t
+        <span class="kw">if</span> dur &gt; sec:
+            lib.log(<span class="str">'mysleep() '</span> + str(dur))
+            <span class="kw">return</span>
+
+<span class="kw">def</span> sleeptest():
+    start_t=time.time()
+    mysleep(<span class="dig">0.5</span>)
+    dur=time.time() - start_t
+    lib.log(str(dur))
+
+<span class="cmt">#leana()</span>
+<span class="kw">def</span> receiveBrave():
+    <span class="kw">while</span> True:
+        myClick3(game, mimg1.imgSelectAll)
+        myClick3(game, mimg1.imgConfirm)
+        myClick3(game, mimg1.imgReceive3)
+        myClick3(game, mimg1.imgYes)
+        lib.sleeplogx(<span class="dig">3</span>)
+
+<span class="kw">def</span> mysleep2(sec):
+    start_t=datetime.datetime.now()
+    <span class="kw">while</span> True:
+        now_t=datetime.datetime.now()
+        dur=(now_t-start_t).total_seconds()
+        <span class="kw">if</span> dur &gt; sec:
+            lib.log(<span class="str">'mysleep() '</span> + str(dur))
+            <span class="kw">return</span>
+
+<span class="cmt">#m1</span>
+setup()
+<span class="cmt">#myClick3(game, mimg1.imgBraveAgain)</span>
+cnt=<span class="dig">0</span>
+<span class="kw">while</span> True:
+    cnt+=<span class="dig">1</span>
+    lib.log(<span class="str">"Pull Round ="</span> + str(cnt))
+    <span class="kw">while</span> lib.logExists(game, lib.ixact(mimg1.imgBraveNext), <span class="dig">1.5</span>):
+        myClick3(game, mimg1.imgBraveNext)
+        <span class="cmt">#lib.sleeplogx(1.5)</span>
+    myClick3(game, mimg1.imgBraveAgain)
+    lib.sleeplogx(<span class="dig">1</span>)
+
+
+<span class="cmt">#lib.log('x')</span>
+<span class="cmt">#mysleep2(1.5)</span>
+<span class="cmt">#lib.log('y')</span>
+
+<span class="cmt">#relaunch()</span>
+<span class="cmt">#launch()</span>
+<span class="cmt">#[</span>
+<span class="cmt">#allyLoopCatch()</span>
+<span class="cmt">#tradeLoopCatch()</span>
+<span class="cmt">#allyLoop()</span>
+<span class="cmt">#myClick3(game, mimg1.imgStartGame)</span>
+<span class="cmt">#myClick3(game,  mimg1.imgMenu)</span>
+<span class="cmt">#myClick3(game, mimg1.imgAllyMain)</span>
+<span class="cmt">#clearApprove()</span>
+<span class="cmt">#allyLoop()</span>
+
+<span class="cmt">#allyApprove()</span>
+<span class="cmt">#m1</span>
+
+</pre>
+</body>
+</html>

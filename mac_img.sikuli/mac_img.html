@@ -1,0 +1,192 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>mac_img.sikuli</h2> <a href="mac_img.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt"># ~/Skull/SikuliX.app/Contents/Java/TrainLog.tx</span>
+
+<span class="kw">import</span> lib
+<span class="kw">import</span> datetime
+reload(lib)
+
+<span class="kw">import</span> org.sikuli.natives.Vision <span class="kw">as</span> Vision;
+<span class="kw">import</span> datetime
+<span class="kw">import</span> shutil
+Vision.setParameter(<span class="str">"MinTargetSize"</span>, <span class="dig">10</span>) <span class="cmt"># A small value such as 6 makes the matching </span>
+
+
+imgStart=lib.X(<img src="1522287435447.png" />).fx(<span class="str">"imgStart"</span>)
+
+imgTradeMain=lib.X(<img src="1522288087910.png" />).fx(<span class="str">"imgTradeMain"</span>)
+imgMobaIcon=lib.X(<img src="1522288273528.png" />).fx(<span class="str">"imgMobaIcon"</span>)
+imgDetails= lib.X(<img src="1522288860470.png" />).fx(<span class="str">"imgMobaIcon"</span>)
+
+imgSelect=lib.X(<img src="1522289355440.png" />).fx(<span class="str">"imgSelect"</span>)
+imgViewItems=lib.X(<img src="1522289436995.png" />).fx(<span class="str">"imgViewItems=lib.X"</span>)
+
+imgLuna=lib.X(<img src="1522289527274.png" />).fx(<span class="str">"imgLuna"</span>)
+
+imgTrade= lib.X(<img src="1522289874738.png" />).fx(<span class="str">"imgTrade"</span>)
+imgConfirm=lib.X(<img src="1522289919112.png" />).fx(<span class="str">"imgConfirm"</span>)
+
+imgContinue=lib.X(<img src="1522290529644.png" />).fx(<span class="str">"imgContinue"</span>)
+
+imgBack=lib.X(<img src="1522290649860.png" />).fx(<span class="str">"imgBack"</span>)
+
+
+imgStart=lib.X(<img src="1522287435447.png" />).fx(<span class="str">""</span>)
+
+imgTradeMain=lib.X(<img src="1522288087910.png" />).fx(<span class="str">"imgTradeMain"</span>)
+imgMobaIcon=lib.X(<img src="1522288273528.png" />).fx(<span class="str">"imgMobaIcon"</span>)
+imgDetails= lib.X(<img src="1522288860470.png" />).fx(<span class="str">"imgMobaIcon"</span>)
+
+imgSelect=lib.X(<img src="1522289355440.png" />).fx(<span class="str">"imgSelect"</span>)
+imgViewItems=lib.X(<img src="1522289436995.png" />).fx(<span class="str">"imgViewItems=lib.X"</span>)
+
+imgLuna=lib.X(<img src="1522289527274.png" />).fx(<span class="str">"imgLuna"</span>)
+
+imgTrade= lib.X(<img src="1522289874738.png" />).fx(<span class="str">"imgTrade"</span>)
+imgConfirm=lib.X(<img src="1522289919112.png" />).fx(<span class="str">"imgConfirm"</span>)
+
+imgContinue=lib.X(<img src="1522290529644.png" />).fx(<span class="str">"imgContinue"</span>)
+
+imgBack=lib.X(<img src="1522290649860.png" />).fx(<span class="str">"imgBack"</span>)
+
+imgAllyMain= lib.X(<img src="1523595250959.png" />).fx(<span class="str">"imgAllyMain"</span>)
+
+imgAllyApprove=lib.X(<img src="1523595307554.png" />).fx(<span class="str">"imgAllyApprove"</span>)
+
+imgAllyWaiting=lib.X(<img src="1524032919882.png" />).fx(<span class="str">"imgAllyWaiting"</span>)
+
+imgReturn= lib.X(<img src="1524624018161.png" />).fx(<span class="str">"imgReturn"</span>)
+
+imgFantaIcon=lib.X(<img src="1524624209542.png" />).fx(<span class="str">"imgFantaIcon"</span>)
+imgStartGame=lib.X(<img src="1524631356781.png" />).fx(<span class="str">"imgStartGame"</span>)
+
+imgMenu=lib.X(<img src="1524631737262.png" />).fx(<span class="str">"imgMenu"</span>)
+imgMenuPressed= lib.X(<img src="1524956362544.png" />).fx(<span class="str">"imgMenuPressed"</span>)
+
+imgYes=lib.X(<img src="1524716674107.png" />).fx(<span class="str">"imgYes"</span>)
+imgWaitApproval=lib.X(<img src="1524716944230.png" />).fx(<span class="str">"imgWaitApproval"</span>)
+
+imgFantaTab=lib.X(<img src="1524633291112.png" />).fx(<span class="str">"imgFantaTab"</span>)
+imgTabClose=lib.X(<img src="1524633324318.png" />).fx(<span class="str">"imgTabClose"</span>)
+
+imgClose= lib.X(<img src="1525361529078.png" />).fx(<span class="str">"imgClose"</span>)
+
+imgLunaTotal=lib.X(<img src="1524964750167.png" />).fx(<span class="str">"imgLunaTotal"</span>)
+
+imgGetLp=lib.X(<img src="1530423984532.png" />).fx(<span class="str">"imgGetLp"</span>)
+
+imgSelectAll=lib.X(<img src="1530469973225.png" />).fx(<span class="str">"imgSelectAll"</span>)
+imgExchangeLP= lib.X(<img src="1530507117620.png" />).fx(<span class="str">"imgExchangeLP"</span>)
+
+imgConfirm=lib.X(<img src="1530470065389.png" />).fx(<span class="str">"imgConfirm"</span>)
+imgReceive3=lib.X(<img src="1530471890835.png" />).fx(<span class="str">"imgReceive"</span>)
+
+imgBraveNext=lib.X(<img src="1530473674010.png" />).fx(<span class="str">"imgBraveNext"</span>)
+imgBraveAgain=lib.X(<img src="1530473867561.png" />).fx(<span class="str">"imgBraveAgain"</span>)
+imgBraveAgain=lib.X(<img src="1531101848123.png" />).fx(<span class="str">"imgBraveAgain"</span>)
+imgBraveAgain0=lib.X(<img src="1531101861844.png" />).fx(<span class="str">"imgBraveAgain"</span>)
+
+
+imgStack=lib.X(<img src="1530513748671.png" />).fx(<span class="str">"imgStack"</span>)
+imgLuna5M=lib.X(<img src="1530513787293.png" />).fx(<span class="str">"imgLuna5M"</span>)
+
+imgLuna5M=lib.X(<img src="1530778717161.png" />) .fx(<span class="str">"imgLuna10M"</span>)
+
+
+imgAlly50k=lib.X(<img src="1530757290840.png" />).fx(<span class="str">"imgAllyPtStack"</span>)
+imgBrave100k=lib.X(<img src="1530762300830.png" />).fx(<span class="str">"imgBrave100k"</span>)
+
+imgItemsTab=lib.X(<img src="1530818011931.png" />).fx(<span class="str">"imgItemsTab"</span>)
+imgLunaTab=lib.X(<img src="1530818075230.png" />).fx(<span class="str">"imgLunaTab"</span>)
+
+imgInboxItemsTabDark=lib.X(<img src="1530989294345.png" />).fx(<span class="str">"imgInboxItemsTabDark"</span>)
+
+imgInboxItemsTab=lib.X(<img src="1530989564675.png" />) .fx(<span class="str">"imgInboxItemsTab"</span>)
+imgInboxLunaTabDark=lib.X(<img src="1530989935198.png" />).fx(<span class="str">"imgInboxLunaTabDark"</span>)
+imgInboxLunaTab=lib.X(<img src="1530989972262.png" />).fx(<span class="str">"imgInboxLunaTab"</span>)
+
+imgInboxFilter=lib.X(<img src="1530990060103.png" />).fx(<span class="str">"imgInboxFilter"</span>)
+imgTypeLuna=lib.X(<img src="1530990316427.png" />).fx(<span class="str">"imgTypeLuna"</span>)
+imgTypeAllyPts=lib.X(<img src="1530990339422.png" />).fx(<span class="str">"imgTypeAllyPts"</span>)
+imgTypeBravePts=lib.X(<img src="1530990403485.png" />).fx(<span class="str">"imgTypeBravePts"</span>)
+
+imgTypeLunaPressed=lib.X(<img src="1530990464113.png" />).fx(<span class="str">"imgTypeLunaPressed"</span>)
+imgTypeAllyPtsPressed=lib.X(<img src="1530991195409.png" />).fx(<span class="str">"imgTypeAllyPtsPressed"</span>)
+imgTypeBravePtsPressed=lib.X(<img src="1530991218607.png" />).fx(<span class="str">"imgTypeBravePtsPressed"</span>)
+
+imgInboxNextPage=lib.X(<img src="1530994057764.png" />).fx(<span class="str">"imgInboxNextPage"</span>)
+imgInboxHasNextPage=lib.X(<img src="1531116304571.png" />).fx(<span class="str">"imgInboxHasNextPage"</span>)
+imgLunaNextPage= lib.X(<img src="1531605406562.png" />).fx(<span class="str">"imgLunaNextPage"</span>)
+</pre>
+</body>
+</html>

@@ -1,0 +1,288 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>skyblock.sikuli</h2> <a href="skyblock.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> lib
+reload(lib)
+
+<span class="kw">import</span> org.sikuli.natives.Vision <span class="kw">as</span> Vision;
+<span class="cmt"># import datetime</span>
+<span class="cmt"># import shutil</span>
+Vision.setParameter(<span class="str">"MinTargetSize"</span>, <span class="dig">10</span>) <span class="cmt"># A small value such as 6 makes the matching </span>
+
+<span class="cmt">#1763 ,1026</span>
+
+testimg=(<img src="1593649758152.png" />)
+
+testimg=(<img src="1593650107198.png" />)
+
+
+imgGameIcon=lib.X(<img src="1593649701227.png" />).fx(<span class="str">"imgGameIcon"</span>)
+
+imgFurnace=lib.X(<img src="1593904615359.png" />).fx(<span class="str">"imgFurnace"</span>)
+
+imgTree1=lib.X(<img src="1593648253121.png" />).fx(<span class="str">"imgTree1"</span>)
+
+<span class="cmt">#,,image,,im</span>
+imgTree1=lib.XP(<img src="1593651399592.png" />).fx(<span class="str">"imgTree1"</span>)
+imgTree1=lib.XP(<img src="1593652062229.png" />).fx(<span class="str">"imgTree1"</span>)
+imgTree2=lib.XP(<img src="1593652173622.png" />).fx(<span class="str">"imgTree2"</span>)
+imgTree3=lib.XP(<img src="1593652239320.png" />).fx(<span class="str">"imgTree3"</span>)
+
+imgTree4=lib.XP(<img src="1593653208140.png" />).fx(<span class="str">"imgTree4"</span>)
+
+imgTree5=lib.XP(<img src="1593653430618.png" />).fx(<span class="str">"imgTree5"</span>)
+
+
+imgTree6=lib.XP(<img src="1593654207905.png" />).fx(<span class="str">"imgTree6"</span>)
+
+
+imgTree7=lib.XP(<img src="1593654788583.png" />).fx(<span class="str">"imgTree7"</span>)
+
+imgTree8=lib.XP(<img src="1593655666558.png" />).fx(<span class="str">"imgTree8"</span>)
+
+imgTree9=lib.XP(<img src="1593656506060.png" />).fx(<span class="str">"imgTree9"</span>)
+
+treeSimilar=<span class="dig">0.78</span>
+
+
+imgIron=lib.X(<img src="1593143381900.png" />).fx(<span class="str">"imgIron"</span>)
+<span class="cmt">#imgIron=lib.X("1593145021675.png").fx("")</span>
+imgBread=lib.XP(<img src="1593903930352.png" />).fx(<span class="str">"imgBread"</span>).similar(<span class="dig">0.80</span>)
+
+
+
+<span class="cmt">#=lib.X("1593143381900.png").fx("")</span>
+imgIronRock1=lib.XP(<img src="1593145021675.png" />).fx(<span class="str">"imgIronRock1"</span>)
+imgIronRock2=lib.XP(<img src="1593368846783.png" />).fx(<span class="str">"imgIronRock2"</span>)
+imgIronRock3=lib.XP(<img src="1593373584318.png" />).fx(<span class="str">"imgIronRock3"</span>)
+imgIronRock4=lib.XP(<img src="1593373588493.png" />).fx(<span class="str">"imgIronRock4"</span>)
+
+
+imgIronRock5=lib.XP(<img src="1593379210444.png" />).fx(<span class="str">"imgIronRock5"</span>)
+
+
+imgIronRock6=lib.XP(<img src="1593379233298.png" />).fx(<span class="str">"imgIronRock6"</span>)
+
+
+imgIronRock7=lib.XP(<img src="1593379242658.png" />).fx(<span class="str">"imgIronRock6"</span>)
+
+
+imgIronRock8=lib.XP(<img src="1593379251877.png" />).fx(<span class="str">"imgIronRock8"</span>)
+
+
+imgIronRock9=lib.XP(<img src="1593379270922.png" />).fx(<span class="str">"imgIronRock9"</span>)
+
+imgCoal=lib.X(<img src="1593138903821.png" />).fx(<span class="str">"imgCoal"</span>)
+
+imgCoal=lib.X(<img src="1593904151439.png" />).fx(<span class="str">"imgCoal"</span>)
+
+
+
+
+imgIronOre=lib.X(<img src="1593143858268.png" />).fx(<span class="str">"imgIronOre"</span>)
+
+imgIronOre=lib.X(<img src="1593903172729.png" />).fx(<span class="str">"imgIronOre"</span>)
+
+imgDough=lib.X(<img src="1593903685352.png" />).fx(<span class="str">"imgDough"</span>)
+
+imgFantaClose=lib.X(<img src="1593139466699.png" />)
+
+
+
+imgPlank=lib.X(<img src="1593493441466.png" />).fx(<span class="str">"imgPlank"</span>)
+<span class="cmt">#imgPlank=lib.X("1593493721699.png").fx("imgPlank")</span>
+
+
+<span class="cmt">#imgPlank=lib.X("1593494165391.png").fx("imgPlank")</span>
+
+imgWood=lib.X(<img src="1593493323985.png" />).fx(<span class="str">"imgWood"</span>)
+
+
+
+<span class="cmt">#,,code</span>
+
+<span class="cmt">#,,init,,ig</span>
+<span class="kw">def</span> initGame():
+    lib.log(<span class="str">'initGame'</span>)
+    <span class="kw">global</span> game, bottombar, gameTop, gameLeft
+    game = <span class="skw">find</span>(imgGameIcon)
+    <span class="cmt">## 1763 ,1026</span>
+    gameHeight=<span class="dig">1050</span>
+    gameWidth=<span class="dig">1763</span>
+    game.setW(gameWidth)
+    game.setH(gameHeight)
+
+    bottomBarHeight=<span class="dig">150</span>
+    bottombar = <span class="skw">find</span>(imgGameIcon)
+    bottombar.setW(gameWidth)
+    bottombar.setH(bottomBarHeight)
+    bar_y = bottombar.getY()
+    bottombar.setY(bar_y + gameHeight - bottomBarHeight)
+    <span class="cmt">#bottombar.setY(626)x</span>
+
+    gameTop = <span class="skw">find</span>(imgGameIcon)
+    gameTop.setW(gameWidth)
+    gameTop.setH(gameHeight - bottomBarHeight)
+
+    gameLeft = <span class="skw">find</span>(imgGameIcon)
+    gameLeft.setW(gameWidth / <span class="dig">2</span>)
+    gameLeft.setH(gameHeight - bottomBarHeight)
+
+
+<span class="kw">def</span> clearIron():
+    <span class="kw">while</span> lib.logExists(SCREEN, imgIron, <span class="dig">1</span>):
+        lib.myClick(SCREEN,imgIron)
+
+
+<span class="cmt">#lib.myClick(SCREEN,imgIron)</span>
+<span class="cmt">#lib.myClickTillGone(SCREEN,imgIron, 1)</span>
+
+<span class="cmt">#,,tr,,gt</span>
+<span class="kw">def</span> getTrees():
+    cnt=<span class="dig">1</span>
+    rocks=[imgTree1,imgTree2,imgTree3,imgTree4,imgTree5,imgTree6,imgTree7,imgTree8,imgTree9]
+    <span class="kw">while</span> True:
+        <span class="kw">for</span> r <span class="kw">in</span> rocks:
+            r=r.similar(treeSimilar)
+            lib.log(<span class="str">"----------------- "</span> + str(cnt))
+            <span class="kw">if</span> lib.logExists(game, r):
+                cnt=cnt+<span class="dig">1</span>
+                lib.myClick(game, r, holdDur=<span class="dig">3.5</span>)
+
+<span class="kw">def</span> getIronRocks():
+    cnt=<span class="dig">1</span>
+    rocks=[imgIronRock1,imgIronRock2,imgIronRock3,imgIronRock4,imgIronRock5,imgIronRock6,imgIronRock7,imgIronRock8,imgIronRock9]
+    <span class="kw">while</span> True:
+        <span class="kw">for</span> r <span class="kw">in</span> rocks:
+            <span class="kw">if</span> lib.logExists(SCREEN, r):
+                lib.log(<span class="str">"----------------- "</span> + str(cnt))
+                cnt=cnt+<span class="dig">1</span>
+                lib.myClick(SCREEN, r, holdDur=<span class="dig">4</span>)
+
+<span class="cmt">#,,cook,,ck</span>
+<span class="kw">def</span> cookStuff(imgRaw, imgCooked, useCoal=True):
+    cnt=<span class="dig">1</span>
+    <span class="kw">while</span> True:
+        lib.log(<span class="str">"----------------- "</span> + str(cnt))
+        <span class="kw">if</span> useCoal:
+            lib.myClick(bottombar, imgCoal, after=<span class="dig">.5</span>, times=<span class="dig">1</span>, moveAway=True)
+        lib.sleeplogx(<span class="dig">1</span>)
+        lib.myClick(bottombar, imgRaw, after=<span class="dig">.5</span>, times=<span class="dig">3</span>, moveAway=True)
+        lib.sleeplogx(<span class="dig">1</span>)
+        lib.myClickTillGone(gameLeft, imgCooked, waitForImgAppear=<span class="dig">1</span>, waitAfterClick=<span class="dig">.5</span>, skipIfNotExist=<span class="dig">1</span>, moveAway=True)
+        cnt=cnt+<span class="dig">1</span>
+
+<span class="kw">def</span> cookBread(useCoal=True):
+    cookStuff(imgDough, imgBread, useCoal)
+
+<span class="kw">def</span> cookIron():
+    cnt=<span class="dig">1</span>
+    <span class="kw">while</span> True:
+        lib.log(<span class="str">"----------------- "</span> + str(cnt))
+        lib.myClick(bottombar, imgCoal, after=<span class="dig">.5</span>, times=<span class="dig">1</span>, moveAway=True)
+        lib.sleeplogx(<span class="dig">1</span>)
+        lib.myClick(bottombar, imgIronOre, after=<span class="dig">.5</span>, times=<span class="dig">3</span>, moveAway=True)
+        lib.sleeplogx(<span class="dig">1</span>)
+        lib.myClickTillGone(SCREEN,imgIron, waitForImgAppear=<span class="dig">1</span>, waitAfterClick=<span class="dig">.5</span>, skipIfNotExist=<span class="dig">1</span>, moveAway=True)
+        cnt=cnt+<span class="dig">1</span>
+
+<span class="kw">def</span> getPlank():
+    cnt=<span class="dig">1</span>
+    <span class="kw">while</span> True:
+        lib.log(<span class="str">"----------------- "</span> + str(cnt))
+        lib.myClick(game, imgCoal, after=<span class="dig">.5</span>)
+        lib.myClick(game, imgWood, after=<span class="dig">.5</span>, times=<span class="dig">3</span>)
+        lib.myClickTillGone(game,imgPlank, waitForImgAppear=<span class="dig">1</span>, retryIfNotGone=<span class="dig">2</span>, waitAfterClick=<span class="dig">.5</span>)
+        cnt=cnt+<span class="dig">1</span>
+
+
+<span class="kw">def</span> debug():
+    i=<span class="skw">find</span>(testimg)
+    lib.printImgSize(i)
+    lib.screenSize()
+
+<span class="cmt">#,,main</span>
+initGame()
+SCREEN.hover()
+lib.log(<span class="str">"============================================================"</span>)
+
+<span class="cmt">#lib.hoverBox(bottombar)</span>
+<span class="cmt">#getPlank()</span>
+<span class="cmt">#getIronRocks()</span>
+getTrees()
+<span class="cmt">#cookIron()</span>
+<span class="cmt">#cookBread(useCoal=True)</span>
+<span class="cmt">#clearIron()</span>
+
+</pre>
+</body>
+</html>

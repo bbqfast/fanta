@@ -1,0 +1,525 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>lib.sikuli</h2> <a href="lib.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">import</span> datetime
+<span class="kw">import</span> shutil
+<span class="kw">import</span> time
+<span class="kw">import</span> traceback
+
+<span class="kw">class</span> XP(Pattern):
+    <span class="kw">def</span> fx(self, _name):
+        self.f  = _name
+        <span class="kw">return</span> self
+
+<span class="kw">class</span> Ref:
+    <span class="kw">def</span> __init__(self, _name, _val):
+        self.val = _val
+        self.name = _name
+    <span class="kw">def</span> s(self):
+        <span class="kw">return</span> str(self.val)
+    <span class="kw">def</span> get(self):
+        log(<span class="str">"get "</span> + self.name + <span class="str">"="</span> + self.s())
+        <span class="kw">return</span> self.val
+    <span class="kw">def</span> set(self, _val):
+        self.val = _val
+        log(<span class="str">"set "</span> + self.name + <span class="str">"="</span> + self.s())
+
+<span class="kw">class</span> X(str):
+    <span class="kw">def</span> __new__(self, value, _fname = <span class="str">"unknown"</span>):
+        self.f = _fname
+        <span class="kw">return</span> str.__new__(self, value)
+    <span class="kw">def</span> fx(self, _name):
+        <span class="cmt">#print "img " + _name</span>
+        self.f  = _name
+        <span class="kw">return</span> self
+
+<span class="kw">class</span> Pts:
+    <span class="kw">def</span> __init__(self, _x, _y):
+        self.x = _x
+        self.y = _y
+
+<span class="kw">class</span> Pts:
+    <span class="kw">def</span> __init__(self, _x, _y):
+        self.x = _x
+        self.y = _y
+
+<span class="kw">class</span> Image1:
+    <span class="cmt"># while not area.exists(img)</span>
+    <span class="kw">def</span> __init__(self, _img):
+        self.img1 = _img
+    <span class="kw">def</span> existsOr(self, area):
+        <span class="kw">return</span> area.exists(self.img1)
+    <span class="kw">def</span> name(self):
+        <span class="kw">return</span> strimg(self.img1)
+
+<span class="kw">class</span> Image2:
+    <span class="kw">def</span> __init__(self, _img1, _img2):
+        self.img1 = _img1
+        self.img2 = _img2
+    <span class="kw">def</span> existsOr(self, area):
+        <span class="kw">return</span> area.exists(self.img1) <span class="kw">or</span> area.exists(self.img2)
+    <span class="kw">def</span> name(self):
+        <span class="kw">return</span> strimg(self.img1) + <span class="str">' or '</span> + strimg(self.img2)
+
+<span class="kw">class</span> Image3:
+    <span class="kw">def</span> __init__(self, _img1, _img2, _img3):
+        self.img1 = _img1
+        self.img2 = _img2
+        self.img3 = _img3
+    <span class="kw">def</span> existsOr(self, area):
+        <span class="kw">return</span> area.exists(self.img1) <span class="kw">or</span> area.exists(self.img2) <span class="kw">or</span> area.exists(self.img3)
+    <span class="kw">def</span> name(self):
+        <span class="kw">return</span> strimg(self.img1) + <span class="str">' or '</span> + strimg(self.img2) + <span class="str">' or '</span> + strimg(self.img3)
+
+<span class="kw">class</span> Image4:
+    <span class="kw">def</span> __init__(self, _img1, _img2, _img3, _img4):
+        self.img1 = _img1
+        self.img2 = _img2
+        self.img3 = _img3
+        self.img4 = _img4
+    <span class="kw">def</span> existsOr(self, area):
+        <span class="kw">return</span> area.exists(self.img1) <span class="kw">or</span> area.exists(self.img2) <span class="kw">or</span> area.exists(self.img3) <span class="kw">or</span> area.exists(self.img4)
+    <span class="kw">def</span> name(self):
+        <span class="kw">return</span> strimg(self.img1) + <span class="str">' or '</span> + strimg(self.img2) + <span class="str">' or '</span> + strimg(self.img3) + <span class="str">' or '</span> + strimg(self.img4)
+
+<span class="kw">def</span> logExcept():
+    log(traceback.format_exc())
+
+<span class="kw">def</span> ctime():
+    <span class="kw">return</span> str(datetime.datetime.today())
+
+<span class="kw">def</span> strimg(img):
+    <span class="cmt">#if (img.__class__.__name__ == 'X'):</span>
+    <span class="kw">if</span> hasattr(img, <span class="str">'f'</span>):
+        <span class="kw">return</span> img.f
+    <span class="kw">else</span>:
+        <span class="kw">return</span> str(img)
+
+<span class="kw">def</span> logimg(msg, img):
+<span class="cmt">#    f = open('TrainLog.txt', 'a', 0)</span>
+    <span class="cmt">#f.write(ctime() + ' ' + msg + ' ' + strimg(img) + '\n')</span>
+    log(msg + <span class="str">' '</span> + strimg(img))
+<span class="cmt">#    f.close()</span>
+
+
+<span class="kw">def</span> logc(msg):
+    f = open(<span class="str">'TrainLog.txt'</span>, <span class="str">'a'</span>, <span class="dig">0</span>)
+    f.write(msg)
+    f.close()
+
+
+<span class="kw">def</span> log(msg):
+    f = open(<span class="str">'TrainLog.txt'</span>, <span class="str">'a'</span>, <span class="dig">0</span>)
+    lmsg = ctime() + <span class="str">' '</span> + msg + <span class="str">'\n'</span>
+    <span class="kw">print</span> lmsg
+    f.write(lmsg)
+    f.close()
+
+<span class="kw">def</span> logx(msg):
+    f = open(<span class="str">'TrainLog.txt'</span>, <span class="str">'a'</span>, <span class="dig">0</span>)
+    lmsg = ctime() + <span class="str">' '</span> + msg + <span class="str">'\n'</span>
+    <span class="kw">print</span> lmsg
+    f.write(lmsg)
+    f.close()
+
+<span class="kw">def</span> logExists(area, img, dur = <span class="dig">0</span>):
+    start_t=time.time()
+    exts = area.exists(img, dur)
+    dur=time.time() - start_t
+    <span class="kw">if</span> exts:
+        logimg(<span class="str">'Exists=true dur='</span> + str(dur), img)
+    <span class="kw">else</span>:
+        logimg(<span class="str">'Exists=false dur'</span> + str(dur), img)
+    <span class="kw">return</span> exts
+
+<span class="kw">def</span> clickHere():
+    mouseDown(Button.LEFT)
+    <span class="skw">sleep</span>(<span class="dig">.5</span>)
+    mouseUp(Button.LEFT)
+    <span class="skw">sleep</span>(<span class="dig">.5</span>)
+
+<span class="kw">def</span> clicklog(img):
+    log(<span class="str">'click for '</span> + str(img.f))
+    <span class="skw">click</span>(img)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+
+<span class="kw">def</span> sleeplogx(sec):
+    log(<span class="str">'sleep for '</span> + str(sec))
+    <span class="skw">sleep</span>(sec)
+
+<span class="kw">def</span> sleepMinute(min):
+    log(<span class="str">'sleep for '</span> + str(min) + <span class="str">' Minute'</span>)
+    <span class="kw">for</span> x <span class="kw">in</span> range(<span class="dig">1</span>, min + <span class="dig">1</span>):
+        logc(<span class="str">'...'</span> + str(x))
+        <span class="skw">sleep</span>(<span class="dig">60</span>)
+
+<span class="kw">def</span> by_y(match):
+   <span class="kw">return</span> match.y
+
+<span class="kw">def</span> locate(img):
+    tt=<span class="skw">find</span>(img)
+    hover(tt)
+    log(<span class="str">"Relative pos:  x= "</span> + str(tt.getX() - game.getX() + tt.getW() / <span class="dig">2</span>) + <span class="str">" y= "</span> + str(tt.getY() - game.getY() + tt.getH() / <span class="dig">2</span> ) )
+
+<span class="kw">def</span> locateg(game, img):
+    tt=<span class="skw">find</span>(img)
+    hover(tt)
+    <span class="cmt">#lib.Pts(146, 281)</span>
+    log(<span class="str">"lib.Pts("</span> + str(tt.getX() - game.getX() ) + <span class="str">","</span> + str(tt.getY() - game.getY() ) + <span class="str">")"</span> )
+    log(<span class="str">"lib.Pts("</span> + str(tt.getX() - game.getX() + tt.getW() / <span class="dig">2</span>) + <span class="str">","</span> + str(tt.getY() - game.getY() + tt.getH() / <span class="dig">2</span> ) + <span class="str">")"</span> )
+
+
+<span class="kw">def</span> locatebr(game, img):
+    tt=<span class="skw">find</span>(img)
+    hover(tt)
+    log(<span class="str">"Relative pos:  x= "</span> + str(tt.getX() - game.getX() + tt.getW()) + <span class="str">" y= "</span> + str(tt.getY() - game.getY() + tt.getH()) )
+
+
+<span class="cmt"># debug region</span>
+<span class="kw">def</span> hoverBox(box):
+    hover(Location(box.x, box.y))
+    hover(Location(box.x + box.w, box.y))
+    hover(Location(box.x, box.y + box.h))
+    hover(Location(box.x + box.w, box.y + box.h))
+
+
+<span class="kw">def</span> myWaitInternal(area , imgs, totalWaits, takeshot=False):
+    log(<span class="str">'myWait() '</span> + imgs.name())
+    <span class="kw">if</span> area==None:
+        area=SCREEN
+    waitCount=<span class="dig">0</span>
+    <span class="kw">while</span> <span class="kw">not</span> imgs.existsOr(area):
+        waitCount = waitCount + <span class="dig">1</span>
+        log(<span class="str">'wait '</span> + str(waitCount))
+        <span class="kw">if</span> (waitCount &gt; totalWaits):
+            <span class="kw">if</span> takeshot:
+                screenShot(area)
+            log(<span class="str">'wait '</span> + imgs.name() + <span class="str">' exceeded '</span> + str(totalWaits))
+            <span class="kw">return</span> False
+        <span class="skw">sleep</span>(<span class="dig">.3</span>)
+    <span class="kw">return</span> True
+
+<span class="kw">def</span> myWait0(area ,img, totalWaits):
+    log(<span class="str">'myWait() '</span> + str(img))
+    <span class="kw">if</span> area==None:
+        area=SCREEN
+    waitCount=<span class="dig">0</span>
+    <span class="kw">while</span> <span class="kw">not</span> area.exists(img):
+        waitCount = waitCount + <span class="dig">1</span>
+        log(<span class="str">'wait '</span> + str(waitCount))
+        <span class="kw">if</span> (waitCount &gt; totalWaits):
+            log(<span class="str">'wait '</span> + str(img) + <span class="str">' exceeded '</span> + str(totalWaits))
+            <span class="kw">return</span> False
+        <span class="skw">sleep</span>(<span class="dig">.5</span>)
+    <span class="kw">return</span> True
+
+
+<span class="kw">def</span> myWait(area ,img, totalWaits, takeshot=False):
+    comp=Image1(img)
+    <span class="kw">return</span> myWaitInternal(area, comp, totalWaits, takeshot)
+
+<span class="kw">def</span> myWaitFor2(area ,img1, img2, totalWaits):
+    comp=Image2(img1, img2)
+    <span class="kw">return</span> myWaitInternal(area, comp, totalWaits)
+
+<span class="kw">def</span> myWaitFor3(area ,img1, img2, img3, totalWaits):
+    comp=Image3(img1, img2, img3)
+    <span class="kw">return</span> myWaitInternal(area, comp, totalWaits)
+
+<span class="kw">def</span> myWaitFor4(area ,img1, img2, img3, img4, totalWaits):
+    comp=Image4(img1, img2, img3, img4)
+    <span class="kw">return</span> myWaitInternal(area, comp, totalWaits)
+
+<span class="kw">def</span> myClickImg(imgObj):
+    m = imgObj
+    m.hover()
+    m.mouseDown(Button.LEFT)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    m.mouseUp(Button.LEFT)
+    <span class="skw">sleep</span>(<span class="dig">.5</span>)
+    m = None
+
+<span class="kw">def</span> myClickTillGone0(area, img, <span class="skw">wait</span>=False, dur=<span class="dig">30</span>, retry=<span class="dig">30</span>):
+    log(<span class="str">'deprecated ClickTillGone wait=False, dur=30'</span>)
+    <span class="kw">if</span> <span class="skw">wait</span>:
+        myClickTillGone(area, img, waitForImgAppear=<span class="dig">0</span>, retryIfNotGone=<span class="dig">30</span>)
+    <span class="kw">else</span>:
+        myClickTillGone(area, img, waitForImgAppear=dur, retryIfNotGone=<span class="dig">30</span>)
+
+<span class="cmt">#ctg</span>
+
+<span class="kw">def</span> clickTillGone(area, img, maxRetry=<span class="dig">30</span>):
+    log(<span class="str">'clickTillGone() '</span> + str(img.f))
+    c=<span class="dig">0</span>
+    <span class="kw">while</span> area.exists(img):
+        clicklog(img)
+        c=c+<span class="dig">1</span>
+        <span class="kw">if</span>(c &gt; maxRetry):
+            log(<span class="str">'fastClickTillGone() '</span> + str(img.f) + <span class="str">'exceded'</span>)
+            <span class="kw">return</span> False
+    <span class="kw">return</span> True
+
+
+<span class="kw">def</span> clickTillNext(area, img, nextImg, retryIfNotGone=<span class="dig">10</span>):
+    log(<span class="str">'clickTillNext() '</span> + str(img.f))
+    <span class="cmt"># myClick(area, img, waitForImgAppear)</span>
+    <span class="cmt"># sleeplogx(waitAfterClick)</span>
+    c=<span class="dig">0</span>
+    <span class="kw">while</span> <span class="kw">not</span> area.exists(nextImg):
+        <span class="kw">try</span>:
+            clicklog(img)
+        <span class="kw">except</span>:
+            log(<span class="str">'clickTillNext() except OK'</span>)
+            <span class="kw">pass</span>
+        <span class="cmt"># myClick(area, img, 2)</span>
+        sleeplogx(<span class="dig">1</span>)
+        c=c+<span class="dig">1</span>
+        <span class="kw">if</span>(c &gt; retryIfNotGone):
+            log(<span class="str">'clickTillNext() '</span> + str(img.f) + <span class="str">'exceded'</span>)
+            <span class="kw">return</span> False
+    <span class="kw">return</span> True
+
+
+<span class="kw">def</span> myClickTillGone(area, img, waitForImgAppear=<span class="dig">0</span>, retryIfNotGone=<span class="dig">30</span>, waitAfterClick=<span class="dig">2</span>):
+    log(<span class="str">'myClickTillGone() '</span> + str(img.f))
+    myClick(area, img, waitForImgAppear)
+    sleeplogx(waitAfterClick)
+    c=<span class="dig">0</span>
+    <span class="kw">while</span> area.exists(img):
+        myClick(area, img, <span class="dig">2</span>)
+        sleeplogx(waitAfterClick)
+        c=c+<span class="dig">1</span>
+        <span class="kw">if</span>(c &gt; retryIfNotGone):
+            log(<span class="str">'myClickTillGone() '</span> + str(img.f) + <span class="str">'exceded'</span>)
+            <span class="kw">return</span> False
+    <span class="kw">return</span> True
+
+<span class="cmt"># def myClick(area, img, wait=False, dur=30):</span>
+<span class="cmt">#     log('deprecated myClick wait=False, dur=30')</span>
+<span class="cmt">#     if wait:</span>
+<span class="cmt">#         myClick(area, img, waitForImgAppear=dur)</span>
+<span class="cmt">#     else:</span>
+<span class="cmt">#         myClick(area, img, waitForImgAppear=0)</span>
+
+<span class="kw">def</span> myClickHold(area, img, waitForImgAppear=<span class="dig">0</span>):
+    logimg(<span class="str">'myClickHold() '</span>, img)
+    myClick(area, img, waitForImgAppear=<span class="dig">0</span>, holdDur=<span class="dig">3</span>)
+
+<span class="kw">def</span> myClick(area, img, waitForImgAppear=<span class="dig">0</span>, holdDur=<span class="dig">1</span>):
+    logimg(<span class="str">'myClick() '</span>, img)
+    <span class="kw">if</span> <span class="kw">not</span> waitForImgAppear == <span class="dig">0</span>:
+        log(<span class="str">'myClick() wait non zero'</span>)
+        myWait(area, img, waitForImgAppear)
+    <span class="kw">else</span>:
+        log(<span class="str">'myClick() wait=False'</span>)
+    m = area.<span class="skw">find</span>(img)
+    <span class="cmt">#m.click()</span>
+    m.hover()
+    <span class="cmt">#sleep(0.5)</span>
+    m.mouseDown(Button.LEFT)
+    <span class="skw">sleep</span>(holdDur)
+    m.mouseUp(Button.LEFT)
+    <span class="skw">sleep</span>(<span class="dig">1.5</span>)
+    m = None
+
+<span class="kw">def</span> myClickExact(area, img):
+    m = area.<span class="skw">find</span>(Pattern(img).exact())
+    <span class="cmt">#m.click()</span>
+    m.hover()
+    <span class="cmt">#sleep(0.5)</span>
+    m.mouseDown(Button.LEFT)
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    m.mouseUp(Button.LEFT)
+    <span class="skw">sleep</span>(<span class="dig">1.5</span>)
+    m = None
+
+
+<span class="kw">def</span> scrollPos(game, posDrag, posDrop, speed, dir=<span class="dig">1</span>):
+    <span class="kw">if</span> dir==-<span class="dig">1</span>:
+        temp=posDrag
+        posDrag=posDrop
+        posDrop=temp
+    log(<span class="str">'scrollPos() x='</span> + str(posDrag.x) + <span class="str">'y='</span> + str(posDrag.y))
+    <span class="cmt">#oldDelay=Settings.MoveMouseDelay</span>
+    hover(Location(game.getX() + posDrag.x, game.getY() + posDrag.y))
+    <span class="cmt">#Settings.MoveMouseDelay = speed</span>
+    <span class="skw">dragDrop</span>(Location(game.getX() + posDrag.x, game.getY() + posDrag.y), Location(game.getX() + posDrop.x, game.getY() + posDrop.y))
+    <span class="cmt">#Settings.MoveMouseDelay=oldDelay</span>
+
+<span class="kw">def</span> exactExists(area, img):
+    <span class="kw">return</span> area.exists( Pattern(img).exact())
+
+<span class="kw">def</span> existsTest(img, label):
+    <span class="kw">if</span> game.exists(img):
+        log(label + <span class="str">' exists'</span>)
+    <span class="kw">else</span>:
+        log(label + <span class="str">' exists'</span>)
+
+
+<span class="kw">def</span> slowType(msg):
+    <span class="kw">for</span> c <span class="kw">in</span> msg:
+        log(<span class="str">'c='</span> + str(c))
+        <span class="skw">type</span>(str(c))
+        <span class="skw">sleep</span>(<span class="dig">.5</span>)
+
+<span class="kw">def</span> slowTypeChar(c):
+    <span class="skw">type</span>(c)
+    <span class="skw">sleep</span>(<span class="dig">.5</span>)
+
+<span class="kw">def</span> tryImgsByOrder(img):
+    <span class="kw">try</span>:
+        <span class="kw">return</span> imgsByOrder(img)
+    <span class="kw">except</span>:
+        log(<span class="str">'tryImgsByOrder- not found '</span> + str(img.f))
+        <span class="kw">return</span> []
+
+<span class="kw">def</span> imgsByOrder(img):
+    tt = game.findAll(img)
+    tts  = sorted(tt, key=by_y)
+    log(<span class="str">'imgByOrder: total image found:'</span> + str(len(tts)))
+    <span class="cmt">#hover(tts[0])    </span>
+    <span class="kw">return</span> tts
+
+<span class="kw">def</span> imgByOrder(img, idx):
+    tt = findAll(img)
+    tts  = sorted(tt, key=by_y)
+    log(<span class="str">'imgByOrder: total image found:'</span> + str(len(tts)))
+    <span class="cmt">#hover(tts[0]) </span>
+    <span class="kw">if</span> idx + <span class="dig">1</span> &gt; len(tts) :
+        <span class="kw">return</span> None
+    <span class="kw">else</span>:
+        <span class="kw">return</span> tts[idx]
+
+<span class="kw">def</span> by_y(match):
+   <span class="kw">return</span> match.y
+
+<span class="kw">def</span> imgFirst(area, img):
+    <span class="kw">if</span> <span class="kw">not</span> logExists(area, img):
+        <span class="kw">return</span> nil
+    tt = findAll(img)
+    tts  = sorted(tt, key=by_y)
+    hover(tts[<span class="dig">0</span>])
+    <span class="kw">return</span> tts[<span class="dig">0</span>]
+
+<span class="kw">def</span> imgLast(img):
+    log(<span class="str">'imgLast'</span>)
+    tt = findAll(img)
+    tts  = sorted(tt, key=by_y)
+    <span class="cmt">#log(str(len(tts)))</span>
+    button=tts[len(tts)-<span class="dig">1</span>]
+    hover(button)
+    <span class="kw">return</span> button
+
+
+<span class="kw">def</span> timestamp():
+    curDate = datetime.datetime.now().date() <span class="cmt">#.time()</span>
+    curTime = datetime.datetime.now().time()
+    <span class="kw">return</span> str(curDate.year) + str(curDate.month) + str(curDate.day) + <span class="str">"-"</span> + str(curTime.hour) + <span class="str">";"</span> + str(curTime.minute) + <span class="str">";"</span> + str(curTime.second)
+
+
+<span class="kw">def</span> screenShot(area, name=<span class="str">"screenshot"</span>):
+    log(<span class="str">'screenShot():'</span> + name)
+    <span class="cmt">#img = find(gImgScore) </span>
+    <span class="cmt"># file=capture(area)</span>
+    <span class="cmt"># shutil.move(file,  name + "=Shot=" + timestamp() + ".png")</span>
+    screenShotNoTime(area, name + <span class="str">"=Shot="</span> + timestamp() + <img src=".png" />)
+
+<span class="kw">def</span> screenShotNoTime(area, name):
+    log(<span class="str">'screenShot():'</span> + name)
+    <span class="cmt">#img = find(gImgScore) </span>
+    file=<span class="skw">capture</span>(area)
+    shutil.move(file,  name)
+
+
+<span class="kw">def</span> saveStatsShot(img, name):
+    <span class="cmt">#img = find(gImgScore) </span>
+    img.setW(<span class="dig">400</span>)
+    img.setH(<span class="dig">600</span>)
+    img.hover()
+    file=<span class="skw">capture</span>(img)
+    <span class="cmt">#shutil.move(file, name + "=" + timestamp() + ".png")</span>
+    shutil.move(file, name + <img src=".png" />)
+    img = None <span class="cmt"># clean up</span>
+
+<span class="kw">def</span> sendMail(body):
+    os.system(<span class="str">"C:\Skull\questMail.bat "</span> + body)
+
+<span class="kw">def</span> dur(sec):
+    <span class="cmt"># return str(datetime.timedelta(seconds=sec))</span>
+    <span class="kw">return</span> time.strftime(<span class="str">"%H:%M:%S"</span>, time.gmtime(sec))
+
+<span class="kw">def</span> ixact(img, sim=<span class="dig">0.9</span>):
+    <span class="kw">return</span> XP(img).fx(img.f+<span class="str">"Exact"</span>).similar(sim)
+</pre>
+</body>
+</html>
