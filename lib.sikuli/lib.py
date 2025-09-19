@@ -543,7 +543,7 @@ def slowType(msg):
         mysleep(DefaultTypeSleep)
 
 def keydown(c):
-    log('kd=' + str(c))
+    # log('kd=' + str(c))
     # type(c)
     keyDown(c)
 

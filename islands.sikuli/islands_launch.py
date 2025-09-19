@@ -27,4 +27,8 @@ import os
 import growgarden_lib
 reload(growgarden_lib)
 
-growgarden_lib.main1()
+growgarden_lib.run()
+#growgarden_lib.main1()
+#growgarden_lib.main2()
+#growgarden_lib.main3()
+#growgarden_lib.mouse_pos()
